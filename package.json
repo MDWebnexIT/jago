@@ -1,0 +1,29 @@
+{
+  "name": "jago-office-management",
+  "version": "1.0.0",
+  "description": "Jago Corporation PLC - Office Management & Sales Android App",
+  "main": "index.html",
+  "scripts": {
+    "build": "powershell -Command \"New-Item -ItemType Directory -Force -Path www; Copy-Item -Path index.html, manifest.json, sw.js, .htaccess, _redirects, netlify.toml -Destination www/ -Force; Copy-Item -Path css, js -Destination www/ -Recurse -Force\"",
+    "cap:init": "cap init",
+    "cap:add": "npx cap add android",
+    "cap:copy": "npx cap copy android",
+    "cap:sync": "npm run build && npx cap sync android",
+    "cap:open": "npx cap open android"
+  },
+  "keywords": [
+    "jago",
+    "pwa",
+    "android",
+    "capacitor",
+    "sales",
+    "management"
+  ],
+  "author": "Jago Corporation PLC",
+  "license": "ISC",
+  "devDependencies": {
+    "@capacitor/android": "^8.5.1",
+    "@capacitor/cli": "^8.5.1",
+    "@capacitor/core": "^8.5.1"
+  }
+}

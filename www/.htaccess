@@ -1,0 +1,33 @@
+# cPanel & LiteSpeed / Apache Hosting Configuration for Jago Sales Portal
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Force HTTPS Redirect for cPanel SSL
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Disable Directory Browsing
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+
+# MIME Types for PWA Manifest, Fonts & Service Worker
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest .json
+  AddType application/javascript .js
+  AddType text/css .css
+</IfModule>
+
+# Gzip Compression for Fast Mobile Performance on cPanel
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json application/manifest+json
+</IfModule>
+
+# Prevent caching on Service Worker so app updates apply immediately across devices
+<IfModule mod_headers.c>
+  <FilesMatch "sw\.js$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+  </FilesMatch>
+</IfModule>
