@@ -1,14 +1,17 @@
 {
   "name": "jago-office-management",
   "version": "1.0.0",
-  "description": "Jago Corporation PLC - Office Management & Sales Android App",
-  "main": "index.html",
+  "description": "Jago Corporation PLC - Office Management & Sales System (Windows 11 64-bit Desktop Application)",
+  "main": "electron-main.js",
   "scripts": {
-    "build": "powershell -Command \"New-Item -ItemType Directory -Force -Path www; Copy-Item -Path index.html, manifest.json, sw.js, .htaccess, _redirects, netlify.toml -Destination www/ -Force; Copy-Item -Path css, js -Destination www/ -Recurse -Force\"",
+    "build": "npm run web:build",
+    "web:build": "powershell -Command \"New-Item -ItemType Directory -Force -Path www; Copy-Item -Path index.html, index.php, api.php, manifest.json, sw.js, .htaccess, _redirects, netlify.toml -Destination www/ -Force; Copy-Item -Path css, js, data -Destination www/ -Recurse -Force\"",
+    "start": "electron .",
+    "build:exe": "npm run web:build && npx electron-builder --win portable nsis --x64",
     "cap:init": "cap init",
     "cap:add": "npx cap add android",
     "cap:copy": "npx cap copy android",
-    "cap:sync": "npm run build && npx cap sync android",
+    "cap:sync": "npm run web:build && npx cap sync android",
     "cap:open": "npx cap open android"
   },
   "keywords": [
@@ -16,6 +19,9 @@
     "pwa",
     "android",
     "capacitor",
+    "windows",
+    "desktop",
+    "electron",
     "sales",
     "management"
   ],
@@ -24,6 +30,23 @@
   "devDependencies": {
     "@capacitor/android": "^8.5.1",
     "@capacitor/cli": "^8.5.1",
-    "@capacitor/core": "^8.5.1"
+    "@capacitor/core": "^8.5.1",
+    "electron": "^44.3.0",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "com.jagocorp.officemanagement",
+    "productName": "Jago Sales Management",
+    "directories": {
+      "output": "dist_win"
+    },
+    "files": [
+      "electron-main.js",
+      "index.html",
+      "www/**/*",
+      "css/**/*",
+      "js/**/*",
+      "data/**/*"
+    ]
   }
 }

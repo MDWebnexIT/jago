@@ -1533,8 +1533,86 @@ const Storage = {
   set(key, value) {
     try {
       localStorage.setItem(key, JSON.stringify(value));
+      if (key !== 'jago_lifetime_backup_v1') {
+        this.autoSaveLifetimeBackup();
+      }
+      this.pushToPhpServer();
     } catch (e) {
       console.error('Storage set error:', e);
+    }
+  },
+
+  autoSaveLifetimeBackup() {
+    try {
+      const snapshot = {
+        version: "1.0_LIFETIME",
+        timestamp: new Date().toISOString(),
+        users: this.get(STORAGE_KEYS.USERS, DEFAULT_USERS),
+        customers: this.get(STORAGE_KEYS.CUSTOMERS, []),
+        items: this.get(STORAGE_KEYS.ITEMS, []),
+        priceLogs: this.get(STORAGE_KEYS.PRICE_LOGS, []),
+        openingBalanceLogs: this.get(STORAGE_KEYS.OPENING_BALANCE_LOGS, []),
+        daybook: this.get(STORAGE_KEYS.DAYBOOK, []),
+        conveyance: this.get(STORAGE_KEYS.CONVEYANCE, []),
+        conveyanceLocations: this.get(STORAGE_KEYS.CONVEYANCE_LOCATIONS, [])
+      };
+      localStorage.setItem('jago_lifetime_backup_v1', JSON.stringify(snapshot));
+    } catch (e) {
+      console.error('Auto lifetime backup error:', e);
+    }
+  },
+
+  async syncWithPhpServer() {
+    try {
+      let url = 'api.php?action=load';
+      if (typeof jagoWpVars !== 'undefined' && jagoWpVars.ajaxUrl) {
+        url = jagoWpVars.ajaxUrl + '?action=jago_load_data';
+      }
+      const res = await fetch(url);
+      if (res.ok) {
+        const data = await res.json();
+        if (data && Array.isArray(data.daybook) && data.daybook.length > 0) {
+          if (Array.isArray(data.customers)) localStorage.setItem(STORAGE_KEYS.CUSTOMERS, JSON.stringify(data.customers));
+          if (Array.isArray(data.items)) localStorage.setItem(STORAGE_KEYS.ITEMS, JSON.stringify(data.items));
+          if (Array.isArray(data.priceLogs)) localStorage.setItem(STORAGE_KEYS.PRICE_LOGS, JSON.stringify(data.priceLogs));
+          if (Array.isArray(data.openingBalanceLogs)) localStorage.setItem(STORAGE_KEYS.OPENING_BALANCE_LOGS, JSON.stringify(data.openingBalanceLogs));
+          if (Array.isArray(data.daybook)) localStorage.setItem(STORAGE_KEYS.DAYBOOK, JSON.stringify(data.daybook));
+          if (Array.isArray(data.conveyance)) localStorage.setItem(STORAGE_KEYS.CONVEYANCE, JSON.stringify(data.conveyance));
+          if (Array.isArray(data.conveyanceLocations)) localStorage.setItem(STORAGE_KEYS.CONVEYANCE_LOCATIONS, JSON.stringify(data.conveyanceLocations));
+          if (Array.isArray(data.users)) localStorage.setItem(STORAGE_KEYS.USERS, JSON.stringify(data.users));
+          this.autoSaveLifetimeBackup();
+        }
+      }
+    } catch (e) {
+      // Standalone or non-PHP mode
+    }
+  },
+  async pushToPhpServer() {
+    try {
+      let url = 'api.php?action=save';
+      if (typeof jagoWpVars !== 'undefined' && jagoWpVars.ajaxUrl) {
+        url = jagoWpVars.ajaxUrl + '?action=jago_save_data';
+      }
+      const payload = {
+        version: "1.0",
+        appName: "Jago Corporation PLC Sales & Marketing Management",
+        exportDate: new Date().toISOString(),
+        users: this.get(STORAGE_KEYS.USERS, DEFAULT_USERS),
+        customers: this.get(STORAGE_KEYS.CUSTOMERS, []),
+        items: this.get(STORAGE_KEYS.ITEMS, []),
+        priceLogs: this.get(STORAGE_KEYS.PRICE_LOGS, []),
+        openingBalanceLogs: this.get(STORAGE_KEYS.OPENING_BALANCE_LOGS, []),
+        daybook: this.get(STORAGE_KEYS.DAYBOOK, []),
+        conveyance: this.get(STORAGE_KEYS.CONVEYANCE, []),
+        conveyanceLocations: this.get(STORAGE_KEYS.CONVEYANCE_LOCATIONS, [])
+      };
+      await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+    } catch (e) {
+      // Standalone mode
     }
   },
   resetToDefaultBackupData() {
@@ -1546,17 +1624,39 @@ const Storage = {
     this.set(STORAGE_KEYS.CONVEYANCE, DEFAULT_CONVEYANCE);
     this.set(STORAGE_KEYS.CONVEYANCE_LOCATIONS, DEFAULT_LOCATIONS);
     localStorage.setItem('jago_data_seed_version_v7', 'LOADED_2026_09_06_AUTHENTIC');
+    this.autoSaveLifetimeBackup();
   },
 
   init() {
-    const seedVersion = localStorage.getItem('jago_data_seed_version_v7');
-    const customers = this.get(STORAGE_KEYS.CUSTOMERS, []);
-    const daybook = this.get(STORAGE_KEYS.DAYBOOK, []);
-    const conveyance = this.get(STORAGE_KEYS.CONVEYANCE, []);
+    this.syncWithPhpServer();
 
-    // Force seed restore if version mismatch or if dataset is missing authentic backup records
-    if (seedVersion !== 'LOADED_2026_09_06_AUTHENTIC' || customers.length < 4 || daybook.length < 21 || conveyance.length < 19) {
+    // Check for lifetime auto-backup snapshot first before defaulting
+    const lifetimeBackupRaw = localStorage.getItem('jago_lifetime_backup_v1');
+    const hasExistingData = localStorage.getItem(STORAGE_KEYS.DAYBOOK) || localStorage.getItem(STORAGE_KEYS.CUSTOMERS);
+
+    if (!hasExistingData && lifetimeBackupRaw) {
+      try {
+        const backup = JSON.parse(lifetimeBackupRaw);
+        if (backup && Array.isArray(backup.daybook)) {
+          if (Array.isArray(backup.customers)) localStorage.setItem(STORAGE_KEYS.CUSTOMERS, JSON.stringify(backup.customers));
+          if (Array.isArray(backup.items)) localStorage.setItem(STORAGE_KEYS.ITEMS, JSON.stringify(backup.items));
+          if (Array.isArray(backup.priceLogs)) localStorage.setItem(STORAGE_KEYS.PRICE_LOGS, JSON.stringify(backup.priceLogs));
+          if (Array.isArray(backup.openingBalanceLogs)) localStorage.setItem(STORAGE_KEYS.OPENING_BALANCE_LOGS, JSON.stringify(backup.openingBalanceLogs));
+          if (Array.isArray(backup.daybook)) localStorage.setItem(STORAGE_KEYS.DAYBOOK, JSON.stringify(backup.daybook));
+          if (Array.isArray(backup.conveyance)) localStorage.setItem(STORAGE_KEYS.CONVEYANCE, JSON.stringify(backup.conveyance));
+          if (Array.isArray(backup.conveyanceLocations)) localStorage.setItem(STORAGE_KEYS.CONVEYANCE_LOCATIONS, JSON.stringify(backup.conveyanceLocations));
+          if (Array.isArray(backup.users)) localStorage.setItem(STORAGE_KEYS.USERS, JSON.stringify(backup.users));
+        }
+      } catch (e) {
+        console.error('Failed to restore from lifetime backup:', e);
+      }
+    }
+
+    const seedVersion = localStorage.getItem('jago_data_seed_version_v7');
+    if (!seedVersion && !hasExistingData && !lifetimeBackupRaw) {
       this.resetToDefaultBackupData();
+    } else if (!seedVersion) {
+      localStorage.setItem('jago_data_seed_version_v7', 'LOADED_2026_09_06_AUTHENTIC');
     }
 
     if (!localStorage.getItem(STORAGE_KEYS.USERS)) {
@@ -1578,6 +1678,9 @@ const Storage = {
         if (modified) this.set(k, itemsList);
       }
     });
+
+    // Ensure lifetime backup is initialized
+    this.autoSaveLifetimeBackup();
   },
 
   getSavedLocations() {
@@ -1703,6 +1806,7 @@ function importAppData(jsonFile, syncMode = 'overwrite', callback) {
         }
       }
 
+      Storage.autoSaveLifetimeBackup();
       if (callback) callback(true, "Database successfully updated & synchronized!");
     } catch (err) {
       if (callback) callback(false, "Failed to read backup file: " + err.message);

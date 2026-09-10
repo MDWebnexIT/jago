@@ -1,5 +1,37 @@
 /* Daily Conveyance Bill Management for Jago Corporation PLC */
 
+function numberToWordsBDT(amount) {
+  const num = parseFloat(amount);
+  if (isNaN(num) || num <= 0) return "Taka Zero Only";
+
+  const a = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 
+             'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
+  const b = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+
+  function inWords(n) {
+    if (n < 20) return a[n];
+    if (n < 100) return (b[Math.floor(n / 10)] + (n % 10 ? ' ' + a[n % 10] : '')).trim();
+    if (n < 1000) return (a[Math.floor(n / 100)] + ' Hundred' + (n % 100 ? ' ' + inWords(n % 100) : '')).trim();
+    if (n < 100000) return (inWords(Math.floor(n / 1000)) + ' Thousand' + (n % 1000 ? ' ' + inWords(n % 1000) : '')).trim();
+    if (n < 10000000) return (inWords(Math.floor(n / 100000)) + ' Lakh' + (n % 100000 ? ' ' + inWords(n % 100000) : '')).trim();
+    return (inWords(Math.floor(n / 10000000)) + ' Crore' + (n % 10000000 ? ' ' + inWords(n % 10000000) : '')).trim();
+  }
+
+  const taka = Math.floor(num);
+  const paisa = Math.round((num - taka) * 100);
+
+  let words = taka > 0 ? inWords(taka) : 'Zero';
+  let result = 'Taka ' + words;
+  if (paisa > 0) {
+    result += ' and ' + inWords(paisa) + ' Paisa';
+  }
+  result += ' Only';
+  return result;
+}
+if (typeof window !== 'undefined') {
+  window.numberToWordsBDT = numberToWordsBDT;
+}
+
 const ConveyanceManager = {
   getAllRawLogs() {
     return Storage.get(STORAGE_KEYS.CONVEYANCE, []);
@@ -105,12 +137,16 @@ const ConveyanceManager = {
     }
 
     const totalElem = document.getElementById('conveyanceDailyTotal');
+    const totalWordsElem = document.getElementById('conveyanceDailyTotalWords');
 
     let total = 0;
     logs.forEach(l => total += (parseFloat(l.amount) || 0));
 
     if (totalElem) {
       totalElem.innerText = formatBDT(total);
+    }
+    if (totalWordsElem) {
+      totalWordsElem.innerText = numberToWordsBDT(total);
     }
 
     if (logs.length === 0) {
@@ -240,18 +276,22 @@ const ConveyanceManager = {
 
     // Update Metric Cards
     const totalElem = document.getElementById('convMetricTotal');
+    const totalWordsElem = document.getElementById('convMetricTotalWords');
     const tripsElem = document.getElementById('convMetricTrips');
     const rickshawElem = document.getElementById('convMetricRickshaw');
     const cngUberElem = document.getElementById('convMetricCngUber');
     const busOtherElem = document.getElementById('convMetricBusOther');
     const footerTotalElem = document.getElementById('conveyanceTableFooterTotal');
+    const footerTotalWordsElem = document.getElementById('conveyanceTableFooterTotalWords');
 
     if (totalElem) totalElem.innerText = formatBDT(totalBill);
+    if (totalWordsElem) totalWordsElem.innerText = numberToWordsBDT(totalBill);
     if (tripsElem) tripsElem.innerText = `${totalTrips} Trips`;
     if (rickshawElem) rickshawElem.innerText = formatBDT(rickshawSum);
     if (cngUberElem) cngUberElem.innerText = formatBDT(cngUberSum);
     if (busOtherElem) busOtherElem.innerText = formatBDT(busOtherSum);
     if (footerTotalElem) footerTotalElem.innerText = formatBDT(totalBill);
+    if (footerTotalWordsElem) footerTotalWordsElem.innerHTML = `<strong>Amount in Words:</strong> ${numberToWordsBDT(totalBill)}`;
 
     // Render Master Detailed Trip Log Table Body
     if (logs.length === 0) {
@@ -339,8 +379,13 @@ const ConveyanceManager = {
             <div class="card-title" style="font-size: 1rem; color: var(--primary);">
               <i class="ri-calendar-event-fill"></i> ${formatDate(dateStr)} (${dayLogs.length} Journeys)
             </div>
-            <div style="font-weight: 800; color: var(--danger); font-size: 1.05rem;">
-              Daily Total: ${formatBDT(dayTotal)}
+            <div style="text-align: right;">
+              <div style="font-weight: 800; color: var(--danger); font-size: 1.05rem;">
+                Daily Total: ${formatBDT(dayTotal)}
+              </div>
+              <div style="font-size: 0.78rem; color: var(--text-muted); font-style: italic; font-weight: 500;">
+                In Words: ${numberToWordsBDT(dayTotal)}
+              </div>
             </div>
           </div>
           <div class="table-responsive">
@@ -361,6 +406,11 @@ const ConveyanceManager = {
                 <tr style="background: rgba(255,255,255,0.04); font-weight: 700;">
                   <td colspan="4" style="text-align: right; color: var(--text-muted);">Daily Subtotal for ${formatDate(dateStr)}:</td>
                   <td style="text-align: right; color: var(--danger); font-size: 1rem;">${formatBDT(dayTotal)}</td>
+                </tr>
+                <tr style="background: rgba(56, 189, 248, 0.05); font-weight: 600;">
+                  <td colspan="5" style="text-align: right; color: var(--primary); font-size: 0.85rem;">
+                    <strong>In Words:</strong> ${numberToWordsBDT(dayTotal)}
+                  </td>
                 </tr>
               </tfoot>
             </table>
@@ -427,7 +477,10 @@ const ConveyanceManager = {
         <td style="font-weight: 600;">${formatBDT(d.rickshaw)}</td>
         <td style="font-weight: 600;">${formatBDT(d.cngUber)}</td>
         <td style="font-weight: 600;">${formatBDT(d.busOther)}</td>
-        <td style="font-weight: 800; color: var(--danger); font-size: 0.95rem;">${formatBDT(d.total)}</td>
+        <td style="font-weight: 800; color: var(--danger); font-size: 0.95rem;">
+          ${formatBDT(d.total)}
+          <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: 400; font-style: italic;">${numberToWordsBDT(d.total)}</div>
+        </td>
       </tr>
     `).join('');
   },
@@ -558,6 +611,11 @@ const ConveyanceManager = {
                   <td colspan="4" style="padding: 6px 10px; text-align: right; color: #475569;">Daily Subtotal (${formatDate(dateStr)}):</td>
                   <td style="padding: 6px 10px; text-align: right; color: #dc2626; font-size: 0.95rem;">${formatBDT(dayTotal)}</td>
                 </tr>
+                <tr style="background: #f1f5f9; font-weight: 600;">
+                  <td colspan="5" style="padding: 4px 10px; text-align: right; color: #0284c7; font-size: 0.82rem;">
+                    <strong>In Words:</strong> ${numberToWordsBDT(dayTotal)}
+                  </td>
+                </tr>
               </tfoot>
             </table>
           </div>
@@ -599,6 +657,7 @@ const ConveyanceManager = {
           <div style="text-align: right;">
             <span style="color: #64748b; font-size: 0.78rem; text-transform: uppercase;">Cumulative Expense:</span><br>
             <strong style="color: #dc2626; font-size: 1.05rem;">${formatBDT(grandTotal)}</strong>
+            <div style="font-size: 0.75rem; color: #0284c7; font-weight: 600; margin-top: 2px;">${numberToWordsBDT(grandTotal)}</div>
           </div>
         </div>
 
@@ -608,9 +667,14 @@ const ConveyanceManager = {
         </div>
 
         <!-- Cumulative Summary Banner -->
-        <div style="background: #0f172a; color: white; padding: 0.85rem 1.25rem; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; font-size: 1rem; margin-bottom: 2.5rem;">
-          <span style="font-weight: 700;">Grand Total Cumulative Conveyance Claim:</span>
-          <span style="font-weight: 800; color: #38bdf8; font-size: 1.25rem;">${formatBDT(grandTotal)}</span>
+        <div style="background: #0f172a; color: white; padding: 1rem 1.25rem; border-radius: 6px; margin-bottom: 2.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 1rem;">
+            <span style="font-weight: 700;">Grand Total Cumulative Conveyance Claim:</span>
+            <span style="font-weight: 800; color: #38bdf8; font-size: 1.25rem;">${formatBDT(grandTotal)}</span>
+          </div>
+          <div style="margin-top: 0.5rem; text-align: right; color: #e2e8f0; font-size: 0.92rem; border-top: 1px dashed rgba(255,255,255,0.25); padding-top: 0.5rem;">
+            <strong style="color: #38bdf8;">Amount in Words:</strong> ${numberToWordsBDT(grandTotal)}
+          </div>
         </div>
 
         <!-- Approvals & Signatures Block -->

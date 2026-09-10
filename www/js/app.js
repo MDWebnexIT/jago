@@ -206,6 +206,11 @@ function refreshCurrentTabContent() {
         InvoiceManager.renderInvoicesTable();
       }
       break;
+    case 'cashClearanceTab':
+      if (typeof CashClearanceManager !== 'undefined') {
+        CashClearanceManager.renderCashClearanceView();
+      }
+      break;
     default:
       DayBookManager.renderDaybookTable(dateVal);
       DayBookManager.renderDaybookReport(dateVal);
@@ -265,6 +270,13 @@ function addDaybookProductRow(selectedItemId = '', qty = 1, unitPrice = '') {
   const container = document.getElementById('dbProductRowsContainer');
   if (!container) return;
 
+  if (typeof selectedItemId === 'object' && selectedItemId !== null) {
+    const itemObj = selectedItemId;
+    selectedItemId = itemObj.itemId || itemObj.id || '';
+    qty = itemObj.qty !== undefined ? itemObj.qty : 1;
+    unitPrice = itemObj.unitPrice !== undefined ? itemObj.unitPrice : '';
+  }
+
   const items = ItemManager.getItems();
   const rowId = 'db-row-' + Math.random().toString(36).substr(2, 9);
 
@@ -297,8 +309,10 @@ function addDaybookProductRow(selectedItemId = '', qty = 1, unitPrice = '') {
   `;
 
   container.appendChild(rowDiv);
-  if (selectedItemId) {
+  if (selectedItemId && unitPrice === '') {
     onDaybookProductRowChange(rowId);
+  } else {
+    recalcMultiItemGrandTotal();
   }
 }
 
@@ -524,6 +538,9 @@ function initFormListeners() {
 
 // Core function to save Daybook entry (handles single/multi-item & custom party date)
 function saveDaybookEntryCore() {
+  const editIdInput = document.getElementById('dbEditId');
+  const editId = editIdInput ? editIdInput.value : '';
+
   const dateInput = document.getElementById('dbEntryDate');
   const headerDateInput = document.getElementById('selectedDateInput');
   const dateVal = dateInput && dateInput.value ? dateInput.value : (headerDateInput ? headerDateInput.value : new Date().toISOString().split('T')[0]);
@@ -563,7 +580,7 @@ function saveDaybookEntryCore() {
   const paymentMethod = document.getElementById('dbPaymentMethod').value;
   const remark = document.getElementById('dbRemark').value;
 
-  const entry = DayBookManager.addEntry({
+  const entryData = {
     date: dateVal,
     type,
     time,
@@ -572,7 +589,14 @@ function saveDaybookEntryCore() {
     amount: customAmount,
     paymentMethod,
     remark
-  });
+  };
+
+  let entry;
+  if (editId) {
+    entry = DayBookManager.updateEntry(editId, entryData);
+  } else {
+    entry = DayBookManager.addEntry(entryData);
+  }
 
   // Keep global header date synced so user sees entry immediately
   if (headerDateInput && headerDateInput.value !== dateVal) {
@@ -635,23 +659,35 @@ function openModal(id) {
   if (modal) {
     modal.classList.add('active');
     if (id === 'daybookModal') {
-      const alertBox = document.getElementById('dbModalAlert');
-      if (alertBox) alertBox.style.display = 'none';
+      const editId = document.getElementById('dbEditId')?.value;
+      if (!editId) {
+        const titleElem = document.getElementById('daybookModalTitle');
+        if (titleElem) titleElem.innerText = 'Add Daybook Entry';
 
-      const headerDate = document.getElementById('selectedDateInput')?.value || new Date().toISOString().split('T')[0];
-      const dbEntryDate = document.getElementById('dbEntryDate');
-      if (dbEntryDate) dbEntryDate.value = headerDate;
+        const btnAddAnother = document.getElementById('btnSaveAndAddAnother');
+        if (btnAddAnother) btnAddAnother.style.display = 'inline-flex';
 
-      const typeSelect = document.getElementById('dbEntryType');
-      const productSection = document.getElementById('dbProductSection');
-      const container = document.getElementById('dbProductRowsContainer');
-      if (typeSelect && (typeSelect.value === 'delivery' || typeSelect.value === 'orderInHand')) {
-        productSection.style.display = 'block';
-        if (container && container.children.length === 0) {
-          addDaybookProductRow();
+        const btnSaveClose = document.getElementById('btnSaveAndClose');
+        if (btnSaveClose) btnSaveClose.innerHTML = '<i class="ri-check-line"></i> Save & Close';
+
+        const alertBox = document.getElementById('dbModalAlert');
+        if (alertBox) alertBox.style.display = 'none';
+
+        const headerDate = document.getElementById('selectedDateInput')?.value || new Date().toISOString().split('T')[0];
+        const dbEntryDate = document.getElementById('dbEntryDate');
+        if (dbEntryDate) dbEntryDate.value = headerDate;
+
+        const typeSelect = document.getElementById('dbEntryType');
+        const productSection = document.getElementById('dbProductSection');
+        const container = document.getElementById('dbProductRowsContainer');
+        if (typeSelect && (typeSelect.value === 'delivery' || typeSelect.value === 'orderInHand')) {
+          productSection.style.display = 'block';
+          if (container && container.children.length === 0) {
+            addDaybookProductRow();
+          }
+        } else if (productSection) {
+          productSection.style.display = 'none';
         }
-      } else if (productSection) {
-        productSection.style.display = 'none';
       }
     }
   }
@@ -660,6 +696,14 @@ function openModal(id) {
 function closeModal(id) {
   const modal = document.getElementById(id);
   if (modal) modal.classList.remove('active');
+  if (id === 'daybookModal') {
+    const editIdInput = document.getElementById('dbEditId');
+    if (editIdInput) editIdInput.value = '';
+    const daybookForm = document.getElementById('daybookForm');
+    if (daybookForm) daybookForm.reset();
+    const container = document.getElementById('dbProductRowsContainer');
+    if (container) container.innerHTML = '';
+  }
 }
 
 // PDF Document Export Helper Engine (Optimized High-Speed Renderer)
@@ -683,6 +727,14 @@ function downloadElementAsPDF(elementOrId, defaultFilename = 'Jago_Document.pdf'
 
   // Clone element & prepare clean A4 printable view
   const clone = element.cloneNode(true);
+  clone.style.display = 'block';
+  clone.style.visibility = 'visible';
+  clone.style.opacity = '1';
+  clone.querySelectorAll('*').forEach(el => {
+    if (el.style.display === 'none' && !el.classList.contains('no-print')) {
+      el.style.display = 'block';
+    }
+  });
   clone.querySelectorAll('.no-print, button, input:not([type="text"]), select, .btn-icon').forEach(el => el.remove());
 
   const pdfWrapper = document.createElement('div');

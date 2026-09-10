@@ -1,0 +1,1163 @@
+{
+  "version": "1.0",
+  "appName": "Jago Corporation PLC Sales & Marketing Management",
+  "exportDate": "2026-09-06T20:09:21.983Z",
+  "customers": [
+    {
+      "id": "cust-n1y54a2cv",
+      "shopName": "Al Karim water purifier",
+      "ownerName": "Ali hasan",
+      "address": "32/1, 1st floor, 6th gate, Shundorbon square market, gulisthan, Dhaka.",
+      "phone": "01976708484",
+      "bin": "",
+      "nid": "",
+      "zone": "Gulshan"
+    },
+    {
+      "id": "cust-14meooown",
+      "shopName": "Water source and electronic",
+      "ownerName": "Md Sumon Lashkar",
+      "address": "11/1, 12, Kazi Abdul Hamid Lane, North South Road, Dhaka, Bangladesh",
+      "phone": "01703188291",
+      "bin": "",
+      "nid": "",
+      "zone": "Gulisthan",
+      "openingBalance": -14000,
+      "balanceType": "credit",
+      "openingBalanceDate": "2026-09-04",
+      "openingBalanceNote": ""
+    },
+    {
+      "id": "cust-1",
+      "shopName": "Rajdhani electronics",
+      "ownerName": "Md Faisal",
+      "address": "Shop 36, national stadium market",
+      "phone": "01716284747",
+      "bin": "",
+      "nid": "",
+      "zone": "Gulisthan",
+      "openingBalance": 16600,
+      "balanceType": "debit",
+      "openingBalanceDate": "2026-09-04",
+      "openingBalanceNote": ""
+    },
+    {
+      "id": "cust-5",
+      "shopName": "Ss water technology",
+      "ownerName": "Shipikur Rahman Rubel",
+      "address": "149, kaptan bajar complex, bhaban 02, nawabpur, Dhaka,",
+      "phone": "01712134550",
+      "bin": "",
+      "nid": "2398815233",
+      "zone": "Gulisthan",
+      "openingBalance": 17900,
+      "balanceType": "debit",
+      "openingBalanceDate": "2026-09-05",
+      "openingBalanceNote": ""
+    }
+  ],
+  "items": [
+    {
+      "id": "item-h3oodzvyn",
+      "name": "PP 190 gm 20 inch",
+      "price": 70,
+      "category": "Filter Cartridge",
+      "details": "",
+      "dateAdded": "2026-09-04"
+    },
+    {
+      "id": "item-ly72owps4",
+      "name": "PP 120gm 10 inch",
+      "price": 42,
+      "category": "Filter Cartridge",
+      "details": "",
+      "dateAdded": "2026-09-04"
+    },
+    {
+      "id": "item-8k2calrid",
+      "name": "Osmo Smart",
+      "price": 7300,
+      "category": "Purifier System",
+      "details": "Blue/White",
+      "dateAdded": "2026-09-04"
+    },
+    {
+      "id": "item-1",
+      "name": "RO 105",
+      "price": 7500,
+      "category": "Purifier System",
+      "dateAdded": "2026-01-01",
+      "details": "(5-Stage Water Purifier System)"
+    },
+    {
+      "id": "item-2",
+      "name": "PP  90 gm 10 Inch",
+      "price": 32,
+      "category": "Filter Cartridge",
+      "dateAdded": "2026-01-01",
+      "details": "Sediment Filter"
+    },
+    {
+      "id": "item-3",
+      "name": "CTO  10 Inch",
+      "price": 83,
+      "category": "Filter Cartridge",
+      "dateAdded": "2026-01-01",
+      "details": "Carbon Block Filter"
+    },
+    {
+      "id": "item-4",
+      "name": "GAC  10 Inch",
+      "price": 83,
+      "category": "Filter Cartridge",
+      "dateAdded": "2026-01-01",
+      "details": "Granular Carbon Filter"
+    }
+  ],
+  "priceLogs": [
+    {
+      "id": "log-4hije5wod",
+      "itemId": "item-h3oodzvyn",
+      "itemName": "PP 190 gm 20 inch",
+      "oldPrice": 0,
+      "newPrice": 70,
+      "effectiveDate": "2026-09-04",
+      "note": "Item Created"
+    },
+    {
+      "id": "log-s2k2uhgt2",
+      "itemId": "item-ly72owps4",
+      "itemName": "PP 120gm 10 inch",
+      "oldPrice": 0,
+      "newPrice": 42,
+      "effectiveDate": "2026-09-04",
+      "note": "Item Created"
+    },
+    {
+      "id": "log-psxzucvje",
+      "itemId": "item-8k2calrid",
+      "itemName": "Osmo Smart",
+      "oldPrice": 0,
+      "newPrice": 7300,
+      "effectiveDate": "2026-09-04",
+      "note": "Item Created"
+    },
+    {
+      "id": "log-rxek2ukea",
+      "itemId": "item-4",
+      "itemName": "GAC  10 Inch",
+      "oldPrice": 400,
+      "newPrice": 83,
+      "effectiveDate": "2026-09-04",
+      "note": "Price Edit"
+    },
+    {
+      "id": "log-bigdngxp4",
+      "itemId": "item-1",
+      "itemName": "RO 105",
+      "oldPrice": 18500,
+      "newPrice": 7500,
+      "effectiveDate": "2026-09-04",
+      "note": "Price Edit"
+    },
+    {
+      "id": "log-p8jegy6x9",
+      "itemId": "item-2",
+      "itemName": "PP Sediment Filter 10 Inch",
+      "oldPrice": 32,
+      "newPrice": 32,
+      "effectiveDate": "2026-07-01",
+      "note": "Price revision effective from 04 Sept 2026"
+    },
+    {
+      "id": "log-txvx4eis9",
+      "itemId": "item-3",
+      "itemName": "CTO Carbon Block Filter 10 Inch",
+      "oldPrice": 350,
+      "newPrice": 83,
+      "effectiveDate": "2026-09-01",
+      "note": "Price revision effective from 04 Sept 2026"
+    },
+    {
+      "id": "log-mn3cjlh9c",
+      "itemId": "item-2",
+      "itemName": "PP Sediment Filter 10 Inch",
+      "oldPrice": 250,
+      "newPrice": 32,
+      "effectiveDate": "2026-09-04",
+      "note": "Price revision effective from 04 Sept 2026"
+    },
+    {
+      "id": "log-7do3yfdq8",
+      "itemId": "item-1",
+      "itemName": "RO 6-Stage Water Purifier System",
+      "oldPrice": 18500,
+      "newPrice": 18500,
+      "effectiveDate": "2026-01-01",
+      "note": "Initial Price Set"
+    },
+    {
+      "id": "log-2643v4wxv",
+      "itemId": "item-2",
+      "itemName": "PP Sediment Filter 10 Inch",
+      "oldPrice": 250,
+      "newPrice": 250,
+      "effectiveDate": "2026-01-01",
+      "note": "Initial Price Set"
+    },
+    {
+      "id": "log-vto84ajo3",
+      "itemId": "item-3",
+      "itemName": "CTO Carbon Block Filter 10 Inch",
+      "oldPrice": 350,
+      "newPrice": 350,
+      "effectiveDate": "2026-01-01",
+      "note": "Initial Price Set"
+    },
+    {
+      "id": "log-53yvic039",
+      "itemId": "item-4",
+      "itemName": "GAC Granular Carbon Filter 10 Inch",
+      "oldPrice": 400,
+      "newPrice": 400,
+      "effectiveDate": "2026-01-01",
+      "note": "Initial Price Set"
+    },
+    {
+      "id": "log-jfm8lzown",
+      "itemId": "item-5",
+      "itemName": "RO Membrane 75 GPD (Filmtec)",
+      "oldPrice": 1650,
+      "newPrice": 1650,
+      "effectiveDate": "2026-01-01",
+      "note": "Initial Price Set"
+    },
+    {
+      "id": "log-drl81reqs",
+      "itemId": "item-6",
+      "itemName": "Post Carbon T33 Inline Filter",
+      "oldPrice": 450,
+      "newPrice": 450,
+      "effectiveDate": "2026-01-01",
+      "note": "Initial Price Set"
+    },
+    {
+      "id": "log-rgm7n22ai",
+      "itemId": "item-7",
+      "itemName": "UV Sterilizer Lamp Assembly 6W",
+      "oldPrice": 1200,
+      "newPrice": 1200,
+      "effectiveDate": "2026-01-01",
+      "note": "Initial Price Set"
+    },
+    {
+      "id": "log-sdwy6u7zb",
+      "itemId": "item-8",
+      "itemName": "Water Booster Pump 24V DC",
+      "oldPrice": 2200,
+      "newPrice": 2200,
+      "effectiveDate": "2026-01-01",
+      "note": "Initial Price Set"
+    },
+    {
+      "id": "log-rom89n7c8",
+      "itemId": "item-9",
+      "itemName": "Gooseneck Faucet (SS 304)",
+      "oldPrice": 650,
+      "newPrice": 650,
+      "effectiveDate": "2026-01-01",
+      "note": "Initial Price Set"
+    }
+  ],
+  "openingBalanceLogs": [
+    {
+      "id": "bal-log-31nrnm3gw",
+      "customerId": "cust-1",
+      "shopName": "Rajdhani electronics",
+      "oldBalance": 0,
+      "oldType": "debit",
+      "newBalance": 8000,
+      "newType": "debit",
+      "effectiveDate": "2026-09-04",
+      "note": "Opening balance updated",
+      "updatedAt": "2026-09-04T21:57:47.338Z"
+    },
+    {
+      "id": "bal-log-7i7xdfcgb",
+      "customerId": "cust-1",
+      "shopName": "Rajdhani electronics",
+      "oldBalance": 8000,
+      "oldType": "debit",
+      "newBalance": 8000,
+      "newType": "credit",
+      "effectiveDate": "2026-09-04",
+      "note": "Opening balance updated",
+      "updatedAt": "2026-09-04T22:13:17.172Z"
+    },
+    {
+      "id": "bal-log-5uf2obit3",
+      "customerId": "cust-1",
+      "shopName": "Rajdhani electronics",
+      "oldBalance": 8000,
+      "oldType": "credit",
+      "newBalance": 0,
+      "newType": "credit",
+      "effectiveDate": "2026-09-04",
+      "note": "Opening balance updated",
+      "updatedAt": "2026-09-04T22:13:43.879Z"
+    },
+    {
+      "id": "bal-log-emim0hxk0",
+      "customerId": "cust-1",
+      "shopName": "Rajdhani electronics",
+      "oldBalance": 0,
+      "oldType": "credit",
+      "newBalance": -8000,
+      "newType": "credit",
+      "effectiveDate": "2026-09-04",
+      "note": "Opening balance updated",
+      "updatedAt": "2026-09-04T22:14:04.522Z"
+    },
+    {
+      "id": "bal-log-ix4sh9m7f",
+      "customerId": "cust-1",
+      "shopName": "Rajdhani electronics",
+      "oldBalance": -8000,
+      "oldType": "credit",
+      "newBalance": 8000,
+      "newType": "credit",
+      "effectiveDate": "2026-09-04",
+      "note": "Opening balance updated",
+      "updatedAt": "2026-09-04T22:17:47.392Z"
+    },
+    {
+      "id": "bal-log-f7pb66vm2",
+      "customerId": "cust-1",
+      "shopName": "Rajdhani electronics",
+      "oldBalance": 8000,
+      "oldType": "credit",
+      "newBalance": 0,
+      "newType": "credit",
+      "effectiveDate": "2026-09-04",
+      "note": "Opening balance updated",
+      "updatedAt": "2026-09-04T22:17:57.616Z"
+    },
+    {
+      "id": "bal-log-orkwml1oe",
+      "customerId": "cust-1",
+      "shopName": "Rajdhani electronics",
+      "oldBalance": 0,
+      "oldType": "credit",
+      "newBalance": -24000,
+      "newType": "credit",
+      "effectiveDate": "2026-09-04",
+      "note": "Opening balance updated",
+      "updatedAt": "2026-09-04T22:18:44.439Z"
+    },
+    {
+      "id": "bal-log-4gn047mn6",
+      "customerId": "cust-14meooown",
+      "shopName": "Water source and electronic",
+      "oldBalance": 0,
+      "oldType": "debit",
+      "newBalance": -91275,
+      "newType": "credit",
+      "effectiveDate": "2026-09-04",
+      "note": "Opening balance updated",
+      "updatedAt": "2026-09-04T22:21:00.912Z"
+    },
+    {
+      "id": "bal-log-bjssixdb9",
+      "customerId": "cust-14meooown",
+      "shopName": "Water source and electronic",
+      "oldBalance": -91275,
+      "oldType": "credit",
+      "newBalance": -14000,
+      "newType": "credit",
+      "effectiveDate": "2026-09-04",
+      "note": "Opening balance updated",
+      "updatedAt": "2026-09-04T22:28:38.973Z"
+    },
+    {
+      "id": "bal-log-rd1zm0ehb",
+      "customerId": "cust-1",
+      "shopName": "Rajdhani electronics",
+      "oldBalance": -24000,
+      "oldType": "credit",
+      "newBalance": 0,
+      "newType": "credit",
+      "effectiveDate": "2026-09-04",
+      "note": "Opening balance updated",
+      "updatedAt": "2026-09-04T22:32:38.884Z"
+    },
+    {
+      "id": "bal-log-zzgopsszv",
+      "customerId": "cust-1",
+      "shopName": "Rajdhani electronics",
+      "oldBalance": 0,
+      "oldType": "credit",
+      "newBalance": 16000,
+      "newType": "credit",
+      "effectiveDate": "2026-09-04",
+      "note": "Opening balance updated",
+      "updatedAt": "2026-09-04T22:38:10.567Z"
+    },
+    {
+      "id": "bal-log-ecby4macj",
+      "customerId": "cust-1",
+      "shopName": "Rajdhani electronics",
+      "oldBalance": 16000,
+      "oldType": "credit",
+      "newBalance": 16000,
+      "newType": "debit",
+      "effectiveDate": "2026-09-04",
+      "note": "Opening balance updated",
+      "updatedAt": "2026-09-04T22:38:18.288Z"
+    },
+    {
+      "id": "bal-log-w7cmf3r37",
+      "customerId": "cust-1",
+      "shopName": "Rajdhani electronics",
+      "oldBalance": 16000,
+      "oldType": "debit",
+      "newBalance": 16600,
+      "newType": "debit",
+      "effectiveDate": "2026-09-04",
+      "note": "Opening balance updated",
+      "updatedAt": "2026-09-04T22:38:34.762Z"
+    },
+    {
+      "id": "bal-log-d4xma10im",
+      "customerId": "cust-5",
+      "shopName": "Ss water technology",
+      "oldBalance": 0,
+      "oldType": "debit",
+      "newBalance": 17900,
+      "newType": "debit",
+      "effectiveDate": "2026-09-05",
+      "note": "Opening balance updated",
+      "updatedAt": "2026-09-05T14:22:43.889Z"
+    }
+  ],
+  "daybook": [
+    {
+      "id": "db-dif349qqe",
+      "date": "2026-09-01",
+      "type": "collection",
+      "time": "10: 50 AM",
+      "partyName": "Ss water technology",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 17900,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Modhumoti 475"
+    },
+    {
+      "id": "db-kq4yajmu7",
+      "date": "2026-09-01",
+      "type": "collection",
+      "time": "10:50 AM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 16600,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Modhumoti 475"
+    },
+    {
+      "id": "db-0uya128fw",
+      "date": "2026-09-01",
+      "type": "orderInHand",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        },
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 200,
+          "unitPrice": 42,
+          "subtotal": 8400
+        },
+        {
+          "itemId": "item-h3oodzvyn",
+          "itemName": "PP 190 gm 20 inch",
+          "qty": 100,
+          "unitPrice": 70,
+          "subtotal": 7000
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 500,
+      "unitPrice": 32,
+      "amount": 31400,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-ihk6043ns",
+      "date": "2026-09-02",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "83",
+      "vatInvoiceNo": "77",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-h3oodzvyn",
+          "itemName": "PP 190 gm 20 inch",
+          "qty": 100,
+          "unitPrice": 70,
+          "subtotal": 7000
+        },
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 200,
+          "unitPrice": 42,
+          "subtotal": 8400
+        },
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        }
+      ],
+      "itemId": "item-h3oodzvyn",
+      "itemName": "PP 190 gm 20 inch",
+      "qty": 100,
+      "unitPrice": 70,
+      "amount": 31400,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-xefywyu48",
+      "date": "2026-09-02",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "84",
+      "vatInvoiceNo": "78",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        }
+      ],
+      "itemId": "item-3",
+      "itemName": "CTO  10 Inch",
+      "qty": 125,
+      "unitPrice": 83,
+      "amount": 20750,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-aa4blf8wq",
+      "date": "2026-09-02",
+      "type": "collection",
+      "time": "1:30  PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "77",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 31400,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: 475"
+    },
+    {
+      "id": "db-rgjkczh1b",
+      "date": "2026-09-02",
+      "type": "collection",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "84",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 20750,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: 475"
+    },
+    {
+      "id": "db-2hddsu64a",
+      "date": "2026-09-03",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "89",
+      "vatInvoiceNo": "89",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 500,
+      "unitPrice": 32,
+      "amount": 16000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-8pz1xl4yb",
+      "date": "2026-09-03",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "90",
+      "vatInvoiceNo": "82",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 150,
+          "unitPrice": 83,
+          "subtotal": 12450
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 150,
+          "unitPrice": 83,
+          "subtotal": 12450
+        },
+        {
+          "itemId": "item-h3oodzvyn",
+          "itemName": "PP 190 gm 20 inch",
+          "qty": 100,
+          "unitPrice": 70,
+          "subtotal": 7000
+        }
+      ],
+      "itemId": "item-3",
+      "itemName": "CTO  10 Inch",
+      "qty": 150,
+      "unitPrice": 83,
+      "amount": 31900,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-27mkmyu4e",
+      "date": "2026-09-03",
+      "type": "collection",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 14000,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: 475"
+    },
+    {
+      "id": "db-sdjtvsm7z",
+      "date": "2026-09-05",
+      "type": "collection",
+      "time": "4:30 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "89",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 16000,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Modhumuti 475"
+    },
+    {
+      "id": "db-gozk2z7x1",
+      "date": "2026-09-05",
+      "type": "collection",
+      "time": "4:35 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "90",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 24000,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: bank 475"
+    },
+    {
+      "id": "db-frxnrxs6t",
+      "date": "2026-09-05",
+      "type": "cashInHand",
+      "time": "3:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "90",
+      "vatInvoiceNo": "",
+      "recipientPerson": "In My Hand (Sales Exec)",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 900,
+      "paymentMethod": "Cash",
+      "remark": "partially paid 25000 whare bank 24000"
+    },
+    {
+      "id": "db-yv4ibyo7y",
+      "date": "2026-09-05",
+      "type": "orderInHand",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 500,
+      "unitPrice": 32,
+      "amount": 16000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-u5dtwdh7o",
+      "date": "2026-09-05",
+      "type": "orderInHand",
+      "time": "12:30 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        },
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 500,
+      "unitPrice": 32,
+      "amount": 36750,
+      "paymentMethod": "Cash",
+      "remark": "Delivery tomorrow"
+    },
+    {
+      "id": "db-dq6kjx4hz",
+      "date": "2026-09-06",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "95",
+      "vatInvoiceNo": "87",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        },
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 500,
+      "unitPrice": 32,
+      "amount": 36750,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-f4uouqyxk",
+      "date": "2026-09-06",
+      "type": "delivery",
+      "time": "12:30 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "93",
+      "vatInvoiceNo": "86",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 500,
+      "unitPrice": 32,
+      "amount": 16000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-080a5ane7",
+      "date": "2026-09-06",
+      "type": "cashInHand",
+      "time": "12:20 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "95",
+      "vatInvoiceNo": "",
+      "recipientPerson": "Office Person: Jahid vai Nogod",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 6500,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-qn5aarli5",
+      "date": "2026-09-06",
+      "type": "cashInHand",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "95",
+      "vatInvoiceNo": "",
+      "recipientPerson": "Office Person: Jahid vai Bikash",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 6500,
+      "paymentMethod": "Cash",
+      "remark": "Jahid vai, বিকাশ"
+    },
+    {
+      "id": "db-841zypopf",
+      "date": "2026-09-06",
+      "type": "cashInHand",
+      "time": "04:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "95",
+      "vatInvoiceNo": "",
+      "recipientPerson": "Accounts Dept (Office)",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 10000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-2drhb18vv",
+      "date": "2026-09-06",
+      "type": "cashInHand",
+      "time": "04:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "90",
+      "vatInvoiceNo": "",
+      "recipientPerson": "Accounts Dept (Office)",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 7900,
+      "paymentMethod": "Cash",
+      "remark": ""
+    }
+  ],
+  "conveyance": [
+    {
+      "id": "conv-ew6f4uy19",
+      "date": "2026-09-05",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Market visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-q8iiv5vdr",
+      "date": "2026-09-05",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Market visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-0kuc3u2i8",
+      "date": "2026-09-05",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Payment deposit to bank 475",
+      "amount": 30
+    },
+    {
+      "id": "conv-yrxpgdtk4",
+      "date": "2026-09-05",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Order Collection",
+      "amount": 10
+    },
+    {
+      "id": "conv-imywj4dbj",
+      "date": "2026-09-03",
+      "fromLocation": "Bata Signal",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-mjlhoo4a3",
+      "date": "2026-09-03",
+      "fromLocation": "Head office (51, Central Road)",
+      "toLocation": "Bata Signal",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-60rcmrd3r",
+      "date": "2026-09-03",
+      "fromLocation": "Bata Signal",
+      "toLocation": "Head office (51, Central Road)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-983talxan",
+      "date": "2026-09-03",
+      "fromLocation": "Polton",
+      "toLocation": "Bata Signal",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-8w2a7qe5r",
+      "date": "2026-09-03",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Polton",
+      "transport": "Rickshaw",
+      "purpose": "Going to Head office for burying some products ED sir",
+      "amount": 30
+    },
+    {
+      "id": "conv-v362ugd9j",
+      "date": "2026-09-03",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Payment deposit to  bank",
+      "amount": 30
+    },
+    {
+      "id": "conv-0d1zynq1y",
+      "date": "2026-09-03",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Order Collection",
+      "amount": 10
+    },
+    {
+      "id": "conv-bzt5y8ly4",
+      "date": "2026-09-02",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Market",
+      "amount": 40
+    },
+    {
+      "id": "conv-px5sx166r",
+      "date": "2026-09-02",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-o31984uhr",
+      "date": "2026-09-02",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Payment collection",
+      "amount": 10
+    },
+    {
+      "id": "conv-mpbwejipc",
+      "date": "2026-09-02",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Order collection and payment collection",
+      "amount": 10
+    },
+    {
+      "id": "conv-ief7cgxct",
+      "date": "2026-09-01",
+      "fromLocation": "Bata signal",
+      "toLocation": "Gulistan",
+      "transport": "Bus",
+      "purpose": "Water source",
+      "amount": 10
+    },
+    {
+      "id": "conv-1eacmywxp",
+      "date": "2026-09-01",
+      "fromLocation": "Head office",
+      "toLocation": "Bata signal",
+      "transport": "Rickshaw",
+      "purpose": "Order collection",
+      "amount": 30
+    },
+    {
+      "id": "conv-j63xcmyv9",
+      "date": "2026-09-01",
+      "fromLocation": "Head office",
+      "toLocation": "Gulisan",
+      "transport": "Bus",
+      "purpose": "Go to water source",
+      "amount": 20
+    },
+    {
+      "id": "conv-09tlptaey",
+      "date": "2026-09-01",
+      "fromLocation": "Bata signal",
+      "toLocation": "Head office",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    }
+  ],
+  "conveyanceLocations": [
+    "Office (Motijheel)",
+    "Gulisthan Market",
+    "New Market",
+    "Jatrabari Bus Stand",
+    "Badda Link Road",
+    "Malibugh Chawk",
+    "Bonani Road 11",
+    "Gulshan 1 Circle",
+    "Mirpur 10 Circle",
+    "Mirpur 1 Bus Stop",
+    "Uttara Sector 3",
+    "Stadium Market Gulisthan",
+    "Nowabpur",
+    "Bank / CRM  (Motijheel)",
+    "Polton",
+    "Bata Signal",
+    "Head office (51, Central Road)"
+  ]
+}

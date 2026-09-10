@@ -175,12 +175,26 @@ const DayBookManager = {
       html += `<tr><td></td><td>-</td><td style="color:#64748b;">No collection recorded for this date</td><td>৳ 0</td><td>-</td></tr>`;
     } else {
       collections.forEach(item => {
+        let invTag = item.invoiceNo ? `<span style="color:#0284c7; font-weight:700;">Inv #${item.invoiceNo}</span>` : '';
+        let pmTag = item.paymentMethod ? `<strong>Method:</strong> ${item.paymentMethod}` : '';
+        let recipientTag = item.recipientPerson ? `<strong>Recipient / Bank:</strong> ${item.recipientPerson}` : '';
+        
+        let detailsHTML = `<strong>${item.partyName}</strong>`;
+        let metaTags = [];
+        if (invTag) metaTags.push(invTag);
+        if (pmTag) metaTags.push(pmTag);
+        if (recipientTag) metaTags.push(recipientTag);
+        
+        if (metaTags.length > 0) {
+          detailsHTML += `<div style="font-size: 0.85rem; color: #475569; margin-top: 0.2rem;">${metaTags.join(' | ')}</div>`;
+        }
+
         html += `
           <tr>
             <td></td>
             <td>${item.time}</td>
-            <td><strong>${item.partyName}</strong> ${item.paymentMethod ? `(${item.paymentMethod})` : ''}</td>
-            <td style="font-weight:600;">${formatBDT(item.amount)}</td>
+            <td>${detailsHTML}</td>
+            <td style="font-weight:600; color:#059669;">${formatBDT(item.amount)}</td>
             <td>${item.remark || '-'}</td>
           </tr>
         `;
@@ -211,12 +225,24 @@ const DayBookManager = {
     } else {
       deliveries.forEach(item => {
         const itemFormatted = this.formatItemDetailsHTML(item);
+        let invTag = item.invoiceNo ? `<span style="color:#0284c7; font-weight:700;">Inv #${item.invoiceNo}</span>` : '';
+        let vatTag = item.vatInvoiceNo ? `<span style="color:#0d9488; font-weight:600;">VAT #${item.vatInvoiceNo}</span>` : '';
+        let recipientTag = item.recipientPerson ? `<strong>Delivered To / Person:</strong> ${item.recipientPerson}` : '';
+
+        let metaTags = [];
+        if (invTag) metaTags.push(invTag);
+        if (vatTag) metaTags.push(vatTag);
+        if (recipientTag) metaTags.push(recipientTag);
+
+        let metaHTML = metaTags.length > 0 ? `<div style="font-size: 0.85rem; color: #475569; margin-top: 0.15rem; margin-bottom: 0.2rem;">${metaTags.join(' | ')}</div>` : '';
+
         html += `
           <tr>
             <td></td>
             <td>${item.time}</td>
             <td>
               <div style="font-weight:700; color:#0f172a; font-size:0.95rem;">${item.partyName}</div>
+              ${metaHTML}
               ${itemFormatted}
             </td>
             <td style="font-weight:700; color:#0284c7;">${formatBDT(item.amount)}</td>
@@ -249,12 +275,24 @@ const DayBookManager = {
       html += `<tr><td></td><td>-</td><td style="color:#64748b;">No cash in hand recorded</td><td>৳ 0</td><td>-</td></tr>`;
     } else {
       cashList.forEach(item => {
+        let invTag = item.invoiceNo ? `<span style="color:#0284c7; font-weight:700;">Inv #${item.invoiceNo}</span>` : '';
+        let custodyTag = item.recipientPerson ? `<strong>Custody:</strong> ${item.recipientPerson}` : '<strong>Custody:</strong> Self';
+        
+        let detailsHTML = `<strong>${item.partyName}</strong>`;
+        let metaTags = [];
+        if (invTag) metaTags.push(invTag);
+        if (custodyTag) metaTags.push(custodyTag);
+        
+        if (metaTags.length > 0) {
+          detailsHTML += `<div style="font-size: 0.85rem; color: #475569; margin-top: 0.2rem;">${metaTags.join(' | ')}</div>`;
+        }
+
         html += `
           <tr>
             <td></td>
             <td>${item.time}</td>
-            <td><strong>${item.partyName}</strong></td>
-            <td style="font-weight:600;">${formatBDT(item.amount)}</td>
+            <td>${detailsHTML}</td>
+            <td style="font-weight:600; color:#d97706;">${formatBDT(item.amount)}</td>
             <td>${item.remark || '-'}</td>
           </tr>
         `;
@@ -285,6 +323,8 @@ const DayBookManager = {
     } else {
       orders.forEach(item => {
         const itemFormatted = this.formatItemDetailsHTML(item);
+        const orderNoteHTML = item.remark ? `<div style="font-size: 0.84rem; color: #2563eb; font-weight: 600; margin-top: 0.25rem;"><i class="ri-chat-1-line"></i> <strong>Order Note:</strong> ${item.remark}</div>` : '';
+
         html += `
           <tr>
             <td></td>
@@ -292,6 +332,7 @@ const DayBookManager = {
             <td>
               <div style="font-weight:700; color:#0f172a; font-size:0.95rem;">${item.partyName}</div>
               ${itemFormatted}
+              ${orderNoteHTML}
             </td>
             <td style="font-weight:700; color:#2563eb;">${formatBDT(item.amount)}</td>
             <td>${item.remark || '-'}</td>
@@ -357,21 +398,48 @@ const DayBookManager = {
       orderInHand: '<span class="badge badge-secondary">Order in Hand</span>'
     };
 
-    tbody.innerHTML = entries.map(e => `
-      <tr>
-        <td>${e.time}</td>
-        <td>${typeLabels[e.type] || e.type}</td>
-        <td style="font-weight:700;">${e.partyName}</td>
-        <td>${this.formatItemDetailsHTML(e) || '-'}</td>
-        <td style="font-weight:700; color:var(--text-main);">${formatBDT(e.amount)}</td>
-        <td style="font-size:0.82rem; color:var(--text-muted);">${e.remark || '-'}</td>
-        <td style="text-align:right;">
-          <button class="btn btn-danger btn-sm" onclick="DayBookManager.confirmDelete('${e.id}')" title="Delete Entry">
-            <i class="ri-delete-bin-line"></i>
-          </button>
-        </td>
-      </tr>
-    `).join('');
+    tbody.innerHTML = entries.map(e => {
+      let itemDetails = this.formatItemDetailsHTML(e) || '';
+
+      if (e.type === 'collection') {
+        const invTag = e.invoiceNo ? `<span class="badge badge-secondary" style="font-size: 0.8rem; font-weight: 700; color: #0284c7; background: #e0f2fe;">Inv #${e.invoiceNo}</span> ` : '';
+        const pmText = e.paymentMethod ? `<span class="badge badge-success" style="font-size: 0.8rem; font-weight: 600; background: #dcfce7; color: #15803d;">${e.paymentMethod}</span> ` : '';
+        const recipientText = e.recipientPerson ? `<span style="font-size: 0.82rem; color: var(--text-muted);">Bank/Recipient: ${e.recipientPerson}</span>` : '';
+        itemDetails = `<div style="font-size: 0.88rem;">${invTag}${pmText}${recipientText}</div>`;
+      } else if (e.type === 'delivery') {
+        const invTag = e.invoiceNo ? `<span class="badge badge-secondary" style="font-size: 0.8rem; font-weight: 700; color: #0284c7; background: #e0f2fe;">Inv #${e.invoiceNo}</span> ` : '';
+        const vatTag = e.vatInvoiceNo ? `<span class="badge badge-secondary" style="font-size: 0.8rem; font-weight: 600; color: #0d9488; background: #ccfbf1;">VAT #${e.vatInvoiceNo}</span> ` : '';
+        const recipientText = e.recipientPerson ? `<span style="font-size: 0.82rem; color: var(--text-muted);">Delivered To: ${e.recipientPerson}</span>` : '';
+        const metaLine = (invTag || vatTag || recipientText) ? `<div style="margin-bottom: 0.2rem;">${invTag}${vatTag}${recipientText}</div>` : '';
+        itemDetails = metaLine + itemDetails;
+      } else if (e.type === 'cashInHand') {
+        const invTag = e.invoiceNo ? `<span class="badge badge-secondary" style="font-size: 0.8rem; font-weight: 700; color: #0284c7; background: #e0f2fe;">Inv #${e.invoiceNo}</span> ` : '';
+        const custodyText = e.recipientPerson ? `<strong>Custody:</strong> ${e.recipientPerson}` : '<strong>Custody:</strong> Self / Executive';
+        itemDetails = `<div style="font-size: 0.88rem;">${invTag}${custodyText}</div>`;
+      } else if (e.type === 'orderInHand') {
+        const noteTag = e.remark ? `<div style="font-size: 0.83rem; color: #2563eb; font-weight: 600; margin-top: 0.2rem;"><i class="ri-chat-1-line"></i> <strong>Order Note:</strong> ${e.remark}</div>` : '';
+        itemDetails = itemDetails + noteTag;
+      }
+
+      return `
+        <tr>
+          <td>${e.time}</td>
+          <td>${typeLabels[e.type] || e.type}</td>
+          <td style="font-weight:700;">${e.partyName}</td>
+          <td>${itemDetails || '-'}</td>
+          <td style="font-weight:700; color:var(--text-main);">${formatBDT(e.amount)}</td>
+          <td style="font-size:0.82rem; color:var(--text-muted);">${e.remark || '-'}</td>
+          <td style="text-align:right; white-space:nowrap;">
+            <button class="btn btn-secondary btn-sm" onclick="DayBookManager.openEditModal('${e.id}')" title="Edit Entry" style="padding: 0.25rem 0.5rem; margin-right: 0.25rem;">
+              <i class="ri-edit-line"></i> Edit
+            </button>
+            <button class="btn btn-danger btn-sm" onclick="DayBookManager.confirmDelete('${e.id}')" title="Delete Entry" style="padding: 0.25rem 0.5rem;">
+              <i class="ri-delete-bin-line"></i>
+            </button>
+          </td>
+        </tr>
+      `;
+    }).join('');
   },
 
   confirmDelete(id) {
