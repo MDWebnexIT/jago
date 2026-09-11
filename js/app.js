@@ -780,6 +780,7 @@ function downloadElementAsPDF(elementOrId, defaultFilename = 'Jago_Document.pdf'
   if (typeof html2pdf !== 'undefined') {
     const pdfWorker = html2pdf().set(opt).from(pdfWrapper);
     
+    // 1. Android Native App Download
     if (window.AndroidHost && typeof window.AndroidHost.downloadFile === 'function') {
       pdfWorker.output('datauristring').then(pdfDataUrl => {
         if (document.body.contains(hiddenContainer)) document.body.removeChild(hiddenContainer);
@@ -793,7 +794,47 @@ function downloadElementAsPDF(elementOrId, defaultFilename = 'Jago_Document.pdf'
           loadingToast.style.display = 'none';
         });
       });
-    } else {
+    }
+    // 2. Electron Native Windows Desktop App Download
+    else if (typeof window !== 'undefined' && window.require) {
+      try {
+        const electron = window.require('electron');
+        if (electron && electron.ipcRenderer) {
+          pdfWorker.output('datauristring').then(async (pdfDataUrl) => {
+            if (document.body.contains(hiddenContainer)) document.body.removeChild(hiddenContainer);
+            const res = await electron.ipcRenderer.invoke('save-pdf-file', { dataUrl: pdfDataUrl, filename: defaultFilename });
+            if (res && res.success) {
+              loadingToast.innerHTML = '<i class="ri-checkbox-circle-fill" style="color:#34d399;"></i> PDF Saved Successfully!';
+              setTimeout(() => { loadingToast.style.display = 'none'; }, 2000);
+            } else {
+              loadingToast.style.display = 'none';
+            }
+          }).catch(err => {
+            console.warn('Electron PDF save error, fallback to save():', err);
+            pdfWorker.save().then(() => {
+              if (document.body.contains(hiddenContainer)) document.body.removeChild(hiddenContainer);
+              loadingToast.style.display = 'none';
+            });
+          });
+          return;
+        }
+      } catch (e) {
+        console.warn('Electron require fallback:', e);
+      }
+
+      // Fallback in case window.require fails
+      pdfWorker.save().then(() => {
+        if (document.body.contains(hiddenContainer)) document.body.removeChild(hiddenContainer);
+        loadingToast.innerHTML = '<i class="ri-checkbox-circle-fill" style="color:#34d399;"></i> PDF Downloaded Successfully!';
+        setTimeout(() => { loadingToast.style.display = 'none'; }, 1800);
+      }).catch(err => {
+        if (document.body.contains(hiddenContainer)) document.body.removeChild(hiddenContainer);
+        loadingToast.style.display = 'none';
+        window.print();
+      });
+    }
+    // 3. Web Browser Standard Download
+    else {
       pdfWorker.save().then(() => {
         if (document.body.contains(hiddenContainer)) document.body.removeChild(hiddenContainer);
         loadingToast.innerHTML = '<i class="ri-checkbox-circle-fill" style="color:#34d399;"></i> PDF Downloaded Successfully!';

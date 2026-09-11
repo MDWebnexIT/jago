@@ -4,6 +4,12 @@ const path = require('path');
 
 const PORT = 8080;
 const PUBLIC_DIR = __dirname;
+const DATA_DIR = path.join(__dirname, 'data');
+const DB_FILE = path.join(DATA_DIR, 'database.json');
+
+if (!fs.existsSync(DATA_DIR)) {
+  fs.mkdirSync(DATA_DIR, { recursive: true });
+}
 
 const mimeTypes = {
   '.html': 'text/html',
@@ -21,9 +27,70 @@ const mimeTypes = {
 };
 
 const server = http.createServer((req, res) => {
-  let filePath = path.join(PUBLIC_DIR, req.url === '/' ? 'index.html' : req.url.split('?')[0]);
-  
-  // Prevent directory traversal
+  const reqUrl = req.url || '/';
+  const urlParts = reqUrl.split('?');
+  const pathname = urlParts[0];
+  const queryString = urlParts[1] || '';
+
+  // Enable CORS for cross-device & mobile connection
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    res.writeHead(200);
+    res.end();
+    return;
+  }
+
+  // Handle Real-Time Cross-Device Data Sync API Endpoints
+  if (pathname === '/api.php' || pathname === '/api/save' || pathname === '/api/load' || pathname === '/api/sync') {
+    const isSaveAction = queryString.includes('action=save') || pathname === '/api/save';
+
+    if (req.method === 'POST' || isSaveAction) {
+      let body = '';
+      req.on('data', chunk => { body += chunk.toString(); });
+      req.on('end', () => {
+        try {
+          const json = JSON.parse(body);
+          if (json && typeof json === 'object') {
+            fs.writeFile(DB_FILE, JSON.stringify(json, null, 2), 'utf8', (err) => {
+              if (err) {
+                res.writeHead(500, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ status: 'error', message: err.message }));
+              } else {
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ status: 'success', message: 'Database updated successfully across all devices!' }));
+              }
+            });
+          } else {
+            res.writeHead(400, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ status: 'error', message: 'Invalid JSON payload' }));
+          }
+        } catch (err) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ status: 'error', message: 'JSON Parse Error: ' + err.message }));
+        }
+      });
+      return;
+    } else {
+      // GET request / load action
+      fs.readFile(DB_FILE, 'utf8', (err, data) => {
+        if (err || !data) {
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ status: 'empty', message: 'No database file initialized yet' }));
+        } else {
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          res.end(data);
+        }
+      });
+      return;
+    }
+  }
+
+  // Serve Static Web Assets
+  let filePath = path.join(PUBLIC_DIR, pathname === '/' ? 'index.html' : pathname);
+
   if (!filePath.startsWith(PUBLIC_DIR)) {
     res.writeHead(403);
     res.end('403 Forbidden');
@@ -32,7 +99,6 @@ const server = http.createServer((req, res) => {
 
   fs.stat(filePath, (err, stats) => {
     if (err || !stats.isFile()) {
-      // Fallback to index.html for SPA / clean routing
       filePath = path.join(PUBLIC_DIR, 'index.html');
     }
 
@@ -46,7 +112,6 @@ const server = http.createServer((req, res) => {
       } else {
         res.writeHead(200, { 
           'Content-Type': contentType,
-          'Access-Control-Allow-Origin': '*',
           'Cache-Control': 'no-cache'
         });
         res.end(content, 'utf-8');
@@ -55,6 +120,7 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
+server.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running at http://localhost:${PORT}/ and http://0.0.0.0:${PORT}/ for all devices`);
 });
+

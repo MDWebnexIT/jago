@@ -1562,31 +1562,55 @@ const Storage = {
     }
   },
 
-  async syncWithPhpServer() {
+  async syncWithPhpServer(isBackground = false) {
     try {
       let url = 'api.php?action=load';
       if (typeof jagoWpVars !== 'undefined' && jagoWpVars.ajaxUrl) {
         url = jagoWpVars.ajaxUrl + '?action=jago_load_data';
       }
-      const res = await fetch(url);
+      const fetchUrl = url + (url.includes('?') ? '&' : '?') + 't=' + Date.now();
+      const res = await fetch(fetchUrl);
       if (res.ok) {
         const data = await res.json();
         if (data && Array.isArray(data.daybook) && data.daybook.length > 0) {
-          if (Array.isArray(data.customers)) localStorage.setItem(STORAGE_KEYS.CUSTOMERS, JSON.stringify(data.customers));
-          if (Array.isArray(data.items)) localStorage.setItem(STORAGE_KEYS.ITEMS, JSON.stringify(data.items));
-          if (Array.isArray(data.priceLogs)) localStorage.setItem(STORAGE_KEYS.PRICE_LOGS, JSON.stringify(data.priceLogs));
-          if (Array.isArray(data.openingBalanceLogs)) localStorage.setItem(STORAGE_KEYS.OPENING_BALANCE_LOGS, JSON.stringify(data.openingBalanceLogs));
-          if (Array.isArray(data.daybook)) localStorage.setItem(STORAGE_KEYS.DAYBOOK, JSON.stringify(data.daybook));
-          if (Array.isArray(data.conveyance)) localStorage.setItem(STORAGE_KEYS.CONVEYANCE, JSON.stringify(data.conveyance));
-          if (Array.isArray(data.conveyanceLocations)) localStorage.setItem(STORAGE_KEYS.CONVEYANCE_LOCATIONS, JSON.stringify(data.conveyanceLocations));
-          if (Array.isArray(data.users)) localStorage.setItem(STORAGE_KEYS.USERS, JSON.stringify(data.users));
-          this.autoSaveLifetimeBackup();
+          const currentDaybookStr = localStorage.getItem(STORAGE_KEYS.DAYBOOK) || '';
+          const newDaybookStr = JSON.stringify(data.daybook);
+
+          if (currentDaybookStr !== newDaybookStr || !localStorage.getItem(STORAGE_KEYS.DAYBOOK)) {
+            if (Array.isArray(data.customers)) localStorage.setItem(STORAGE_KEYS.CUSTOMERS, JSON.stringify(data.customers));
+            if (Array.isArray(data.items)) localStorage.setItem(STORAGE_KEYS.ITEMS, JSON.stringify(data.items));
+            if (Array.isArray(data.priceLogs)) localStorage.setItem(STORAGE_KEYS.PRICE_LOGS, JSON.stringify(data.priceLogs));
+            if (Array.isArray(data.openingBalanceLogs)) localStorage.setItem(STORAGE_KEYS.OPENING_BALANCE_LOGS, JSON.stringify(data.openingBalanceLogs));
+            if (Array.isArray(data.daybook)) localStorage.setItem(STORAGE_KEYS.DAYBOOK, JSON.stringify(data.daybook));
+            if (Array.isArray(data.conveyance)) localStorage.setItem(STORAGE_KEYS.CONVEYANCE, JSON.stringify(data.conveyance));
+            if (Array.isArray(data.conveyanceLocations)) localStorage.setItem(STORAGE_KEYS.CONVEYANCE_LOCATIONS, JSON.stringify(data.conveyanceLocations));
+            if (Array.isArray(data.users)) localStorage.setItem(STORAGE_KEYS.USERS, JSON.stringify(data.users));
+            
+            this.autoSaveLifetimeBackup();
+
+            if (isBackground && typeof refreshCurrentTabContent === 'function') {
+              refreshCurrentTabContent();
+            }
+          }
         }
       }
     } catch (e) {
       // Standalone or non-PHP mode
     }
   },
+
+  startAutoPollingSync(intervalMs = 8000) {
+    if (this._pollingStarted) return;
+    this._pollingStarted = true;
+
+    const runSync = async () => {
+      await this.syncWithPhpServer(true);
+    };
+
+    setInterval(runSync, intervalMs);
+    window.addEventListener('focus', runSync);
+  },
+
   async pushToPhpServer() {
     try {
       let url = 'api.php?action=save';
@@ -1629,6 +1653,7 @@ const Storage = {
 
   init() {
     this.syncWithPhpServer();
+    this.startAutoPollingSync();
 
     // Check for lifetime auto-backup snapshot first before defaulting
     const lifetimeBackupRaw = localStorage.getItem('jago_lifetime_backup_v1');

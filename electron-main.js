@@ -4,6 +4,28 @@ const fs = require('fs');
 
 let mainWindow;
 
+// Handle Native Desktop PDF File Saving
+ipcMain.handle('save-pdf-file', async (event, { dataUrl, filename }) => {
+  try {
+    const { filePath } = await dialog.showSaveDialog(mainWindow, {
+      title: 'Save PDF Report / Invoice Document',
+      defaultPath: filename || 'Jago_Document.pdf',
+      filters: [{ name: 'PDF Documents (*.pdf)', extensions: ['pdf'] }]
+    });
+
+    if (filePath) {
+      const base64Data = dataUrl.replace(/^data:application\/pdf;filename=generated\.pdf;base64,/, '')
+                                .replace(/^data:application\/pdf;base64,/, '')
+                                .replace(/^data:application\/octet-stream;base64,/, '');
+      fs.writeFileSync(filePath, Buffer.from(base64Data, 'base64'));
+      return { success: true, filePath };
+    }
+    return { success: false, cancelled: true };
+  } catch (err) {
+    return { success: false, error: err.message };
+  }
+});
+
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1300,
@@ -20,6 +42,12 @@ function createWindow() {
     },
     show: false,
     backgroundColor: '#0f172a'
+  });
+
+  // Enable native file download handling in Electron session
+  mainWindow.webContents.session.on('will-download', (event, item) => {
+    const savePath = path.join(app.getPath('downloads'), item.getFilename());
+    item.setSavePath(savePath);
   });
 
   // Load the web app index file
