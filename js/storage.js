@@ -119,15 +119,23 @@ const SessionManager = {
     if (session && session.userId) {
       const users = this.getUsers();
       const found = users.find(u => u.userId.toLowerCase() === session.userId.toLowerCase());
-      if (found) {
-        return found;
-      }
+      if (found) return found;
       return session;
+    }
+
+    // Default persistent login for master executive Md Nazmul Hasan unless explicitly logged out
+    const isExplicitLoggedOut = localStorage.getItem('jago_explicit_logout') === 'true';
+    if (!isExplicitLoggedOut) {
+      const users = this.getUsers();
+      const masterUser = users.find(u => u.userId.toLowerCase() === 'nazmul') || DEFAULT_USERS[0];
+      this.setCurrentUser(masterUser);
+      return masterUser;
     }
     return null;
   },
   setCurrentUser(user) {
     this.setPublicViewSession(false);
+    localStorage.removeItem('jago_explicit_logout');
     Storage.set(STORAGE_KEYS.SESSION, {
       userId: user.userId,
       name: user.name,
@@ -171,6 +179,7 @@ const SessionManager = {
   },
   logout() {
     this.setPublicViewSession(false);
+    localStorage.setItem('jago_explicit_logout', 'true');
     localStorage.removeItem(STORAGE_KEYS.SESSION);
   },
   addUser(userData) {
@@ -1542,6 +1551,47 @@ const Storage = {
     }
   },
 
+  saveToDesktopDiskFile(snapshotData) {
+    if (typeof window !== 'undefined' && window.require) {
+      try {
+        const fs = window.require('fs');
+        const path = window.require('path');
+        const electron = window.require('electron');
+        const app = electron.remote ? electron.remote.app : (electron.app || null);
+        const userDataPath = app ? app.getPath('userData') : (process.env.APPDATA || process.cwd());
+        const targetPath = path.join(userDataPath, 'jago_desktop_lifetime_database.json');
+        fs.writeFileSync(targetPath, JSON.stringify(snapshotData, null, 2), 'utf8');
+      } catch (e) {
+        console.warn('Desktop disk backup save error:', e);
+      }
+    }
+  },
+
+  loadFromDesktopDiskFile() {
+    if (typeof window !== 'undefined' && window.require) {
+      try {
+        const fs = window.require('fs');
+        const path = window.require('path');
+        const electron = window.require('electron');
+        const app = electron.remote ? electron.remote.app : (electron.app || null);
+        const userDataPath = app ? app.getPath('userData') : (process.env.APPDATA || process.cwd());
+        const targetPath = path.join(userDataPath, 'jago_desktop_lifetime_database.json');
+        if (fs.existsSync(targetPath)) {
+          const raw = fs.readFileSync(targetPath, 'utf8');
+          if (raw) {
+            const data = JSON.parse(raw);
+            if (data && typeof data === 'object') {
+              return data;
+            }
+          }
+        }
+      } catch (e) {
+        console.warn('Desktop disk backup load error:', e);
+      }
+    }
+    return null;
+  },
+
   autoSaveLifetimeBackup() {
     try {
       const snapshot = {
@@ -1557,12 +1607,18 @@ const Storage = {
         conveyanceLocations: this.get(STORAGE_KEYS.CONVEYANCE_LOCATIONS, [])
       };
       localStorage.setItem('jago_lifetime_backup_v1', JSON.stringify(snapshot));
+      this.saveToDesktopDiskFile(snapshot);
     } catch (e) {
       console.error('Auto lifetime backup error:', e);
     }
   },
 
   async syncWithPhpServer(isBackground = false) {
+    // In standalone file:// protocol, avoid HTTP PHP sync calls
+    if (window.location.protocol === 'file:') {
+      return;
+    }
+
     try {
       let url = 'api.php?action=load';
       if (typeof jagoWpVars !== 'undefined' && jagoWpVars.ajaxUrl) {
@@ -1572,22 +1628,47 @@ const Storage = {
       const res = await fetch(fetchUrl);
       if (res.ok) {
         const data = await res.json();
-        if (data && Array.isArray(data.daybook) && data.daybook.length > 0) {
-          const currentDaybookStr = localStorage.getItem(STORAGE_KEYS.DAYBOOK) || '';
-          const newDaybookStr = JSON.stringify(data.daybook);
+        if (data && typeof data === 'object') {
+          let hasChanges = false;
 
-          if (currentDaybookStr !== newDaybookStr || !localStorage.getItem(STORAGE_KEYS.DAYBOOK)) {
-            if (Array.isArray(data.customers)) localStorage.setItem(STORAGE_KEYS.CUSTOMERS, JSON.stringify(data.customers));
-            if (Array.isArray(data.items)) localStorage.setItem(STORAGE_KEYS.ITEMS, JSON.stringify(data.items));
-            if (Array.isArray(data.priceLogs)) localStorage.setItem(STORAGE_KEYS.PRICE_LOGS, JSON.stringify(data.priceLogs));
-            if (Array.isArray(data.openingBalanceLogs)) localStorage.setItem(STORAGE_KEYS.OPENING_BALANCE_LOGS, JSON.stringify(data.openingBalanceLogs));
-            if (Array.isArray(data.daybook)) localStorage.setItem(STORAGE_KEYS.DAYBOOK, JSON.stringify(data.daybook));
-            if (Array.isArray(data.conveyance)) localStorage.setItem(STORAGE_KEYS.CONVEYANCE, JSON.stringify(data.conveyance));
-            if (Array.isArray(data.conveyanceLocations)) localStorage.setItem(STORAGE_KEYS.CONVEYANCE_LOCATIONS, JSON.stringify(data.conveyanceLocations));
-            if (Array.isArray(data.users)) localStorage.setItem(STORAGE_KEYS.USERS, JSON.stringify(data.users));
-            
+          const smartMergeTable = (keyName, incomingArr) => {
+            if (!Array.isArray(incomingArr) || incomingArr.length === 0) return;
+            const currentArr = Storage.get(keyName, []);
+            const existingMap = new Map();
+            currentArr.forEach(item => {
+              const idKey = item.id || (item.date + '_' + item.amount + '_' + (item.customerName || item.purpose || ''));
+              existingMap.set(idKey, item);
+            });
+
+            let addedCount = 0;
+            incomingArr.forEach(item => {
+              const idKey = item.id || (item.date + '_' + item.amount + '_' + (item.customerName || item.purpose || ''));
+              if (!existingMap.has(idKey)) {
+                existingMap.set(idKey, item);
+                addedCount++;
+              }
+            });
+
+            if (addedCount > 0) {
+              const mergedList = Array.from(existingMap.values());
+              localStorage.setItem(keyName, JSON.stringify(mergedList));
+              hasChanges = true;
+            }
+          };
+
+          smartMergeTable(STORAGE_KEYS.CUSTOMERS, data.customers);
+          smartMergeTable(STORAGE_KEYS.ITEMS, data.items);
+          smartMergeTable(STORAGE_KEYS.PRICE_LOGS, data.priceLogs);
+          smartMergeTable(STORAGE_KEYS.OPENING_BALANCE_LOGS, data.openingBalanceLogs);
+          smartMergeTable(STORAGE_KEYS.DAYBOOK, data.daybook);
+          smartMergeTable(STORAGE_KEYS.CONVEYANCE, data.conveyance);
+          smartMergeTable(STORAGE_KEYS.CONVEYANCE_LOCATIONS, data.conveyanceLocations);
+          if (Array.isArray(data.users) && data.users.length > 0) {
+            smartMergeTable(STORAGE_KEYS.USERS, data.users);
+          }
+
+          if (hasChanges) {
             this.autoSaveLifetimeBackup();
-
             if (isBackground && typeof refreshCurrentTabContent === 'function') {
               refreshCurrentTabContent();
             }
@@ -1595,7 +1676,7 @@ const Storage = {
         }
       }
     } catch (e) {
-      // Standalone or non-PHP mode
+      // Standalone mode
     }
   },
 
@@ -1612,6 +1693,10 @@ const Storage = {
   },
 
   async pushToPhpServer() {
+    if (window.location.protocol === 'file:') {
+      return;
+    }
+
     try {
       let url = 'api.php?action=save';
       if (typeof jagoWpVars !== 'undefined' && jagoWpVars.ajaxUrl) {
@@ -1652,6 +1737,19 @@ const Storage = {
   },
 
   init() {
+    // 1. Try restoring from permanent Desktop AppData disk file first (Electron)
+    const diskBackup = this.loadFromDesktopDiskFile();
+    if (diskBackup) {
+      if (Array.isArray(diskBackup.customers)) localStorage.setItem(STORAGE_KEYS.CUSTOMERS, JSON.stringify(diskBackup.customers));
+      if (Array.isArray(diskBackup.items)) localStorage.setItem(STORAGE_KEYS.ITEMS, JSON.stringify(diskBackup.items));
+      if (Array.isArray(diskBackup.priceLogs)) localStorage.setItem(STORAGE_KEYS.PRICE_LOGS, JSON.stringify(diskBackup.priceLogs));
+      if (Array.isArray(diskBackup.openingBalanceLogs)) localStorage.setItem(STORAGE_KEYS.OPENING_BALANCE_LOGS, JSON.stringify(diskBackup.openingBalanceLogs));
+      if (Array.isArray(diskBackup.daybook)) localStorage.setItem(STORAGE_KEYS.DAYBOOK, JSON.stringify(diskBackup.daybook));
+      if (Array.isArray(diskBackup.conveyance)) localStorage.setItem(STORAGE_KEYS.CONVEYANCE, JSON.stringify(diskBackup.conveyance));
+      if (Array.isArray(diskBackup.conveyanceLocations)) localStorage.setItem(STORAGE_KEYS.CONVEYANCE_LOCATIONS, JSON.stringify(diskBackup.conveyanceLocations));
+      if (Array.isArray(diskBackup.users)) localStorage.setItem(STORAGE_KEYS.USERS, JSON.stringify(diskBackup.users));
+    }
+
     this.syncWithPhpServer();
     this.startAutoPollingSync();
 

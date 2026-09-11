@@ -26,6 +26,64 @@ ipcMain.handle('save-pdf-file', async (event, { dataUrl, filename }) => {
   }
 });
 
+// Native Electron PDF Generation Engine via printToPDF
+ipcMain.handle('generate-electron-pdf', async (event, { filename, orientation, htmlContent }) => {
+  try {
+    const pdfWin = new BrowserWindow({
+      show: false,
+      webPreferences: {
+        nodeIntegration: false,
+        contextIsolation: true
+      }
+    });
+
+    const fullHtml = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="utf-8">
+        <style>
+          body { font-family: system-ui, -apple-system, sans-serif; margin: 15px; color: #0f172a; background: #ffffff; }
+          table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; }
+          th, td { border: 1px solid #cbd5e1; padding: 6px 10px; font-size: 0.85rem; }
+          th { background: #f1f5f9; color: #0f172a; font-weight: 700; text-align: left; }
+          .no-print, button, input:not([type="text"]), select, .btn-icon { display: none !important; }
+        </style>
+      </head>
+      <body>
+        ${htmlContent}
+      </body>
+      </html>
+    `;
+
+    await pdfWin.loadURL('data:text/html;charset=utf-8,' + encodeURIComponent(fullHtml));
+
+    const pdfBuffer = await pdfWin.webContents.printToPDF({
+      printBackground: true,
+      landscape: orientation === 'landscape',
+      pageSize: 'A4',
+      margins: { top: 0.3, bottom: 0.3, left: 0.3, right: 0.3 }
+    });
+
+    pdfWin.close();
+
+    const { filePath } = await dialog.showSaveDialog(mainWindow, {
+      title: 'Save PDF Report / Document',
+      defaultPath: filename || 'Jago_Document.pdf',
+      filters: [{ name: 'PDF Documents (*.pdf)', extensions: ['pdf'] }]
+    });
+
+    if (filePath) {
+      fs.writeFileSync(filePath, pdfBuffer);
+      return { success: true, filePath };
+    }
+    return { success: false, cancelled: true };
+  } catch (err) {
+    console.error('Native Electron PDF Error:', err);
+    return { success: false, error: err.message };
+  }
+});
+
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1300,
