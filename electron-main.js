@@ -26,6 +26,25 @@ ipcMain.handle('save-pdf-file', async (event, { dataUrl, filename }) => {
   }
 });
 
+// Handle Native Desktop JSON Backup File Saving
+ipcMain.handle('save-json-file', async (event, { jsonContent, filename }) => {
+  try {
+    const { filePath } = await dialog.showSaveDialog(mainWindow, {
+      title: 'Save Jago System Data Backup (.json)',
+      defaultPath: filename || `Jago_Sales_Backup_${new Date().toISOString().split('T')[0]}.json`,
+      filters: [{ name: 'JSON Backup Files (*.json)', extensions: ['json'] }]
+    });
+
+    if (filePath) {
+      fs.writeFileSync(filePath, jsonContent, 'utf-8');
+      return { success: true, filePath };
+    }
+    return { success: false, cancelled: true };
+  } catch (err) {
+    return { success: false, error: err.message };
+  }
+});
+
 // Native Electron PDF Generation Engine via printToPDF
 ipcMain.handle('generate-electron-pdf', async (event, { filename, orientation, htmlContent }) => {
   try {

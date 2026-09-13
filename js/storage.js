@@ -1835,7 +1835,7 @@ function formatDate(dateStr) {
 }
 
 // Export / Backup Application Data (Full JSON Dump)
-function exportAppData() {
+async function exportAppData() {
   const data = {
     version: "1.0",
     appName: "Jago Corporation PLC Sales & Marketing Management",
@@ -1852,6 +1852,32 @@ function exportAppData() {
   const jsonStr = JSON.stringify(data, null, 2);
   const filenameDate = new Date().toISOString().split('T')[0];
   const filename = `Jago_Sales_Backup_${filenameDate}.json`;
+
+  // Check Electron Desktop environment
+  let electron = null;
+  try {
+    if (typeof window.require === 'function') {
+      electron = window.require('electron');
+    }
+  } catch(e) {}
+
+  if (electron && electron.ipcRenderer) {
+    try {
+      const res = await electron.ipcRenderer.invoke('save-json-file', { jsonContent: jsonStr, filename });
+      if (res && res.success) {
+        if (typeof showToast === 'function') {
+          showToast('✅ Backup file saved successfully!', 'success');
+        } else {
+          alert('✅ Backup file saved successfully!');
+        }
+      } else if (res && res.error) {
+        alert('⚠️ Failed to save backup file: ' + res.error);
+      }
+      return;
+    } catch(err) {
+      console.error('Electron save-json-file error:', err);
+    }
+  }
 
   if (window.AndroidHost && typeof window.AndroidHost.downloadFile === 'function') {
     const base64Data = "data:application/json;base64," + btoa(unescape(encodeURIComponent(jsonStr)));

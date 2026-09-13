@@ -76,6 +76,134 @@ const DayBookManager = {
     return newEntry;
   },
 
+  updateEntry(id, updatedData) {
+    const entries = this.getAllRawEntries();
+    const index = entries.findIndex(e => e.id === id);
+    if (index === -1) return null;
+
+    let itemsList = [];
+    let calculatedAmount = parseFloat(updatedData.amount) || 0;
+
+    if (updatedData.items && Array.isArray(updatedData.items) && updatedData.items.length > 0) {
+      itemsList = updatedData.items.map(it => ({
+        itemId: it.itemId || "",
+        itemName: it.itemName || "Item",
+        qty: parseFloat(it.qty) || 1,
+        unitPrice: parseFloat(it.unitPrice) || 0,
+        subtotal: (parseFloat(it.qty) || 1) * (parseFloat(it.unitPrice) || 0)
+      }));
+      calculatedAmount = itemsList.reduce((sum, item) => sum + item.subtotal, 0);
+    } else if (updatedData.itemName) {
+      const q = parseFloat(updatedData.qty) || 1;
+      const u = parseFloat(updatedData.unitPrice) || 0;
+      itemsList = [{
+        itemId: updatedData.itemId || "",
+        itemName: updatedData.itemName,
+        qty: q,
+        unitPrice: u,
+        subtotal: q * u
+      }];
+      if (calculatedAmount <= 0) calculatedAmount = q * u;
+    }
+
+    entries[index] = {
+      ...entries[index],
+      date: updatedData.date || entries[index].date,
+      type: updatedData.type || entries[index].type,
+      time: updatedData.time || entries[index].time,
+      partyName: updatedData.partyName ? updatedData.partyName.trim() : entries[index].partyName,
+      items: itemsList,
+      itemId: itemsList.length > 0 ? itemsList[0].itemId : (updatedData.itemId || entries[index].itemId || ""),
+      itemName: itemsList.length > 0 ? itemsList[0].itemName : (updatedData.itemName || entries[index].itemName || ""),
+      qty: itemsList.length > 0 ? itemsList[0].qty : (parseFloat(updatedData.qty) || 1),
+      unitPrice: itemsList.length > 0 ? itemsList[0].unitPrice : (parseFloat(updatedData.unitPrice) || 0),
+      amount: calculatedAmount,
+      paymentMethod: updatedData.paymentMethod || entries[index].paymentMethod,
+      remark: updatedData.remark !== undefined ? updatedData.remark.trim() : entries[index].remark
+    };
+
+    Storage.set(STORAGE_KEYS.DAYBOOK, entries);
+    return entries[index];
+  },
+
+  openEditModal(id) {
+    const entries = this.getAllRawEntries();
+    const entry = entries.find(e => e.id === id);
+    if (!entry) return;
+
+    if (typeof CustomerManager !== 'undefined' && typeof CustomerManager.populateCustomerDropdowns === 'function') {
+      CustomerManager.populateCustomerDropdowns();
+    }
+
+    const modalTitle = document.getElementById('daybookModalTitle');
+    if (modalTitle) modalTitle.innerText = `Edit Daybook Entry (${entry.partyName})`;
+
+    const btnAddAnother = document.getElementById('btnSaveAndAddAnother');
+    if (btnAddAnother) btnAddAnother.style.display = 'none';
+
+    const btnSaveClose = document.getElementById('btnSaveAndClose');
+    if (btnSaveClose) btnSaveClose.innerHTML = '<i class="ri-check-line"></i> Update Entry';
+
+    const alertBox = document.getElementById('dbModalAlert');
+    if (alertBox) alertBox.style.display = 'none';
+
+    document.getElementById('dbEditId').value = entry.id;
+    document.getElementById('dbEntryDate').value = entry.date || new Date().toISOString().split('T')[0];
+    document.getElementById('dbEntryType').value = entry.type || 'collection';
+    document.getElementById('dbTime').value = entry.time || '';
+
+    const partySelect = document.getElementById('dbPartyName');
+    if (partySelect) {
+      let found = false;
+      for (let i = 0; i < partySelect.options.length; i++) {
+        if (partySelect.options[i].value.toLowerCase() === (entry.partyName || '').toLowerCase()) {
+          partySelect.selectedIndex = i;
+          found = true;
+          break;
+        }
+      }
+      if (!found && entry.partyName) {
+        const opt = document.createElement('option');
+        opt.value = entry.partyName;
+        opt.text = entry.partyName;
+        opt.selected = true;
+        partySelect.appendChild(opt);
+      }
+    }
+
+    document.getElementById('dbAmount').value = entry.amount || '';
+    document.getElementById('dbPaymentMethod').value = entry.paymentMethod || 'Cash';
+    document.getElementById('dbRemark').value = entry.remark || '';
+
+    const type = entry.type;
+    const productSection = document.getElementById('dbProductSection');
+    const container = document.getElementById('dbProductRowsContainer');
+    if (container) container.innerHTML = '';
+
+    if (type === 'delivery' || type === 'orderInHand') {
+      if (productSection) productSection.style.display = 'block';
+      if (entry.items && Array.isArray(entry.items) && entry.items.length > 0) {
+        entry.items.forEach(item => {
+          if (typeof addDaybookProductRow === 'function') {
+            addDaybookProductRow(item.itemId, item.qty, item.unitPrice);
+          }
+        });
+      } else if (entry.itemName) {
+        if (typeof addDaybookProductRow === 'function') {
+          addDaybookProductRow(entry.itemId, entry.qty, entry.unitPrice);
+        }
+      } else {
+        if (typeof addDaybookProductRow === 'function') {
+          addDaybookProductRow();
+        }
+      }
+    } else if (productSection) {
+      productSection.style.display = 'none';
+    }
+
+    openModal('daybookModal');
+  },
+
   deleteEntry(id) {
     let entries = this.getAllRawEntries();
     entries = entries.filter(e => e.id !== id);
