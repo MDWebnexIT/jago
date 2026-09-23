@@ -206,6 +206,11 @@ function refreshCurrentTabContent() {
         InvoiceManager.renderInvoicesTable();
       }
       break;
+    case 'paymentHistoryTab':
+      if (typeof InvoiceManager !== 'undefined') {
+        InvoiceManager.renderPaymentHistoryTable();
+      }
+      break;
     case 'cashClearanceTab':
       if (typeof CashClearanceManager !== 'undefined') {
         CashClearanceManager.renderCashClearanceView();
@@ -861,6 +866,8 @@ function downloadCurrentTabPDF() {
     downloadElementAsPDF('reportTab', `Jago_Market_Sales_Report_${dateVal}.pdf`);
   } else if (tabId === 'invoicesTab') {
     downloadElementAsPDF('invoicesTab', `Jago_Master_Invoices_Report_${dateVal}.pdf`);
+  } else if (tabId === 'paymentHistoryTab') {
+    downloadElementAsPDF('paymentHistoryTab', `Jago_Invoice_Payment_History_${dateVal}.pdf`);
   } else if (tabId === 'conveyanceReportTab') {
     downloadElementAsPDF('conveyanceDayWiseReportContainer', `Jago_Conveyance_Report_${dateVal}.pdf`);
   } else {

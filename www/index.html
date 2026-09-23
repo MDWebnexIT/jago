@@ -103,6 +103,10 @@
         <i class="ri-bill-line"></i>
         <span>All Invoices Report</span>
       </div>
+      <div class="nav-item" data-tab="paymentHistoryTab">
+        <i class="ri-exchange-dollar-line"></i>
+        <span>Invoice Payment History</span>
+      </div>
       <div class="nav-item" data-tab="conveyanceReportTab">
         <i class="ri-car-line"></i>
         <span>Conveyance Report</span>
@@ -191,6 +195,10 @@
       <div class="nav-item" data-tab="invoicesTab">
         <i class="ri-file-list-3-line"></i>
         <span>All Invoices Report</span>
+      </div>
+      <div class="nav-item" data-tab="paymentHistoryTab">
+        <i class="ri-exchange-dollar-line"></i>
+        <span>Invoice Payment History</span>
       </div>
       <div class="nav-item" data-tab="cashClearanceTab">
         <i class="ri-safe-2-line"></i>
@@ -1170,6 +1178,159 @@
             </table>
           </div>
         </div>
+      </div>
+
+      <!-- TAB 11: INVOICE PAYMENT HISTORY & TRACKING HUB -->
+      <div class="tab-panel" id="paymentHistoryTab">
+        <div class="card no-print" style="margin-bottom: 1.5rem;">
+          <div class="card-header" style="flex-wrap: wrap; gap: 1rem;">
+            <div class="card-title">
+              <i class="ri-exchange-dollar-line"></i> Invoice Payment History & Channel Breakdown Hub
+            </div>
+            <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+              <button class="btn btn-secondary btn-sm" onclick="window.print()">
+                <i class="ri-printer-line"></i> Print Payment History
+              </button>
+              <button class="btn btn-danger btn-sm" onclick="InvoiceManager.downloadPaymentHistoryPDF()" style="background: #e11d48; border-color: #e11d48; color: white;" title="Download Payment History Report as PDF Document">
+                <i class="ri-file-pdf-2-line"></i> Download PDF
+              </button>
+            </div>
+          </div>
+
+          <!-- Summary Metric Cards -->
+          <div class="metrics-grid" style="margin-bottom: 1.25rem;">
+            <div class="metric-card">
+              <div class="metric-icon delivery">
+                <i class="ri-shopping-cart-2-line"></i>
+              </div>
+              <div class="metric-info">
+                <h3>Total Invoiced Sales</h3>
+                <div class="value" id="payHistTotalSales" style="color: var(--primary);">৳ 0</div>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon collection">
+                <i class="ri-wallet-3-line"></i>
+              </div>
+              <div class="metric-info">
+                <h3>Total Money Received</h3>
+                <div class="value" id="payHistTotalCollected" style="color: var(--success);">৳ 0</div>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon" style="background: rgba(239, 68, 68, 0.15); color: var(--danger);">
+                <i class="ri-error-warning-line"></i>
+              </div>
+              <div class="metric-info">
+                <h3>Remaining Due Balance</h3>
+                <div class="value" id="payHistTotalDue" style="color: var(--danger);">৳ 0</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Channel Breakdown Cards -->
+          <div class="metrics-grid" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); margin-bottom: 1.25rem;">
+            <div class="metric-card" style="padding: 0.75rem 1rem;">
+              <div class="metric-info">
+                <h3 style="font-size: 0.75rem;"><i class="ri-bank-card-line" style="color: #0284c7;"></i> Bank Transfer</h3>
+                <div class="value" id="payHistBankTotal" style="font-size: 1.05rem; color: #0284c7;">৳ 0</div>
+              </div>
+            </div>
+
+            <div class="metric-card" style="padding: 0.75rem 1rem;">
+              <div class="metric-info">
+                <h3 style="font-size: 0.75rem;"><i class="ri-smartphone-line" style="color: #d946ef;"></i> bKash / Nagad</h3>
+                <div class="value" id="payHistBkashTotal" style="font-size: 1.05rem; color: #d946ef;">৳ 0</div>
+              </div>
+            </div>
+
+            <div class="metric-card" style="padding: 0.75rem 1rem;">
+              <div class="metric-info">
+                <h3 style="font-size: 0.75rem;"><i class="ri-money-dollar-circle-line" style="color: #10b981;"></i> Cash Received</h3>
+                <div class="value" id="payHistCashTotal" style="font-size: 1.05rem; color: #10b981;">৳ 0</div>
+              </div>
+            </div>
+
+            <div class="metric-card" style="padding: 0.75rem 1rem;">
+              <div class="metric-info">
+                <h3 style="font-size: 0.75rem;"><i class="ri-file-shield-2-line" style="color: #f59e0b;"></i> Cheques Received</h3>
+                <div class="value" id="payHistChequeTotal" style="font-size: 1.05rem; color: #f59e0b;">৳ 0</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filters Row -->
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: flex-end;">
+            <div class="form-group" style="flex: 2; min-width: 200px;">
+              <label for="payHistSearchInput" style="font-size: 0.8rem; font-weight: 600;">Search Invoice # or Customer</label>
+              <input type="text" class="form-control" id="payHistSearchInput" placeholder="Search Invoice # (e.g. INV-1001), Customer, or Bank..." oninput="InvoiceManager.renderPaymentHistoryTable()">
+            </div>
+
+            <div class="form-group" style="flex: 1.5; min-width: 170px;">
+              <label for="payHistCustomerFilter" style="font-size: 0.8rem; font-weight: 600;">Filter Customer</label>
+              <select class="form-select customer-party-select" id="payHistCustomerFilter" onchange="InvoiceManager.renderPaymentHistoryTable()">
+                <option value="">All Customers</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="flex: 1.2; min-width: 150px;">
+              <label for="payHistStatusFilter" style="font-size: 0.8rem; font-weight: 600;">Payment Status</label>
+              <select class="form-select" id="payHistStatusFilter" onchange="InvoiceManager.renderPaymentHistoryTable()">
+                <option value="">All Statuses</option>
+                <option value="unpaid">🔴 Unpaid / Due Only</option>
+                <option value="partial">🟠 Partial Paid Only</option>
+                <option value="paid">🟢 Fully Paid Only</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="flex: 1.2; min-width: 150px;">
+              <label for="payHistMethodFilter" style="font-size: 0.8rem; font-weight: 600;">Payment Channel</label>
+              <select class="form-select" id="payHistMethodFilter" onchange="InvoiceManager.renderPaymentHistoryTable()">
+                <option value="">All Channels</option>
+                <option value="Bank">Bank Transfer</option>
+                <option value="bKash">bKash / Nagad</option>
+                <option value="Cash">Cash</option>
+                <option value="Cheque">Cheque</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="flex: 1; min-width: 130px;">
+              <label for="payHistFromDate" style="font-size: 0.8rem; font-weight: 600;">From Date</label>
+              <input type="date" class="form-control" id="payHistFromDate" onchange="InvoiceManager.renderPaymentHistoryTable()">
+            </div>
+
+            <div class="form-group" style="flex: 1; min-width: 130px;">
+              <label for="payHistToDate" style="font-size: 0.8rem; font-weight: 600;">To Date</label>
+              <input type="date" class="form-control" id="payHistToDate" onchange="InvoiceManager.renderPaymentHistoryTable()">
+            </div>
+          </div>
+        </div>
+
+        <!-- Master Payment History Table -->
+        <div class="card">
+          <div class="table-responsive">
+            <table class="data-table" style="font-size: 0.88rem;">
+              <thead>
+                <tr>
+                  <th style="width: 12%;">Invoice # & Date</th>
+                  <th style="width: 18%;">Customer & Zone</th>
+                  <th style="width: 11%;">Invoice Total (৳)</th>
+                  <th style="width: 11%;">Paid So Far (৳)</th>
+                  <th style="width: 11%;">Remaining Due (৳)</th>
+                  <th style="width: 10%;">Status</th>
+                  <th style="width: 27%;">Payment History & Method Breakdown</th>
+                  <th style="text-align: right; width: 10%;">Action</th>
+                </tr>
+              </thead>
+              <tbody id="payHistTableBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
       </div>
 
       <!-- TAB 10: CASH IN HAND CLEARANCE & RECONCILIATION -->

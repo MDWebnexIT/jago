@@ -58,6 +58,7 @@ const SessionManager = {
         conveyanceReportTab: false,
         ledgerTab: false,
         invoicesTab: false,
+        paymentHistoryTab: false,
         itemTab: false,
         masterInputTab: false
       }
