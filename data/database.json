@@ -1,8 +1,72 @@
 {
   "version": "1.0",
   "appName": "Jago Corporation PLC Sales & Marketing Management",
-  "exportDate": "2026-09-06T20:09:21.983Z",
+  "exportDate": "2026-11-18T18:43:26.562Z",
+  "users": [
+    {
+      "userId": "nazmul",
+      "pass": "N@azmul",
+      "name": "Md Nazmul Hasan",
+      "role": "user",
+      "designation": "Senior Sales & Marketing Executive",
+      "allowBackup": true,
+      "dateCreated": "2026-01-01"
+    },
+    {
+      "userId": "jagoadmin",
+      "pass": "J@agoadmin",
+      "name": "Super Admin",
+      "role": "admin",
+      "designation": "System Administrator",
+      "allowBackup": true,
+      "dateCreated": "2026-01-01"
+    }
+  ],
   "customers": [
+    {
+      "id": "cust-r4a4pgzbu",
+      "userId": "nazmul",
+      "shopName": "Alif Water Technology",
+      "ownerName": "Md Abdul Hakim (Aziz)",
+      "address": "La 42/1, Middle Badda, Dhaka 1212.",
+      "phone": "01723411774",
+      "bin": "",
+      "nid": "6425324909",
+      "zone": "Badda"
+    },
+    {
+      "id": "cust-w2uysvtyz",
+      "userId": "nazmul",
+      "shopName": "Badol Enterprise",
+      "ownerName": "Afsar Uddin Badol",
+      "address": "24/A, Mowlana Bhasani Hockey Stadium, Gulisthan, Dhaka",
+      "phone": "01606587414",
+      "bin": "0079299120208",
+      "nid": "",
+      "zone": "Gulisthan"
+    },
+    {
+      "id": "cust-miszdhy0r",
+      "userId": "nazmul",
+      "shopName": "Ulab University",
+      "ownerName": "",
+      "address": "",
+      "phone": "",
+      "bin": "",
+      "nid": "",
+      "zone": "Mirpur 1"
+    },
+    {
+      "id": "cust-3crk9tufm",
+      "userId": "nazmul",
+      "shopName": "Amit Water Technology",
+      "ownerName": "Md. Julfeker Ali Amit",
+      "address": "Shop: 56. Udayan Market (Nearby Imperial Hotel) GPO, Opposite Baitul mokkarom Market road.",
+      "phone": "01615077550",
+      "bin": "",
+      "nid": "461 798 1842",
+      "zone": "Gulisthan"
+    },
     {
       "id": "cust-n1y54a2cv",
       "shopName": "Al Karim water purifier",
@@ -11,7 +75,8 @@
       "phone": "01976708484",
       "bin": "",
       "nid": "",
-      "zone": "Gulshan"
+      "zone": "Gulshan",
+      "userId": "nazmul"
     },
     {
       "id": "cust-14meooown",
@@ -22,10 +87,11 @@
       "bin": "",
       "nid": "",
       "zone": "Gulisthan",
-      "openingBalance": -14000,
+      "openingBalance": 0,
       "balanceType": "credit",
       "openingBalanceDate": "2026-09-04",
-      "openingBalanceNote": ""
+      "openingBalanceNote": "",
+      "userId": "nazmul"
     },
     {
       "id": "cust-1",
@@ -36,10 +102,11 @@
       "bin": "",
       "nid": "",
       "zone": "Gulisthan",
-      "openingBalance": 16600,
+      "openingBalance": 0,
       "balanceType": "debit",
       "openingBalanceDate": "2026-09-04",
-      "openingBalanceNote": ""
+      "openingBalanceNote": "",
+      "userId": "nazmul"
     },
     {
       "id": "cust-5",
@@ -53,7 +120,8 @@
       "openingBalance": 17900,
       "balanceType": "debit",
       "openingBalanceDate": "2026-09-05",
-      "openingBalanceNote": ""
+      "openingBalanceNote": "",
+      "userId": "nazmul"
     }
   ],
   "items": [
@@ -100,7 +168,7 @@
     {
       "id": "item-3",
       "name": "CTO  10 Inch",
-      "price": 83,
+      "price": 85,
       "category": "Filter Cartridge",
       "dateAdded": "2026-01-01",
       "details": "Carbon Block Filter"
@@ -108,7 +176,7 @@
     {
       "id": "item-4",
       "name": "GAC  10 Inch",
-      "price": 83,
+      "price": 85,
       "category": "Filter Cartridge",
       "dateAdded": "2026-01-01",
       "details": "Granular Carbon Filter"
@@ -116,13 +184,34 @@
   ],
   "priceLogs": [
     {
+      "id": "log-8imekyvs7",
+      "itemId": "item-3",
+      "itemName": "CTO  10 Inch",
+      "oldPrice": 83,
+      "newPrice": 85,
+      "effectiveDate": "2026-10-10",
+      "note": "Price Edit",
+      "updatedBy": "Md Nazmul Hasan (nazmul)"
+    },
+    {
+      "id": "log-y0u9bkth3",
+      "itemId": "item-4",
+      "itemName": "GAC  10 Inch",
+      "oldPrice": 83,
+      "newPrice": 85,
+      "effectiveDate": "2026-10-10",
+      "note": "Price Edit",
+      "updatedBy": "Md Nazmul Hasan (nazmul)"
+    },
+    {
       "id": "log-4hije5wod",
       "itemId": "item-h3oodzvyn",
       "itemName": "PP 190 gm 20 inch",
       "oldPrice": 0,
       "newPrice": 70,
       "effectiveDate": "2026-09-04",
-      "note": "Item Created"
+      "note": "Item Created",
+      "updatedBy": "Md Nazmul Hasan (nazmul)"
     },
     {
       "id": "log-s2k2uhgt2",
@@ -131,7 +220,8 @@
       "oldPrice": 0,
       "newPrice": 42,
       "effectiveDate": "2026-09-04",
-      "note": "Item Created"
+      "note": "Item Created",
+      "updatedBy": "Md Nazmul Hasan (nazmul)"
     },
     {
       "id": "log-psxzucvje",
@@ -140,7 +230,8 @@
       "oldPrice": 0,
       "newPrice": 7300,
       "effectiveDate": "2026-09-04",
-      "note": "Item Created"
+      "note": "Item Created",
+      "updatedBy": "Md Nazmul Hasan (nazmul)"
     },
     {
       "id": "log-rxek2ukea",
@@ -149,7 +240,8 @@
       "oldPrice": 400,
       "newPrice": 83,
       "effectiveDate": "2026-09-04",
-      "note": "Price Edit"
+      "note": "Price Edit",
+      "updatedBy": "Md Nazmul Hasan (nazmul)"
     },
     {
       "id": "log-bigdngxp4",
@@ -158,7 +250,8 @@
       "oldPrice": 18500,
       "newPrice": 7500,
       "effectiveDate": "2026-09-04",
-      "note": "Price Edit"
+      "note": "Price Edit",
+      "updatedBy": "Md Nazmul Hasan (nazmul)"
     },
     {
       "id": "log-p8jegy6x9",
@@ -167,7 +260,8 @@
       "oldPrice": 32,
       "newPrice": 32,
       "effectiveDate": "2026-07-01",
-      "note": "Price revision effective from 04 Sept 2026"
+      "note": "Price revision effective from 04 Sept 2026",
+      "updatedBy": "Md Nazmul Hasan (nazmul)"
     },
     {
       "id": "log-txvx4eis9",
@@ -176,7 +270,8 @@
       "oldPrice": 350,
       "newPrice": 83,
       "effectiveDate": "2026-09-01",
-      "note": "Price revision effective from 04 Sept 2026"
+      "note": "Price revision effective from 04 Sept 2026",
+      "updatedBy": "Md Nazmul Hasan (nazmul)"
     },
     {
       "id": "log-mn3cjlh9c",
@@ -185,7 +280,8 @@
       "oldPrice": 250,
       "newPrice": 32,
       "effectiveDate": "2026-09-04",
-      "note": "Price revision effective from 04 Sept 2026"
+      "note": "Price revision effective from 04 Sept 2026",
+      "updatedBy": "Md Nazmul Hasan (nazmul)"
     },
     {
       "id": "log-7do3yfdq8",
@@ -194,7 +290,8 @@
       "oldPrice": 18500,
       "newPrice": 18500,
       "effectiveDate": "2026-01-01",
-      "note": "Initial Price Set"
+      "note": "Initial Price Set",
+      "updatedBy": "Md Nazmul Hasan (nazmul)"
     },
     {
       "id": "log-2643v4wxv",
@@ -203,7 +300,8 @@
       "oldPrice": 250,
       "newPrice": 250,
       "effectiveDate": "2026-01-01",
-      "note": "Initial Price Set"
+      "note": "Initial Price Set",
+      "updatedBy": "Md Nazmul Hasan (nazmul)"
     },
     {
       "id": "log-vto84ajo3",
@@ -212,7 +310,8 @@
       "oldPrice": 350,
       "newPrice": 350,
       "effectiveDate": "2026-01-01",
-      "note": "Initial Price Set"
+      "note": "Initial Price Set",
+      "updatedBy": "Md Nazmul Hasan (nazmul)"
     },
     {
       "id": "log-53yvic039",
@@ -221,7 +320,8 @@
       "oldPrice": 400,
       "newPrice": 400,
       "effectiveDate": "2026-01-01",
-      "note": "Initial Price Set"
+      "note": "Initial Price Set",
+      "updatedBy": "Md Nazmul Hasan (nazmul)"
     },
     {
       "id": "log-jfm8lzown",
@@ -230,7 +330,8 @@
       "oldPrice": 1650,
       "newPrice": 1650,
       "effectiveDate": "2026-01-01",
-      "note": "Initial Price Set"
+      "note": "Initial Price Set",
+      "updatedBy": "Md Nazmul Hasan (nazmul)"
     },
     {
       "id": "log-drl81reqs",
@@ -239,7 +340,8 @@
       "oldPrice": 450,
       "newPrice": 450,
       "effectiveDate": "2026-01-01",
-      "note": "Initial Price Set"
+      "note": "Initial Price Set",
+      "updatedBy": "Md Nazmul Hasan (nazmul)"
     },
     {
       "id": "log-rgm7n22ai",
@@ -248,7 +350,8 @@
       "oldPrice": 1200,
       "newPrice": 1200,
       "effectiveDate": "2026-01-01",
-      "note": "Initial Price Set"
+      "note": "Initial Price Set",
+      "updatedBy": "Md Nazmul Hasan (nazmul)"
     },
     {
       "id": "log-sdwy6u7zb",
@@ -257,7 +360,8 @@
       "oldPrice": 2200,
       "newPrice": 2200,
       "effectiveDate": "2026-01-01",
-      "note": "Initial Price Set"
+      "note": "Initial Price Set",
+      "updatedBy": "Md Nazmul Hasan (nazmul)"
     },
     {
       "id": "log-rom89n7c8",
@@ -266,7 +370,8 @@
       "oldPrice": 650,
       "newPrice": 650,
       "effectiveDate": "2026-01-01",
-      "note": "Initial Price Set"
+      "note": "Initial Price Set",
+      "updatedBy": "Md Nazmul Hasan (nazmul)"
     }
   ],
   "openingBalanceLogs": [
@@ -280,7 +385,8 @@
       "newType": "debit",
       "effectiveDate": "2026-09-04",
       "note": "Opening balance updated",
-      "updatedAt": "2026-09-04T21:57:47.338Z"
+      "updatedAt": "2026-09-04T21:57:47.338Z",
+      "userId": "nazmul"
     },
     {
       "id": "bal-log-7i7xdfcgb",
@@ -292,7 +398,8 @@
       "newType": "credit",
       "effectiveDate": "2026-09-04",
       "note": "Opening balance updated",
-      "updatedAt": "2026-09-04T22:13:17.172Z"
+      "updatedAt": "2026-09-04T22:13:17.172Z",
+      "userId": "nazmul"
     },
     {
       "id": "bal-log-5uf2obit3",
@@ -304,7 +411,8 @@
       "newType": "credit",
       "effectiveDate": "2026-09-04",
       "note": "Opening balance updated",
-      "updatedAt": "2026-09-04T22:13:43.879Z"
+      "updatedAt": "2026-09-04T22:13:43.879Z",
+      "userId": "nazmul"
     },
     {
       "id": "bal-log-emim0hxk0",
@@ -316,7 +424,8 @@
       "newType": "credit",
       "effectiveDate": "2026-09-04",
       "note": "Opening balance updated",
-      "updatedAt": "2026-09-04T22:14:04.522Z"
+      "updatedAt": "2026-09-04T22:14:04.522Z",
+      "userId": "nazmul"
     },
     {
       "id": "bal-log-ix4sh9m7f",
@@ -328,7 +437,8 @@
       "newType": "credit",
       "effectiveDate": "2026-09-04",
       "note": "Opening balance updated",
-      "updatedAt": "2026-09-04T22:17:47.392Z"
+      "updatedAt": "2026-09-04T22:17:47.392Z",
+      "userId": "nazmul"
     },
     {
       "id": "bal-log-f7pb66vm2",
@@ -340,7 +450,8 @@
       "newType": "credit",
       "effectiveDate": "2026-09-04",
       "note": "Opening balance updated",
-      "updatedAt": "2026-09-04T22:17:57.616Z"
+      "updatedAt": "2026-09-04T22:17:57.616Z",
+      "userId": "nazmul"
     },
     {
       "id": "bal-log-orkwml1oe",
@@ -352,7 +463,8 @@
       "newType": "credit",
       "effectiveDate": "2026-09-04",
       "note": "Opening balance updated",
-      "updatedAt": "2026-09-04T22:18:44.439Z"
+      "updatedAt": "2026-09-04T22:18:44.439Z",
+      "userId": "nazmul"
     },
     {
       "id": "bal-log-4gn047mn6",
@@ -364,7 +476,8 @@
       "newType": "credit",
       "effectiveDate": "2026-09-04",
       "note": "Opening balance updated",
-      "updatedAt": "2026-09-04T22:21:00.912Z"
+      "updatedAt": "2026-09-04T22:21:00.912Z",
+      "userId": "nazmul"
     },
     {
       "id": "bal-log-bjssixdb9",
@@ -376,7 +489,8 @@
       "newType": "credit",
       "effectiveDate": "2026-09-04",
       "note": "Opening balance updated",
-      "updatedAt": "2026-09-04T22:28:38.973Z"
+      "updatedAt": "2026-09-04T22:28:38.973Z",
+      "userId": "nazmul"
     },
     {
       "id": "bal-log-rd1zm0ehb",
@@ -388,7 +502,8 @@
       "newType": "credit",
       "effectiveDate": "2026-09-04",
       "note": "Opening balance updated",
-      "updatedAt": "2026-09-04T22:32:38.884Z"
+      "updatedAt": "2026-09-04T22:32:38.884Z",
+      "userId": "nazmul"
     },
     {
       "id": "bal-log-zzgopsszv",
@@ -400,7 +515,8 @@
       "newType": "credit",
       "effectiveDate": "2026-09-04",
       "note": "Opening balance updated",
-      "updatedAt": "2026-09-04T22:38:10.567Z"
+      "updatedAt": "2026-09-04T22:38:10.567Z",
+      "userId": "nazmul"
     },
     {
       "id": "bal-log-ecby4macj",
@@ -412,7 +528,8 @@
       "newType": "debit",
       "effectiveDate": "2026-09-04",
       "note": "Opening balance updated",
-      "updatedAt": "2026-09-04T22:38:18.288Z"
+      "updatedAt": "2026-09-04T22:38:18.288Z",
+      "userId": "nazmul"
     },
     {
       "id": "bal-log-w7cmf3r37",
@@ -424,7 +541,8 @@
       "newType": "debit",
       "effectiveDate": "2026-09-04",
       "note": "Opening balance updated",
-      "updatedAt": "2026-09-04T22:38:34.762Z"
+      "updatedAt": "2026-09-04T22:38:34.762Z",
+      "userId": "nazmul"
     },
     {
       "id": "bal-log-d4xma10im",
@@ -436,7 +554,34 @@
       "newType": "debit",
       "effectiveDate": "2026-09-05",
       "note": "Opening balance updated",
-      "updatedAt": "2026-09-05T14:22:43.889Z"
+      "updatedAt": "2026-09-05T14:22:43.889Z",
+      "userId": "nazmul"
+    },
+    {
+      "id": "bal-log-dafp2lqvj",
+      "customerId": "cust-14meooown",
+      "shopName": "Water source and electronic",
+      "oldBalance": -14000,
+      "oldType": "credit",
+      "newBalance": 0,
+      "newType": "credit",
+      "effectiveDate": "2026-09-04",
+      "note": "Opening balance updated",
+      "updatedAt": "2026-09-23T18:38:27.950Z",
+      "userId": "nazmul"
+    },
+    {
+      "id": "bal-log-obz7i9xlb",
+      "customerId": "cust-1",
+      "shopName": "Rajdhani electronics",
+      "oldBalance": 16600,
+      "oldType": "debit",
+      "newBalance": 0,
+      "newType": "debit",
+      "effectiveDate": "2026-09-04",
+      "note": "Opening balance updated",
+      "updatedAt": "2026-09-23T19:06:57.213Z",
+      "userId": "nazmul"
     }
   ],
   "daybook": [
@@ -456,25 +601,8 @@
       "unitPrice": 0,
       "amount": 17900,
       "paymentMethod": "Bank Deposit",
-      "remark": "Bank/Deposit: Modhumoti 475"
-    },
-    {
-      "id": "db-kq4yajmu7",
-      "date": "2026-09-01",
-      "type": "collection",
-      "time": "10:50 AM",
-      "partyName": "Rajdhani electronics",
-      "invoiceNo": "",
-      "vatInvoiceNo": "",
-      "recipientPerson": "",
-      "items": [],
-      "itemId": "",
-      "itemName": "",
-      "qty": 1,
-      "unitPrice": 0,
-      "amount": 16600,
-      "paymentMethod": "Bank Deposit",
-      "remark": "Bank/Deposit: Modhumoti 475"
+      "remark": "Bank/Deposit: Modhumoti 475",
+      "userId": "nazmul"
     },
     {
       "id": "db-0uya128fw",
@@ -514,7 +642,8 @@
       "unitPrice": 32,
       "amount": 31400,
       "paymentMethod": "Cash",
-      "remark": ""
+      "remark": "",
+      "userId": "nazmul"
     },
     {
       "id": "db-ihk6043ns",
@@ -554,7 +683,8 @@
       "unitPrice": 70,
       "amount": 31400,
       "paymentMethod": "Cash",
-      "remark": ""
+      "remark": "",
+      "userId": "nazmul"
     },
     {
       "id": "db-xefywyu48",
@@ -587,7 +717,8 @@
       "unitPrice": 83,
       "amount": 20750,
       "paymentMethod": "Cash",
-      "remark": ""
+      "remark": "",
+      "userId": "nazmul"
     },
     {
       "id": "db-aa4blf8wq",
@@ -605,7 +736,8 @@
       "unitPrice": 0,
       "amount": 31400,
       "paymentMethod": "Bank Deposit",
-      "remark": "Bank/Deposit: 475"
+      "remark": "Bank/Deposit: 475",
+      "userId": "nazmul"
     },
     {
       "id": "db-rgjkczh1b",
@@ -623,7 +755,8 @@
       "unitPrice": 0,
       "amount": 20750,
       "paymentMethod": "Bank Deposit",
-      "remark": "Bank/Deposit: 475"
+      "remark": "Bank/Deposit: 475",
+      "userId": "nazmul"
     },
     {
       "id": "db-2hddsu64a",
@@ -649,7 +782,8 @@
       "unitPrice": 32,
       "amount": 16000,
       "paymentMethod": "Cash",
-      "remark": ""
+      "remark": "",
+      "userId": "nazmul"
     },
     {
       "id": "db-8pz1xl4yb",
@@ -689,25 +823,8 @@
       "unitPrice": 83,
       "amount": 31900,
       "paymentMethod": "Cash",
-      "remark": ""
-    },
-    {
-      "id": "db-27mkmyu4e",
-      "date": "2026-09-03",
-      "type": "collection",
-      "time": "12:00 PM",
-      "partyName": "Water source and electronic",
-      "invoiceNo": "",
-      "vatInvoiceNo": "",
-      "recipientPerson": "",
-      "items": [],
-      "itemId": "",
-      "itemName": "",
-      "qty": 1,
-      "unitPrice": 0,
-      "amount": 14000,
-      "paymentMethod": "Bank Deposit",
-      "remark": "Bank/Deposit: 475"
+      "remark": "",
+      "userId": "nazmul"
     },
     {
       "id": "db-sdjtvsm7z",
@@ -725,7 +842,8 @@
       "unitPrice": 0,
       "amount": 16000,
       "paymentMethod": "Bank Deposit",
-      "remark": "Bank/Deposit: Modhumuti 475"
+      "remark": "Bank/Deposit: Modhumuti 475",
+      "userId": "nazmul"
     },
     {
       "id": "db-gozk2z7x1",
@@ -743,7 +861,8 @@
       "unitPrice": 0,
       "amount": 24000,
       "paymentMethod": "Bank Deposit",
-      "remark": "Bank/Deposit: bank 475"
+      "remark": "Bank/Deposit: bank 475",
+      "userId": "nazmul"
     },
     {
       "id": "db-frxnrxs6t",
@@ -761,7 +880,8 @@
       "unitPrice": 0,
       "amount": 900,
       "paymentMethod": "Cash",
-      "remark": "partially paid 25000 whare bank 24000"
+      "remark": "partially paid 25000 whare bank 24000",
+      "userId": "nazmul"
     },
     {
       "id": "db-yv4ibyo7y",
@@ -787,7 +907,8 @@
       "unitPrice": 32,
       "amount": 16000,
       "paymentMethod": "Cash",
-      "remark": ""
+      "remark": "",
+      "userId": "nazmul"
     },
     {
       "id": "db-u5dtwdh7o",
@@ -827,7 +948,8 @@
       "unitPrice": 32,
       "amount": 36750,
       "paymentMethod": "Cash",
-      "remark": "Delivery tomorrow"
+      "remark": "Delivery tomorrow",
+      "userId": "nazmul"
     },
     {
       "id": "db-dq6kjx4hz",
@@ -867,7 +989,8 @@
       "unitPrice": 32,
       "amount": 36750,
       "paymentMethod": "Cash",
-      "remark": ""
+      "remark": "",
+      "userId": "nazmul"
     },
     {
       "id": "db-f4uouqyxk",
@@ -893,7 +1016,8 @@
       "unitPrice": 32,
       "amount": 16000,
       "paymentMethod": "Cash",
-      "remark": ""
+      "remark": "",
+      "userId": "nazmul"
     },
     {
       "id": "db-080a5ane7",
@@ -911,7 +1035,8 @@
       "unitPrice": 0,
       "amount": 6500,
       "paymentMethod": "Cash",
-      "remark": ""
+      "remark": "",
+      "userId": "nazmul"
     },
     {
       "id": "db-qn5aarli5",
@@ -929,7 +1054,12 @@
       "unitPrice": 0,
       "amount": 6500,
       "paymentMethod": "Cash",
-      "remark": "Jahid vai, বিকাশ"
+      "remark": "Jahid vai, বিকাশ",
+      "userId": "nazmul",
+      "cleared": true,
+      "clearedAt": "2026-09-10T19:04:41.690Z",
+      "clearedAmount": 6500,
+      "clearedMethod": "Manual Clearance / Bank Deposit"
     },
     {
       "id": "db-841zypopf",
@@ -947,7 +1077,12 @@
       "unitPrice": 0,
       "amount": 10000,
       "paymentMethod": "Cash",
-      "remark": ""
+      "remark": "",
+      "userId": "nazmul",
+      "cleared": true,
+      "clearedAt": "2026-09-10T19:04:44.194Z",
+      "clearedAmount": 10000,
+      "clearedMethod": "Manual Clearance / Bank Deposit"
     },
     {
       "id": "db-2drhb18vv",
@@ -965,10 +1100,6077 @@
       "unitPrice": 0,
       "amount": 7900,
       "paymentMethod": "Cash",
+      "remark": "",
+      "userId": "nazmul"
+    },
+    {
+      "id": "db-to1u0nz1u",
+      "userId": "nazmul",
+      "date": "2026-09-07",
+      "type": "delivery",
+      "time": "1:25 PM",
+      "partyName": "Ss water technology",
+      "invoiceNo": "101",
+      "vatInvoiceNo": "94",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 300,
+          "unitPrice": 32,
+          "subtotal": 9600
+        },
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 50,
+          "unitPrice": 83,
+          "subtotal": 4150
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 50,
+          "unitPrice": 83,
+          "subtotal": 4150
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 300,
+      "unitPrice": 32,
+      "amount": 17900,
+      "paymentMethod": "Cash",
+      "remark": "Delivery from factory"
+    },
+    {
+      "id": "db-qc71rddsb",
+      "userId": "nazmul",
+      "date": "2026-09-07",
+      "type": "collection",
+      "time": "06:07 PM",
+      "partyName": "Ss water technology",
+      "invoiceNo": "101",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 17900,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Modhumuti Bank. #A/C 475  #CRM"
+    },
+    {
+      "id": "db-4xf93m9ll",
+      "userId": "nazmul",
+      "date": "2026-09-07",
+      "type": "collection",
+      "time": "06:10 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "93",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 16000,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: \tBank/Deposit: Modhumuti Bank. #A/C 475 #CRM"
+    },
+    {
+      "id": "db-ma1vske8i",
+      "userId": "nazmul",
+      "date": "2026-09-07",
+      "type": "delivery",
+      "time": "2:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "102",
+      "vatInvoiceNo": "93",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 500,
+          "unitPrice": 41,
+          "subtotal": 20500
+        }
+      ],
+      "itemId": "item-ly72owps4",
+      "itemName": "PP 120gm 10 inch",
+      "qty": 500,
+      "unitPrice": 41,
+      "amount": 20500,
+      "paymentMethod": "Cash",
+      "remark": "From factory"
+    },
+    {
+      "id": "db-4i6w6qprr",
+      "userId": "nazmul",
+      "date": "2026-09-07",
+      "type": "collection",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "95",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 10500,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Bank/Deposit: Modhumuti Bank. #A/C 475 #CRM"
+    },
+    {
+      "id": "db-krzu1n8q1",
+      "userId": "nazmul",
+      "date": "2026-09-07",
+      "type": "cashInHand",
+      "time": "8:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "95",
+      "vatInvoiceNo": "",
+      "recipientPerson": "Office Person: Jahid vai Bikash",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 3250,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-ey3r3u5l4",
+      "userId": "nazmul",
+      "date": "2026-09-08",
+      "type": "cashInHand",
+      "time": "6:25 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "102",
+      "vatInvoiceNo": "",
+      "recipientPerson": "In My Hand (Sales Exec)",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 20500,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-alnksd8y7",
+      "userId": "nazmul",
+      "date": "2026-09-08",
+      "type": "collection",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "95",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 26250,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Modhumoti 475"
+    },
+    {
+      "id": "db-05v1w0nk2",
+      "userId": "nazmul",
+      "date": "2026-09-07",
+      "type": "collection",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "90",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 7900,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Modhumuti 475"
+    },
+    {
+      "id": "db-uligk2xvk",
+      "userId": "nazmul",
+      "date": "2026-09-08",
+      "type": "orderInHand",
+      "time": "6:30 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        },
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        }
+      ],
+      "itemId": "item-3",
+      "itemName": "CTO  10 Inch",
+      "qty": 125,
+      "unitPrice": 83,
+      "amount": 36750,
+      "paymentMethod": "Cash",
+      "remark": "Delivery 9/9/2026"
+    },
+    {
+      "id": "db-20xm60x37",
+      "userId": "nazmul",
+      "date": "2026-09-08",
+      "type": "orderInHand",
+      "time": "6:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 150,
+          "unitPrice": 32,
+          "subtotal": 4800
+        },
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 100,
+          "unitPrice": 41,
+          "subtotal": 4100
+        },
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 25,
+          "unitPrice": 83,
+          "subtotal": 2075
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 25,
+          "unitPrice": 83,
+          "subtotal": 2075
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 150,
+      "unitPrice": 32,
+      "amount": 13050,
+      "paymentMethod": "Cash",
+      "remark": "Delivery 🚚 9/9/2026"
+    },
+    {
+      "id": "db-zutffn6lo",
+      "userId": "nazmul",
+      "date": "2026-09-09",
+      "type": "orderInHand",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 250,
+          "unitPrice": 32,
+          "subtotal": 8000
+        },
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 50,
+          "unitPrice": 41,
+          "subtotal": 2050
+        },
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 50,
+          "unitPrice": 83,
+          "subtotal": 4150
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 50,
+          "unitPrice": 83,
+          "subtotal": 4150
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 250,
+      "unitPrice": 32,
+      "amount": 18350,
+      "paymentMethod": "Cash",
+      "remark": "Delivery Today"
+    },
+    {
+      "id": "db-d3gy5cgg9",
+      "userId": "nazmul",
+      "date": "2026-09-09",
+      "type": "collection",
+      "time": "11:00 AM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "102",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 20500,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Modhumuti #A/C: 475"
+    },
+    {
+      "id": "db-tdug0k7bu",
+      "userId": "nazmul",
+      "date": "2026-09-09",
+      "type": "delivery",
+      "time": "0600 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "104",
+      "vatInvoiceNo": "97",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 150,
+          "unitPrice": 32,
+          "subtotal": 4800
+        },
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 25,
+          "unitPrice": 83,
+          "subtotal": 2075
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 25,
+          "unitPrice": 83,
+          "subtotal": 2075
+        },
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 100,
+          "unitPrice": 41,
+          "subtotal": 4100
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 150,
+      "unitPrice": 32,
+      "amount": 13050,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-evmp0u4os",
+      "userId": "nazmul",
+      "date": "2026-09-09",
+      "type": "delivery",
+      "time": "06:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "107",
+      "vatInvoiceNo": "97",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 50,
+          "unitPrice": 42,
+          "subtotal": 2100
+        },
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 250,
+          "unitPrice": 32,
+          "subtotal": 8000
+        },
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 50,
+          "unitPrice": 83,
+          "subtotal": 4150
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 50,
+          "unitPrice": 83,
+          "subtotal": 4150
+        }
+      ],
+      "itemId": "item-ly72owps4",
+      "itemName": "PP 120gm 10 inch",
+      "qty": 50,
+      "unitPrice": 42,
+      "amount": 18400,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-490pvv53b",
+      "userId": "nazmul",
+      "date": "2026-09-09",
+      "type": "delivery",
+      "time": "4:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "105",
+      "vatInvoiceNo": "96",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        },
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 500,
+      "unitPrice": 32,
+      "amount": 36750,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-34kdut65k",
+      "userId": "nazmul",
+      "date": "2026-09-10",
+      "type": "collection",
+      "time": "3:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "104",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 13050,
+      "paymentMethod": "Cash",
+      "remark": "Bank/Deposit: Account dpt. Modhumuti 475"
+    },
+    {
+      "id": "db-a8kmf9bqc",
+      "userId": "nazmul",
+      "date": "2026-09-10",
+      "type": "collection",
+      "time": "8:04 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "107",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 18400,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Modhumuti 475 #CRM Amount"
+    },
+    {
+      "id": "db-qlq1deggm",
+      "userId": "nazmul",
+      "date": "2026-09-10",
+      "type": "collection",
+      "time": "8:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "105",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 29100,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit:  Modhumuti 475"
+    },
+    {
+      "id": "db-mao3zhx3m",
+      "userId": "nazmul",
+      "date": "2026-09-10",
+      "type": "cashInHand",
+      "time": "8:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "105",
+      "vatInvoiceNo": "",
+      "recipientPerson": "In My Hand (Sales Exec)",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 900,
+      "paymentMethod": "Cash",
+      "remark": "",
+      "cleared": false,
+      "clearedAt": null,
+      "clearedAmount": 0,
+      "clearedMethod": ""
+    },
+    {
+      "id": "db-xay2odjdf",
+      "userId": "nazmul",
+      "date": "2026-09-10",
+      "type": "orderInHand",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 200,
+          "unitPrice": 42,
+          "subtotal": 8400
+        }
+      ],
+      "itemId": "item-ly72owps4",
+      "itemName": "PP 120gm 10 inch",
+      "qty": 200,
+      "unitPrice": 42,
+      "amount": 8400,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-jadl1oceo",
+      "userId": "nazmul",
+      "date": "2026-09-12",
+      "type": "orderInHand",
+      "time": "10:00 AM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 200,
+          "unitPrice": 41,
+          "subtotal": 8200
+        }
+      ],
+      "itemId": "item-ly72owps4",
+      "itemName": "PP 120gm 10 inch",
+      "qty": 200,
+      "unitPrice": 41,
+      "amount": 8200,
+      "paymentMethod": "Cash",
+      "remark": "Delivery  today"
+    },
+    {
+      "id": "db-hrcj0ert4",
+      "userId": "nazmul",
+      "date": "2026-09-12",
+      "type": "cashInHand",
+      "time": "02:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "105",
+      "vatInvoiceNo": "",
+      "recipientPerson": "In My Hand (Sales Exec)",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 6750,
+      "paymentMethod": "Cash",
+      "remark": "",
+      "cleared": false,
+      "clearedAt": null,
+      "clearedAmount": 0,
+      "clearedMethod": ""
+    },
+    {
+      "id": "db-ma8o7ownh",
+      "userId": "nazmul",
+      "date": "2026-09-12",
+      "type": "orderInHand",
+      "time": "01:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        },
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 500,
+      "unitPrice": 32,
+      "amount": 36750,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-m73djx98v",
+      "userId": "nazmul",
+      "date": "2026-09-12",
+      "type": "orderInHand",
+      "time": "03:00 PM",
+      "partyName": "Amit Water Technology",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 200,
+          "unitPrice": 32,
+          "subtotal": 6400
+        },
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 50,
+          "unitPrice": 85,
+          "subtotal": 4250
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 50,
+          "unitPrice": 85,
+          "subtotal": 4250
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 200,
+      "unitPrice": 32,
+      "amount": 14900,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-ibjdmjcsk",
+      "userId": "nazmul",
+      "date": "2026-09-12",
+      "type": "orderInHand",
+      "time": "6:30 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 300,
+          "unitPrice": 32,
+          "subtotal": 9600
+        },
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 100,
+          "unitPrice": 83,
+          "subtotal": 8300
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 100,
+          "unitPrice": 83,
+          "subtotal": 8300
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 300,
+      "unitPrice": 32,
+      "amount": 26200,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-sd1dtqlyt",
+      "userId": "nazmul",
+      "date": "2026-09-13",
+      "type": "collection",
+      "time": "2:30 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "105",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 7650,
+      "paymentMethod": "Cash",
+      "remark": "Bank/Deposit: Modhumuti 475"
+    },
+    {
+      "id": "db-o5gy2m2k4",
+      "userId": "nazmul",
+      "date": "2026-09-13",
+      "type": "delivery",
+      "time": "6:40 PM",
+      "partyName": "Amit Water Technology",
+      "invoiceNo": "109",
+      "vatInvoiceNo": "99",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 200,
+          "unitPrice": 32,
+          "subtotal": 6400
+        },
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 50,
+          "unitPrice": 85,
+          "subtotal": 4250
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 50,
+          "unitPrice": 85,
+          "subtotal": 4250
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 200,
+      "unitPrice": 32,
+      "amount": 14900,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-7lc70nkfu",
+      "userId": "nazmul",
+      "date": "2026-09-13",
+      "type": "delivery",
+      "time": "6:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "110",
+      "vatInvoiceNo": "100",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        },
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 500,
+      "unitPrice": 32,
+      "amount": 36750,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-522xkqzmj",
+      "userId": "nazmul",
+      "date": "2026-09-13",
+      "type": "delivery",
+      "time": "7:30 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "111",
+      "vatInvoiceNo": "101",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 200,
+          "unitPrice": 41,
+          "subtotal": 8200
+        }
+      ],
+      "itemId": "item-ly72owps4",
+      "itemName": "PP 120gm 10 inch",
+      "qty": 200,
+      "unitPrice": 41,
+      "amount": 8200,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-rb0tnclvz",
+      "userId": "nazmul",
+      "date": "2026-09-13",
+      "type": "delivery",
+      "time": "7:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "112",
+      "vatInvoiceNo": "102",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 300,
+          "unitPrice": 32,
+          "subtotal": 9600
+        },
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 100,
+          "unitPrice": 83,
+          "subtotal": 8300
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 100,
+          "unitPrice": 83,
+          "subtotal": 8300
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 300,
+      "unitPrice": 32,
+      "amount": 26200,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-udmwnfcax",
+      "userId": "nazmul",
+      "date": "2026-09-13",
+      "type": "orderInHand",
+      "time": "6:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 500,
+      "unitPrice": 32,
+      "amount": 16000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-53hih1haj",
+      "userId": "nazmul",
+      "date": "2026-09-14",
+      "type": "orderInHand",
+      "time": "6:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 500,
+      "unitPrice": 32,
+      "amount": 16000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-sb5rfcees",
+      "userId": "nazmul",
+      "date": "2026-09-14",
+      "type": "collection",
+      "time": "6:19 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "110",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 18700,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Modhumuti 475 #CRM"
+    },
+    {
+      "id": "db-u362qsa6x",
+      "userId": "nazmul",
+      "date": "2026-09-14",
+      "type": "collection",
+      "time": "06:22 PM",
+      "partyName": "Amit Water Technology",
+      "invoiceNo": "109",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 14900,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Modhumuti 475 #CRM"
+    },
+    {
+      "id": "db-j5hkwye4d",
+      "userId": "nazmul",
+      "date": "2026-09-14",
+      "type": "collection",
+      "time": "6:30 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "111",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 8200,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Modhumuti 475 #CRM"
+    },
+    {
+      "id": "db-wm2iyiwwi",
+      "userId": "nazmul",
+      "date": "2026-09-14",
+      "type": "collection",
+      "time": "6:30 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "112",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 26200,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Modhumuti 475 #CRM"
+    },
+    {
+      "id": "db-ymidy6lfp",
+      "userId": "nazmul",
+      "date": "2026-09-14",
+      "type": "collection",
+      "time": "5:30 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "110",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 1300,
+      "paymentMethod": "Cash",
+      "remark": "Bank/Deposit: Jahid Vai Cash"
+    },
+    {
+      "id": "db-3jarm7zgz",
+      "userId": "nazmul",
+      "date": "2026-09-15",
+      "type": "collection",
+      "time": "01:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "110",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 6750,
+      "paymentMethod": "bKash / Nagad",
+      "remark": "Bank/Deposit: To Jahid vai"
+    },
+    {
+      "id": "db-otacd3m38",
+      "userId": "nazmul",
+      "date": "2026-09-15",
+      "type": "collection",
+      "time": "3:30 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "110",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 10000,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Modhumuti #475 #Bank"
+    },
+    {
+      "id": "db-9gayvqzfn",
+      "userId": "nazmul",
+      "date": "2026-09-15",
+      "type": "orderInHand",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 500,
+      "unitPrice": 32,
+      "amount": 16000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-mbx2utuwr",
+      "userId": "nazmul",
+      "date": "2026-09-15",
+      "type": "orderInHand",
+      "time": "1:30 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-8k2calrid",
+          "itemName": "Osmo Smart",
+          "qty": 3,
+          "unitPrice": 7300,
+          "subtotal": 21900
+        },
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        }
+      ],
+      "itemId": "item-8k2calrid",
+      "itemName": "Osmo Smart",
+      "qty": 3,
+      "unitPrice": 7300,
+      "amount": 37900,
+      "paymentMethod": "Cash",
+      "remark": "Tomorrow, #OSMO smart Blue 2x and White 1 pcs Total 3"
+    },
+    {
+      "id": "db-fygpv134f",
+      "userId": "nazmul",
+      "date": "2026-09-16",
+      "type": "delivery",
+      "time": "8:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "118",
+      "vatInvoiceNo": "107",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        }
+      ],
+      "itemId": "item-3",
+      "itemName": "CTO  10 Inch",
+      "qty": 125,
+      "unitPrice": 83,
+      "amount": 20750,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-ya23b5vua",
+      "userId": "nazmul",
+      "date": "2026-09-16",
+      "type": "delivery",
+      "time": "8:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "117",
+      "vatInvoiceNo": "107",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        },
+        {
+          "itemId": "item-8k2calrid",
+          "itemName": "Osmo Smart",
+          "qty": 3,
+          "unitPrice": 7300,
+          "subtotal": 21900
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 500,
+      "unitPrice": 32,
+      "amount": 37900,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-39hh47h0s",
+      "userId": "nazmul",
+      "date": "2026-09-16",
+      "type": "orderInHand",
+      "time": "6:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 100,
+          "unitPrice": 83,
+          "subtotal": 8300
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 100,
+          "unitPrice": 83,
+          "subtotal": 8300
+        }
+      ],
+      "itemId": "item-3",
+      "itemName": "CTO  10 Inch",
+      "qty": 100,
+      "unitPrice": 83,
+      "amount": 16600,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-1obm8mlb3",
+      "userId": "nazmul",
+      "date": "2026-09-16",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Ulab University",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-1",
+          "itemName": "RO 105",
+          "qty": 12,
+          "unitPrice": 7500,
+          "subtotal": 90000
+        }
+      ],
+      "itemId": "item-1",
+      "itemName": "RO 105",
+      "qty": 12,
+      "unitPrice": 7500,
+      "amount": 90000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-ifu9h4ra8",
+      "userId": "nazmul",
+      "date": "2026-09-17",
+      "type": "delivery",
+      "time": "3:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "119",
+      "vatInvoiceNo": "108",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 200,
+          "unitPrice": 32,
+          "subtotal": 6400
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 100,
+          "unitPrice": 83,
+          "subtotal": 8300
+        },
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 100,
+          "unitPrice": 83,
+          "subtotal": 8300
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 200,
+      "unitPrice": 32,
+      "amount": 23000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-zy18rtfc9",
+      "userId": "nazmul",
+      "date": "2026-09-17",
+      "type": "collection",
+      "time": "2:20 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "118",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 20750,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Modhumuti 475"
+    },
+    {
+      "id": "db-5pa0o9qmx",
+      "userId": "nazmul",
+      "date": "2026-09-17",
+      "type": "collection",
+      "time": "2:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "117",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 9250,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Modhumuti 475"
+    },
+    {
+      "id": "db-dexzbmgmr",
+      "userId": "nazmul",
+      "date": "2026-09-17",
+      "type": "collection",
+      "time": "2:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "117",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 8000,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: To Jahid vai. Office #Accounts  475"
+    },
+    {
+      "id": "db-wlzqlgxtm",
+      "userId": "nazmul",
+      "date": "2026-09-17",
+      "type": "collection",
+      "time": "3:40 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "119",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 23000,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Modumuti #A/C - 475"
+    },
+    {
+      "id": "db-rzi2r6plj",
+      "userId": "nazmul",
+      "date": "2026-09-19",
+      "type": "orderInHand",
+      "time": "11:00 AM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 500,
+      "unitPrice": 32,
+      "amount": 16000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-7lhvjn55u",
+      "userId": "nazmul",
+      "date": "2026-09-19",
+      "type": "orderInHand",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 500,
+      "unitPrice": 32,
+      "amount": 16000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-nncma67bj",
+      "userId": "nazmul",
+      "date": "2026-09-19",
+      "type": "cashInHand",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "117",
+      "vatInvoiceNo": "",
+      "recipientPerson": "In My Hand (Sales Exec)",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 10000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-1x8dkoqdx",
+      "userId": "nazmul",
+      "date": "2026-09-20",
+      "type": "orderInHand",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 300,
+          "unitPrice": 41,
+          "subtotal": 12300
+        }
+      ],
+      "itemId": "item-ly72owps4",
+      "itemName": "PP 120gm 10 inch",
+      "qty": 300,
+      "unitPrice": 41,
+      "amount": 12300,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-hmgku8osg",
+      "userId": "nazmul",
+      "date": "2026-09-20",
+      "type": "orderInHand",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 200,
+          "unitPrice": 42,
+          "subtotal": 8400
+        }
+      ],
+      "itemId": "item-ly72owps4",
+      "itemName": "PP 120gm 10 inch",
+      "qty": 200,
+      "unitPrice": 42,
+      "amount": 8400,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-3ux6lo2tz",
+      "userId": "nazmul",
+      "date": "2026-09-20",
+      "type": "orderInHand",
+      "time": "12:00 PM",
+      "partyName": "Amit Water Technology",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 50,
+          "unitPrice": 42,
+          "subtotal": 2100
+        },
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 50,
+          "unitPrice": 85,
+          "subtotal": 4250
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 50,
+          "unitPrice": 85,
+          "subtotal": 4250
+        }
+      ],
+      "itemId": "item-ly72owps4",
+      "itemName": "PP 120gm 10 inch",
+      "qty": 50,
+      "unitPrice": 42,
+      "amount": 10600,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-qde1puw31",
+      "userId": "nazmul",
+      "date": "2026-09-20",
+      "type": "orderInHand",
+      "time": "12:00 PM",
+      "partyName": "Badol Enterprise",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 250,
+          "unitPrice": 42,
+          "subtotal": 10500
+        },
+        {
+          "itemId": "item-8k2calrid",
+          "itemName": "Osmo Smart",
+          "qty": 2,
+          "unitPrice": 7300,
+          "subtotal": 14600
+        }
+      ],
+      "itemId": "item-ly72owps4",
+      "itemName": "PP 120gm 10 inch",
+      "qty": 250,
+      "unitPrice": 42,
+      "amount": 25100,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-vcmt3tkq5",
+      "userId": "nazmul",
+      "date": "2026-09-21",
+      "type": "delivery",
+      "time": "11:30 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "121",
+      "vatInvoiceNo": "110",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 300,
+          "unitPrice": 41,
+          "subtotal": 12300
+        }
+      ],
+      "itemId": "item-ly72owps4",
+      "itemName": "PP 120gm 10 inch",
+      "qty": 300,
+      "unitPrice": 41,
+      "amount": 12300,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-b2wymtx2d",
+      "userId": "nazmul",
+      "date": "2026-09-21",
+      "type": "delivery",
+      "time": "1:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "120",
+      "vatInvoiceNo": "109",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 200,
+          "unitPrice": 41,
+          "subtotal": 8200
+        }
+      ],
+      "itemId": "item-ly72owps4",
+      "itemName": "PP 120gm 10 inch",
+      "qty": 200,
+      "unitPrice": 41,
+      "amount": 8200,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-xcthjttd5",
+      "userId": "nazmul",
+      "date": "2026-09-21",
+      "type": "delivery",
+      "time": "1:20 PM",
+      "partyName": "Badol Enterprise",
+      "invoiceNo": "122",
+      "vatInvoiceNo": "111",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 250,
+          "unitPrice": 42,
+          "subtotal": 10500
+        }
+      ],
+      "itemId": "item-ly72owps4",
+      "itemName": "PP 120gm 10 inch",
+      "qty": 250,
+      "unitPrice": 42,
+      "amount": 10500,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-589v0u61o",
+      "userId": "nazmul",
+      "date": "2026-09-21",
+      "type": "delivery",
+      "time": "1:30 PM",
+      "partyName": "Amit Water Technology",
+      "invoiceNo": "123",
+      "vatInvoiceNo": "112",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 50,
+          "unitPrice": 42,
+          "subtotal": 2100
+        },
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 50,
+          "unitPrice": 85,
+          "subtotal": 4250
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 50,
+          "unitPrice": 85,
+          "subtotal": 4250
+        }
+      ],
+      "itemId": "item-ly72owps4",
+      "itemName": "PP 120gm 10 inch",
+      "qty": 50,
+      "unitPrice": 42,
+      "amount": 10600,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-g3mv0w5vp",
+      "userId": "nazmul",
+      "date": "2026-09-21",
+      "type": "collection",
+      "time": "4:00 PM",
+      "partyName": "Amit Water Technology",
+      "invoiceNo": "123",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 10600,
+      "paymentMethod": "Cash",
+      "remark": "Bank/Deposit: Cash sent to Naieem  for order Nuralma vai"
+    },
+    {
+      "id": "db-0e1p6ox7e",
+      "userId": "nazmul",
+      "date": "2026-09-21",
+      "type": "collection",
+      "time": "7:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "121",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 12300,
+      "paymentMethod": "bKash / Nagad",
+      "remark": "Bank/Deposit: Send to Jahid vai"
+    },
+    {
+      "id": "db-ucnlr1mj5",
+      "userId": "nazmul",
+      "date": "2026-09-21",
+      "type": "collection",
+      "time": "7:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "117",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 2700,
+      "paymentMethod": "bKash / Nagad",
+      "remark": "Bank/Deposit: To Jahid vai (15000 Total)"
+    },
+    {
+      "id": "db-2bj580bmm",
+      "userId": "nazmul",
+      "date": "2026-09-21",
+      "type": "collection",
+      "time": "5:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "117",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 4400,
+      "paymentMethod": "Cash",
+      "remark": "Bank/Deposit: To Naieem. order by Nuralam Vai. (15000 total for pp raw materiel)"
+    },
+    {
+      "id": "db-khhkpte60",
+      "userId": "nazmul",
+      "date": "2026-09-21",
+      "type": "orderInHand",
+      "time": "11:00 AM",
+      "partyName": "Ss water technology",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 50,
+          "unitPrice": 83,
+          "subtotal": 4150
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 75,
+          "unitPrice": 83,
+          "subtotal": 6225
+        }
+      ],
+      "itemId": "item-3",
+      "itemName": "CTO  10 Inch",
+      "qty": 50,
+      "unitPrice": 83,
+      "amount": 10375,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-icnxri8n9",
+      "userId": "nazmul",
+      "date": "2026-09-21",
+      "type": "orderInHand",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        }
+      ],
+      "itemId": "item-3",
+      "itemName": "CTO  10 Inch",
+      "qty": 125,
+      "unitPrice": 83,
+      "amount": 20750,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-4yepypxkm",
+      "userId": "nazmul",
+      "date": "2026-09-22",
+      "type": "collection",
+      "time": "12:25 AM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "120",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 8200,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Modhumuti A/C #475"
+    },
+    {
+      "id": "db-1apga9htr",
+      "userId": "nazmul",
+      "date": "2026-09-22",
+      "type": "collection",
+      "time": "3:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "117",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 9000,
+      "paymentMethod": "Cash",
+      "remark": "Bank/Deposit: Product perches"
+    },
+    {
+      "id": "db-23rmldcje",
+      "userId": "nazmul",
+      "date": "2026-09-22",
+      "type": "cashInHand",
+      "time": "5:00 PM",
+      "partyName": "Badol Enterprise",
+      "invoiceNo": "122",
+      "vatInvoiceNo": "",
+      "recipientPerson": "In My Hand (Sales Exec)",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 10500,
+      "paymentMethod": "Cash",
+      "remark": "",
+      "cleared": true,
+      "clearedAt": "2026-09-23T17:52:02.873Z",
+      "clearedAmount": 10500,
+      "clearedMethod": "Manual Clearance / Bank Deposit"
+    },
+    {
+      "id": "db-keab9x6ls",
+      "userId": "nazmul",
+      "date": "2026-09-22",
+      "type": "delivery",
+      "time": "4:00 PM",
+      "partyName": "Ss water technology",
+      "invoiceNo": "126",
+      "vatInvoiceNo": "113",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 50,
+          "unitPrice": 83,
+          "subtotal": 4150
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 75,
+          "unitPrice": 83,
+          "subtotal": 6225
+        }
+      ],
+      "itemId": "item-3",
+      "itemName": "CTO  10 Inch",
+      "qty": 50,
+      "unitPrice": 83,
+      "amount": 10375,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-a2l6a8oxn",
+      "userId": "nazmul",
+      "date": "2026-09-22",
+      "type": "delivery",
+      "time": "3:30 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "127",
+      "vatInvoiceNo": "116",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 500,
+      "unitPrice": 32,
+      "amount": 16000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-9u5o623ky",
+      "userId": "nazmul",
+      "date": "2026-09-22",
+      "type": "delivery",
+      "time": "6:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "125",
+      "vatInvoiceNo": "114",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        }
+      ],
+      "itemId": "item-3",
+      "itemName": "CTO  10 Inch",
+      "qty": 125,
+      "unitPrice": 83,
+      "amount": 20750,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-ndbkgyw1z",
+      "userId": "nazmul",
+      "date": "2026-09-22",
+      "type": "cashInHand",
+      "time": "7:00 PM",
+      "partyName": "Ss water technology",
+      "invoiceNo": "126",
+      "vatInvoiceNo": "",
+      "recipientPerson": "In My Hand (Sales Exec)",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 10375,
+      "paymentMethod": "Cash",
+      "remark": "",
+      "cleared": true,
+      "clearedAt": "2026-09-23T17:52:08.520Z",
+      "clearedAmount": 10375,
+      "clearedMethod": "Manual Clearance / Bank Deposit"
+    },
+    {
+      "id": "db-c8ug5r4w7",
+      "userId": "nazmul",
+      "date": "2026-09-22",
+      "type": "orderInHand",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 500,
+      "unitPrice": 32,
+      "amount": 16000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-h1qxv120s",
+      "userId": "nazmul",
+      "date": "2026-09-22",
+      "type": "orderInHand",
+      "time": "12:00 PM",
+      "partyName": "Amit Water Technology",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 500,
+      "unitPrice": 32,
+      "amount": 16000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-0hkl6xm5j",
+      "userId": "nazmul",
+      "date": "2026-09-22",
+      "type": "orderInHand",
+      "time": "12:00 PM",
+      "partyName": "Ss water technology",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 300,
+          "unitPrice": 32,
+          "subtotal": 9600
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 300,
+      "unitPrice": 32,
+      "amount": 9600,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-uj3jdauh1",
+      "userId": "nazmul",
+      "date": "2026-09-23",
+      "type": "collection",
+      "time": "12:40 PM",
+      "partyName": "Ss water technology",
+      "invoiceNo": "126",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 10375,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Modhumuti #475"
+    },
+    {
+      "id": "db-d9c0x82o5",
+      "userId": "nazmul",
+      "date": "2026-09-23",
+      "type": "collection",
+      "time": "12:40 PM",
+      "partyName": "Badol Enterprise",
+      "invoiceNo": "122",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 10500,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Modhumuti #475"
+    },
+    {
+      "id": "db-wbbln5a7g",
+      "userId": "nazmul",
+      "date": "2026-09-23",
+      "type": "delivery",
+      "time": "5:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "131",
+      "vatInvoiceNo": "118",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 150,
+          "unitPrice": 83,
+          "subtotal": 12450
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 150,
+          "unitPrice": 83,
+          "subtotal": 12450
+        }
+      ],
+      "itemId": "item-3",
+      "itemName": "CTO  10 Inch",
+      "qty": 150,
+      "unitPrice": 83,
+      "amount": 24900,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-4g52f99ur",
+      "userId": "nazmul",
+      "date": "2026-09-23",
+      "type": "delivery",
+      "time": "5:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "134",
+      "vatInvoiceNo": "118",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 500,
+      "unitPrice": 32,
+      "amount": 16000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-to9t0iw3v",
+      "userId": "nazmul",
+      "date": "2026-09-23",
+      "type": "delivery",
+      "time": "5:00 PM",
+      "partyName": "Ss water technology",
+      "invoiceNo": "130",
+      "vatInvoiceNo": "120",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 300,
+          "unitPrice": 32,
+          "subtotal": 9600
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 300,
+      "unitPrice": 32,
+      "amount": 9600,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-rairlrewz",
+      "userId": "nazmul",
+      "date": "2026-09-23",
+      "type": "delivery",
+      "time": "5:20 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "129",
+      "vatInvoiceNo": "121",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 32,
+          "unitPrice": 500,
+          "subtotal": 16000
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 32,
+      "unitPrice": 500,
+      "amount": 16000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-hxj3vi27y",
+      "userId": "nazmul",
+      "date": "2026-09-23",
+      "type": "delivery",
+      "time": "6:00 PM",
+      "partyName": "Amit Water Technology",
+      "invoiceNo": "128",
+      "vatInvoiceNo": "122",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 500,
+      "unitPrice": 32,
+      "amount": 16000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-d3w34zqm5",
+      "userId": "nazmul",
+      "date": "2026-09-23",
+      "type": "cashInHand",
+      "time": "7:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "117",
+      "vatInvoiceNo": "",
+      "recipientPerson": "Office Person: Jahid Vai",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 4000,
+      "paymentMethod": "Cash",
+      "remark": "Bkash"
+    },
+    {
+      "id": "db-rnxbvzabr",
+      "userId": "nazmul",
+      "date": "2026-09-23",
+      "type": "cashInHand",
+      "time": "২:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "127",
+      "vatInvoiceNo": "",
+      "recipientPerson": "In My Hand (Sales Exec)",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 16000,
+      "paymentMethod": "Cash",
+      "remark": "",
+      "cleared": true,
+      "clearedAt": "2026-09-27T18:05:18.018Z",
+      "clearedAmount": 16000,
+      "clearedMethod": "Manual Clearance / Bank Deposit"
+    },
+    {
+      "id": "db-ec3aq5dzl",
+      "userId": "nazmul",
+      "date": "2026-09-23",
+      "type": "cashInHand",
+      "time": "7:30 PM",
+      "partyName": "Ss water technology",
+      "invoiceNo": "130",
+      "vatInvoiceNo": "",
+      "recipientPerson": "In My Hand (Sales Exec)",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 9600,
+      "paymentMethod": "Cash",
+      "remark": "",
+      "cleared": true,
+      "clearedAt": "2026-09-27T18:05:22.952Z",
+      "clearedAmount": 9600,
+      "clearedMethod": "Manual Clearance / Bank Deposit"
+    },
+    {
+      "id": "db-d5b6osq8q",
+      "userId": "nazmul",
+      "date": "2026-09-23",
+      "type": "cashInHand",
+      "time": "7:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "125",
+      "vatInvoiceNo": "",
+      "recipientPerson": "In My Hand (Sales Exec)",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 20000,
+      "paymentMethod": "Cash",
+      "remark": "20000 Bikash"
+    },
+    {
+      "id": "db-dvgml8rnp",
+      "userId": "nazmul",
+      "date": "2026-09-25",
+      "type": "orderInHand",
+      "time": "12:00 PM",
+      "partyName": "Ulab University",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-8k2calrid",
+          "itemName": "Osmo Smart",
+          "qty": 1,
+          "unitPrice": 8500,
+          "subtotal": 8500
+        }
+      ],
+      "itemId": "item-8k2calrid",
+      "itemName": "Osmo Smart",
+      "qty": 1,
+      "unitPrice": 8500,
+      "amount": 8500,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-8dchdavr5",
+      "userId": "nazmul",
+      "date": "2026-09-26",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "135",
+      "vatInvoiceNo": "123",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-2",
+          "itemName": "PP  90 gm 10 Inch",
+          "qty": 500,
+          "unitPrice": 32,
+          "subtotal": 16000
+        },
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        }
+      ],
+      "itemId": "item-2",
+      "itemName": "PP  90 gm 10 Inch",
+      "qty": 500,
+      "unitPrice": 32,
+      "amount": 36750,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-s5ojjolll",
+      "userId": "nazmul",
+      "date": "2026-09-26",
+      "type": "collection",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "117",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 4000,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: 24000 TK #475 from Jahid vai"
+    },
+    {
+      "id": "db-l71q0duaw",
+      "userId": "nazmul",
+      "date": "2026-09-26",
+      "type": "collection",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "125",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 20000,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: 24000 TK from Jahid vai #475 Modumuti"
+    },
+    {
+      "id": "db-nslzbupcv",
+      "userId": "nazmul",
+      "date": "2026-09-24",
+      "type": "collection",
+      "time": "3:10 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "127",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 14000,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Bank #475"
+    },
+    {
+      "id": "db-svc6acfif",
+      "userId": "nazmul",
+      "date": "2026-09-24",
+      "type": "collection",
+      "time": "3:10 PM",
+      "partyName": "Ss water technology",
+      "invoiceNo": "130",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 9600,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: #475 modhumut"
+    },
+    {
+      "id": "db-6ymic73u7",
+      "userId": "nazmul",
+      "date": "2026-09-24",
+      "type": "collection",
+      "time": "3:00 PM",
+      "partyName": "Amit Water Technology",
+      "invoiceNo": "128",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 16000,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Mofhumuti 475"
+    },
+    {
+      "id": "db-z1lpeca8p",
+      "userId": "nazmul",
+      "date": "2026-09-26",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Ulab University",
+      "invoiceNo": "12345",
+      "vatInvoiceNo": "0",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-1",
+          "itemName": "RO 105",
+          "qty": 1,
+          "unitPrice": 8500,
+          "subtotal": 8500
+        }
+      ],
+      "itemId": "item-1",
+      "itemName": "RO 105",
+      "qty": 1,
+      "unitPrice": 8500,
+      "amount": 8500,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-ubksh5pfi",
+      "userId": "nazmul",
+      "date": "2026-09-26",
+      "type": "collection",
+      "time": "12:00 PM",
+      "partyName": "Ulab University",
+      "invoiceNo": "12345",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 8500,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-om9phi225",
+      "userId": "nazmul",
+      "date": "2026-09-28",
+      "type": "collection",
+      "time": "3:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "127",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 2000,
+      "paymentMethod": "Cash",
+      "remark": "Bank/Deposit: Office Accounts dpt."
+    },
+    {
+      "id": "db-yu1a7ou83",
+      "userId": "nazmul",
+      "date": "2026-09-28",
+      "type": "collection",
+      "time": "3:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "131",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 5900,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Office Accounts dpt."
+    },
+    {
+      "id": "db-a6r1tp89g",
+      "userId": "nazmul",
+      "date": "2026-09-28",
+      "type": "collection",
+      "time": "7:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "117",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 550,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: 2000 crm"
+    },
+    {
+      "id": "db-4qfom8dtn",
+      "userId": "nazmul",
+      "date": "2026-09-28",
+      "type": "delivery",
+      "time": "3:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "139",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 200,
+          "unitPrice": 41,
+          "subtotal": 8200
+        }
+      ],
+      "itemId": "item-ly72owps4",
+      "itemName": "PP 120gm 10 inch",
+      "qty": 200,
+      "unitPrice": 41,
+      "amount": 8200,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-rbqfqjc1d",
+      "userId": "nazmul",
+      "date": "2026-09-28",
+      "type": "collection",
+      "time": "7:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "139",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 8200,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: CRM 8000 + 2000"
+    },
+    {
+      "id": "db-b21tf3x4e",
+      "userId": "nazmul",
+      "date": "2026-09-28",
+      "type": "collection",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "134",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 16000,
+      "paymentMethod": "Cash",
+      "remark": "Bank/Deposit: office act"
+    },
+    {
+      "id": "db-h171ki1zs",
+      "userId": "nazmul",
+      "date": "2026-09-28",
+      "type": "collection",
+      "time": "3:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "129",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 16000,
+      "paymentMethod": "Cash",
+      "remark": "Bank/Deposit: Office Accounts dpt."
+    },
+    {
+      "id": "db-2jguz3kvn",
+      "userId": "nazmul",
+      "date": "2026-09-01",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "1",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 1,
+          "unitPrice": 14000,
+          "subtotal": 14000
+        }
+      ],
+      "itemId": "item-ly72owps4",
+      "itemName": "PP 120gm 10 inch",
+      "qty": 1,
+      "unitPrice": 14000,
+      "amount": 14000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-oevrg1qdr",
+      "userId": "nazmul",
+      "date": "2026-09-01",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "2",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 1,
+          "unitPrice": 16600,
+          "subtotal": 16600
+        }
+      ],
+      "itemId": "item-ly72owps4",
+      "itemName": "PP 120gm 10 inch",
+      "qty": 1,
+      "unitPrice": 16600,
+      "amount": 16600,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-fsw19rkjd",
+      "userId": "nazmul",
+      "date": "2026-09-01",
+      "type": "collection",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "2",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 16600,
+      "paymentMethod": "Bank Deposit",
+      "remark": ""
+    },
+    {
+      "id": "db-yvpvj33vb",
+      "userId": "nazmul",
+      "date": "2026-09-03",
+      "type": "collection",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "1",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 14000,
+      "paymentMethod": "Bank Deposit",
+      "remark": ""
+    },
+    {
+      "id": "db-mfuxwf57g",
+      "userId": "nazmul",
+      "date": "2026-09-24",
+      "type": "collection",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "131",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 19000,
+      "paymentMethod": "Bank Deposit",
+      "remark": ""
+    },
+    {
+      "id": "db-rkrwzsnvx",
+      "userId": "nazmul",
+      "date": "2026-09-28",
+      "type": "collection",
+      "time": "3:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "135",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 31350,
+      "paymentMethod": "Cash",
+      "remark": "Bank/Deposit: Office Accounts dpt."
+    },
+    {
+      "id": "db-xycilktnx",
+      "userId": "nazmul",
+      "date": "2026-09-28",
+      "type": "collection",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "125",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 750,
+      "paymentMethod": "Cash",
+      "remark": "Bank/Deposit: Office Accounts dpt."
+    },
+    {
+      "id": "db-r3pc6nuxq",
+      "userId": "nazmul",
+      "date": "2026-09-28",
+      "type": "delivery",
+      "time": "4:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "138",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 125,
+          "unitPrice": 83,
+          "subtotal": 10375
+        }
+      ],
+      "itemId": "item-3",
+      "itemName": "CTO  10 Inch",
+      "qty": 125,
+      "unitPrice": 83,
+      "amount": 20750,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-du55nlizd",
+      "userId": "nazmul",
+      "date": "2026-09-28",
+      "type": "collection",
+      "time": "7:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "138",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 1800,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: Bank #475 (2000 CRM)"
+    },
+    {
+      "id": "db-7jf7a7hag",
+      "userId": "nazmul",
+      "date": "2026-09-29",
+      "type": "collection",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "138",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 18000,
+      "paymentMethod": "bKash / Nagad",
+      "remark": "Bank/Deposit: Jahid via,"
+    },
+    {
+      "id": "db-cqk13qpb8",
+      "userId": "nazmul",
+      "date": "2026-09-29",
+      "type": "collection",
+      "time": "3:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "138",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 950,
+      "paymentMethod": "bKash / Nagad",
+      "remark": "Bank/Deposit: Jahid vai"
+    },
+    {
+      "id": "db-ndtnbg0uh",
+      "userId": "nazmul",
+      "date": "2026-09-30",
+      "type": "orderInHand",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 250,
+          "unitPrice": 83,
+          "subtotal": 20750
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 250,
+          "unitPrice": 83,
+          "subtotal": 20750
+        }
+      ],
+      "itemId": "item-3",
+      "itemName": "CTO  10 Inch",
+      "qty": 250,
+      "unitPrice": 83,
+      "amount": 41500,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-ue94bzdgy",
+      "userId": "nazmul",
+      "date": "2026-09-30",
+      "type": "orderInHand",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 150,
+          "unitPrice": 83,
+          "subtotal": 12450
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 150,
+          "unitPrice": 83,
+          "subtotal": 12450
+        }
+      ],
+      "itemId": "item-3",
+      "itemName": "CTO  10 Inch",
+      "qty": 150,
+      "unitPrice": 83,
+      "amount": 24900,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-dx5sjdf7b",
+      "userId": "nazmul",
+      "date": "2026-09-30",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "143",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 150,
+          "unitPrice": 83,
+          "subtotal": 12450
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 150,
+          "unitPrice": 83,
+          "subtotal": 12450
+        }
+      ],
+      "itemId": "item-3",
+      "itemName": "CTO  10 Inch",
+      "qty": 150,
+      "unitPrice": 83,
+      "amount": 24900,
+      "paymentMethod": "Cash",
+      "remark": "3/10/2026"
+    },
+    {
+      "id": "db-chj0g2ctl",
+      "userId": "nazmul",
+      "date": "2026-10-01",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "147",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 250,
+          "unitPrice": 83,
+          "subtotal": 20750
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 250,
+          "unitPrice": 83,
+          "subtotal": 20750
+        }
+      ],
+      "itemId": "item-3",
+      "itemName": "CTO  10 Inch",
+      "qty": 250,
+      "unitPrice": 83,
+      "amount": 41500,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-2z5wzkxr9",
+      "userId": "nazmul",
+      "date": "2026-10-04",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "150",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 200,
+          "unitPrice": 42,
+          "subtotal": 8400
+        },
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 100,
+          "unitPrice": 85,
+          "subtotal": 8500
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 100,
+          "unitPrice": 85,
+          "subtotal": 8500
+        }
+      ],
+      "itemId": "item-ly72owps4",
+      "itemName": "PP 120gm 10 inch",
+      "qty": 200,
+      "unitPrice": 42,
+      "amount": 25400,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-fgpims19a",
+      "userId": "nazmul",
+      "date": "2026-10-05",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "151",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 100,
+          "unitPrice": 85,
+          "subtotal": 8500
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 100,
+          "unitPrice": 85,
+          "subtotal": 8500
+        }
+      ],
+      "itemId": "item-3",
+      "itemName": "CTO  10 Inch",
+      "qty": 100,
+      "unitPrice": 85,
+      "amount": 17000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-4ufn6rf01",
+      "userId": "nazmul",
+      "date": "2026-10-05",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "152",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 100,
+          "unitPrice": 42,
+          "subtotal": 4200
+        }
+      ],
+      "itemId": "item-ly72owps4",
+      "itemName": "PP 120gm 10 inch",
+      "qty": 100,
+      "unitPrice": 42,
+      "amount": 4200,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-ruabht6m0",
+      "userId": "nazmul",
+      "date": "2026-10-05",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "153",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 200,
+          "unitPrice": 42,
+          "subtotal": 8400
+        },
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 100,
+          "unitPrice": 85,
+          "subtotal": 8500
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 100,
+          "unitPrice": 85,
+          "subtotal": 8500
+        }
+      ],
+      "itemId": "item-ly72owps4",
+      "itemName": "PP 120gm 10 inch",
+      "qty": 200,
+      "unitPrice": 42,
+      "amount": 25400,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-ol3ube3nv",
+      "userId": "nazmul",
+      "date": "2026-10-07",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "155",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 200,
+          "unitPrice": 42,
+          "subtotal": 8400
+        }
+      ],
+      "itemId": "item-ly72owps4",
+      "itemName": "PP 120gm 10 inch",
+      "qty": 200,
+      "unitPrice": 42,
+      "amount": 8400,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-hh17zq7n5",
+      "userId": "nazmul",
+      "date": "2026-10-08",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "158",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 1000,
+          "unitPrice": 85,
+          "subtotal": 85000
+        }
+      ],
+      "itemId": "item-3",
+      "itemName": "CTO  10 Inch",
+      "qty": 1000,
+      "unitPrice": 85,
+      "amount": 85000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-mhqc3jx7k",
+      "userId": "nazmul",
+      "date": "2026-10-10",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "161",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-ly72owps4",
+          "itemName": "PP 120gm 10 inch",
+          "qty": 300,
+          "unitPrice": 42,
+          "subtotal": 12600
+        }
+      ],
+      "itemId": "item-ly72owps4",
+      "itemName": "PP 120gm 10 inch",
+      "qty": 300,
+      "unitPrice": 42,
+      "amount": 12600,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-cmixmdx5t",
+      "userId": "nazmul",
+      "date": "2026-10-12",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "162",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 125,
+          "unitPrice": 85,
+          "subtotal": 10625
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 125,
+          "unitPrice": 85,
+          "subtotal": 10625
+        }
+      ],
+      "itemId": "item-3",
+      "itemName": "CTO  10 Inch",
+      "qty": 125,
+      "unitPrice": 85,
+      "amount": 21250,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-25uhxl53y",
+      "userId": "nazmul",
+      "date": "2026-10-17",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "164",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 250,
+          "unitPrice": 86,
+          "subtotal": 21500
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 250,
+          "unitPrice": 86,
+          "subtotal": 21500
+        }
+      ],
+      "itemId": "item-3",
+      "itemName": "CTO  10 Inch",
+      "qty": 250,
+      "unitPrice": 86,
+      "amount": 43000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-sj7thrj5a",
+      "userId": "nazmul",
+      "date": "2026-10-17",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "167",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 150,
+          "unitPrice": 86,
+          "subtotal": 12900
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 150,
+          "unitPrice": 86,
+          "subtotal": 12900
+        }
+      ],
+      "itemId": "item-3",
+      "itemName": "CTO  10 Inch",
+      "qty": 150,
+      "unitPrice": 86,
+      "amount": 25800,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-ugixa9fsw",
+      "userId": "nazmul",
+      "date": "2026-10-17",
+      "type": "collection",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "167",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 25800,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: bank transfer 475"
+    },
+    {
+      "id": "db-5dmytqr7t",
+      "userId": "nazmul",
+      "date": "2026-11-02",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Alif Water Technology",
+      "invoiceNo": "184",
+      "vatInvoiceNo": "165",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-3",
+          "itemName": "CTO  10 Inch",
+          "qty": 1000,
+          "unitPrice": 90,
+          "subtotal": 90000
+        },
+        {
+          "itemId": "item-4",
+          "itemName": "GAC  10 Inch",
+          "qty": 500,
+          "unitPrice": 90,
+          "subtotal": 45000
+        }
+      ],
+      "itemId": "item-3",
+      "itemName": "CTO  10 Inch",
+      "qty": 1000,
+      "unitPrice": 90,
+      "amount": 135000,
+      "paymentMethod": "Cash",
+      "remark": ""
+    },
+    {
+      "id": "db-3isumsiok",
+      "userId": "nazmul",
+      "date": "2026-11-02",
+      "type": "collection",
+      "time": "7:00 PM",
+      "partyName": "Alif Water Technology",
+      "invoiceNo": "184",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 135000,
+      "paymentMethod": "Cash",
+      "remark": "Bank/Deposit: Office account dpt. (Jahid vai)"
+    },
+    {
+      "id": "db-8oelxrppa",
+      "userId": "nazmul",
+      "date": "2026-11-02",
+      "type": "delivery",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "1119",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [
+        {
+          "itemId": "item-8k2calrid",
+          "itemName": "Osmo Smart",
+          "qty": 1,
+          "unitPrice": 7300,
+          "subtotal": 7300
+        }
+      ],
+      "itemId": "item-8k2calrid",
+      "itemName": "Osmo Smart",
+      "qty": 1,
+      "unitPrice": 7300,
+      "amount": 7300,
+      "paymentMethod": "Cash",
+      "remark": "Delivery from HO"
+    },
+    {
+      "id": "db-siiado6ya",
+      "userId": "nazmul",
+      "date": "2026-11-02",
+      "type": "collection",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "1119",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 7300,
+      "paymentMethod": "bKash / Nagad",
+      "remark": "Bank/Deposit: To Jahid vai Office"
+    },
+    {
+      "id": "db-80g29cwor",
+      "userId": "nazmul",
+      "date": "2026-11-18",
+      "type": "collection",
+      "time": "12:00 PM",
+      "partyName": "Ulab University",
+      "invoiceNo": "",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 90000,
+      "paymentMethod": "Bank Deposit",
+      "remark": "Bank/Deposit: modumuti"
+    },
+    {
+      "id": "db-xnqd2858i",
+      "userId": "nazmul",
+      "date": "2026-10-17",
+      "type": "collection",
+      "time": "12:00 PM",
+      "partyName": "Water source and electronic",
+      "invoiceNo": "164",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 43000,
+      "paymentMethod": "Bank Deposit",
+      "remark": ""
+    },
+    {
+      "id": "db-oge4l347c",
+      "userId": "nazmul",
+      "date": "2026-10-03",
+      "type": "collection",
+      "time": "12:00 PM",
+      "partyName": "Rajdhani electronics",
+      "invoiceNo": "143",
+      "vatInvoiceNo": "",
+      "recipientPerson": "",
+      "items": [],
+      "itemId": "",
+      "itemName": "",
+      "qty": 1,
+      "unitPrice": 0,
+      "amount": 24900,
+      "paymentMethod": "Bank Deposit",
       "remark": ""
     }
   ],
   "conveyance": [
+    {
+      "id": "conv-uf1opcv6g",
+      "userId": "nazmul",
+      "date": "2026-11-18",
+      "fromLocation": "Badda Link Road",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-6eouxy6kz",
+      "userId": "nazmul",
+      "date": "2026-11-18",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Badda Link Road",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-pn6vp8d6u",
+      "userId": "nazmul",
+      "date": "2026-11-18",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-mn9jh1r8p",
+      "userId": "nazmul",
+      "date": "2026-11-17",
+      "fromLocation": "Polton",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-rnngcbps8",
+      "userId": "nazmul",
+      "date": "2026-11-17",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Polton",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-qhj09mouy",
+      "userId": "nazmul",
+      "date": "2026-11-16",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-4nlhxwrni",
+      "userId": "nazmul",
+      "date": "2026-11-16",
+      "fromLocation": "Mirpur 10 Circle",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 60
+    },
+    {
+      "id": "conv-trfwth5tr",
+      "userId": "nazmul",
+      "date": "2026-11-16",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Mirpur 10 Circle",
+      "transport": "Motorbike",
+      "purpose": "Sales & Collection Visit",
+      "amount": 60
+    },
+    {
+      "id": "conv-z39b6wkpn",
+      "userId": "nazmul",
+      "date": "2026-11-16",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-vzlszdjqp",
+      "userId": "nazmul",
+      "date": "2026-11-15",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-7w6bx53b8",
+      "userId": "nazmul",
+      "date": "2026-11-15",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-5ydxox4ft",
+      "userId": "nazmul",
+      "date": "2026-11-14",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 60
+    },
+    {
+      "id": "conv-f0k2rw582",
+      "userId": "nazmul",
+      "date": "2026-11-14",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-3vw88huc8",
+      "userId": "nazmul",
+      "date": "2026-11-13",
+      "fromLocation": "Golf Club",
+      "toLocation": "Sonir Akhra",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 100
+    },
+    {
+      "id": "conv-ahryh1zwv",
+      "userId": "nazmul",
+      "date": "2026-11-13",
+      "fromLocation": "Sonir Akhra",
+      "toLocation": "Golf Club",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 100
+    },
+    {
+      "id": "conv-p7j9nziie",
+      "userId": "nazmul",
+      "date": "2026-11-12",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-8uqqocq3r",
+      "userId": "nazmul",
+      "date": "2026-11-12",
+      "fromLocation": "Mirpur 10 Circle",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Motorbike",
+      "purpose": "metro 🚇",
+      "amount": 60
+    },
+    {
+      "id": "conv-jhda7k8vo",
+      "userId": "nazmul",
+      "date": "2026-11-12",
+      "fromLocation": "Golf Club",
+      "toLocation": "Mirpur 10 Circle",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-3jmzdkg8x",
+      "userId": "nazmul",
+      "date": "2026-11-12",
+      "fromLocation": "Sonir Akhra",
+      "toLocation": "Golf Club",
+      "transport": "Motorbike",
+      "purpose": "Sales & Collection Visit",
+      "amount": 350
+    },
+    {
+      "id": "conv-zy4m4khl8",
+      "userId": "nazmul",
+      "date": "2026-11-11",
+      "fromLocation": "Head office (51, Central Road)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-5j7o59atq",
+      "userId": "nazmul",
+      "date": "2026-11-10",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 60
+    },
+    {
+      "id": "conv-kcs3sl4dx",
+      "userId": "nazmul",
+      "date": "2026-11-11",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Head office (51, Central Road)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-nxkkp7n5r",
+      "userId": "nazmul",
+      "date": "2026-11-10",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-vfusl5za2",
+      "userId": "nazmul",
+      "date": "2026-11-09",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-uhh5xp1j5",
+      "userId": "nazmul",
+      "date": "2026-11-09",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-a7q4xe7d1",
+      "userId": "nazmul",
+      "date": "2026-11-09",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "water source",
+      "amount": 50
+    },
+    {
+      "id": "conv-ymgrdnxk5",
+      "userId": "nazmul",
+      "date": "2026-11-08",
+      "fromLocation": "arambugh",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 60
+    },
+    {
+      "id": "conv-iip0wq84d",
+      "userId": "nazmul",
+      "date": "2026-11-08",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "arambugh",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-p8wwk0afe",
+      "userId": "nazmul",
+      "date": "2026-11-08",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 60
+    },
+    {
+      "id": "conv-qkrruqqwa",
+      "userId": "nazmul",
+      "date": "2026-11-07",
+      "fromLocation": "Polton",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-7d3fnui7p",
+      "userId": "nazmul",
+      "date": "2026-11-07",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Polton",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-ui4z35lgv",
+      "userId": "nazmul",
+      "date": "2026-11-07",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-ke4xs5exq",
+      "userId": "nazmul",
+      "date": "2026-11-05",
+      "fromLocation": "Head office (51, Central Road)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-5mqvaxzv5",
+      "userId": "nazmul",
+      "date": "2026-11-05",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Head office (51, Central Road)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-j6q91m6a9",
+      "userId": "nazmul",
+      "date": "2026-11-05",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-dceiwfof5",
+      "userId": "nazmul",
+      "date": "2026-11-04",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-mo8byic15",
+      "userId": "nazmul",
+      "date": "2026-11-04",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-lhqert0l6",
+      "userId": "nazmul",
+      "date": "2026-11-04",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-le8ce9351",
+      "userId": "nazmul",
+      "date": "2026-11-04",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-utvstqr61",
+      "userId": "nazmul",
+      "date": "2026-11-03",
+      "fromLocation": "Polton",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 60
+    },
+    {
+      "id": "conv-x54kzurt1",
+      "userId": "nazmul",
+      "date": "2026-11-03",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Polton",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-t6ly5f4g9",
+      "userId": "nazmul",
+      "date": "2026-11-03",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-8ty68idx7",
+      "userId": "nazmul",
+      "date": "2026-11-02",
+      "fromLocation": "Head office (51, Central Road)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-5bk1h0433",
+      "userId": "nazmul",
+      "date": "2026-11-02",
+      "fromLocation": "Badda Link Road",
+      "toLocation": "Head office (51, Central Road)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 90
+    },
+    {
+      "id": "conv-xz6xcy6pd",
+      "userId": "nazmul",
+      "date": "2026-11-02",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Badda Link Road",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-q47khyt21",
+      "userId": "nazmul",
+      "date": "2026-11-02",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-9c8ulft6p",
+      "userId": "nazmul",
+      "date": "2026-11-02",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-d26700hj0",
+      "userId": "nazmul",
+      "date": "2026-11-01",
+      "fromLocation": "Polton",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-7j4fw43s5",
+      "userId": "nazmul",
+      "date": "2026-11-01",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Polton",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-sucp6h4w3",
+      "userId": "nazmul",
+      "date": "2026-11-01",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-zjn3egpyy",
+      "userId": "nazmul",
+      "date": "2026-11-01",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-zvpe5lo0c",
+      "userId": "nazmul",
+      "date": "2026-10-31",
+      "fromLocation": "arambugh",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 70
+    },
+    {
+      "id": "conv-c4pagv6n6",
+      "userId": "nazmul",
+      "date": "2026-10-31",
+      "fromLocation": "Nowabpur",
+      "toLocation": "arambugh",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 70
+    },
+    {
+      "id": "conv-pm7r3mv0r",
+      "userId": "nazmul",
+      "date": "2026-10-31",
+      "fromLocation": "Polton",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-yp11lw4l4",
+      "userId": "nazmul",
+      "date": "2026-10-31",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Polton",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-luapoc1t8",
+      "userId": "nazmul",
+      "date": "2026-10-31",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-uj1t33s3a",
+      "userId": "nazmul",
+      "date": "2026-10-29",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-rd6lkxy4u",
+      "userId": "nazmul",
+      "date": "2026-10-29",
+      "fromLocation": "Polton",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-qbofgnfxy",
+      "userId": "nazmul",
+      "date": "2026-10-29",
+      "fromLocation": "arambugh",
+      "toLocation": "Polton",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-6z3joyjoo",
+      "userId": "nazmul",
+      "date": "2026-10-29",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "arambugh",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-xtxnsgyid",
+      "userId": "nazmul",
+      "date": "2026-10-29",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-s1pgpipbb",
+      "userId": "nazmul",
+      "date": "2026-10-29",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-xk9748muw",
+      "userId": "nazmul",
+      "date": "2026-10-28",
+      "fromLocation": "Head office (51, Central Road)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-ouaefhrvn",
+      "userId": "nazmul",
+      "date": "2026-10-28",
+      "fromLocation": "Ulav University",
+      "toLocation": "Head office (51, Central Road)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 0
+    },
+    {
+      "id": "conv-tdl9ddzst",
+      "userId": "nazmul",
+      "date": "2026-10-28",
+      "fromLocation": "Head office (51, Central Road)",
+      "toLocation": "Ulav University",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 0
+    },
+    {
+      "id": "conv-4akixrf84",
+      "userId": "nazmul",
+      "date": "2026-10-28",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Head office (51, Central Road)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-aejagv187",
+      "userId": "nazmul",
+      "date": "2026-10-28",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-72td2da3d",
+      "userId": "nazmul",
+      "date": "2026-10-27",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-sthrb8ft5",
+      "userId": "nazmul",
+      "date": "2026-10-27",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-r17sjn4hl",
+      "userId": "nazmul",
+      "date": "2026-10-27",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-vfad5f95l",
+      "userId": "nazmul",
+      "date": "2026-10-27",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-td904hami",
+      "userId": "nazmul",
+      "date": "2026-10-26",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-aknw10jv3",
+      "userId": "nazmul",
+      "date": "2026-10-26",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-9cu6hsske",
+      "userId": "nazmul",
+      "date": "2026-10-26",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-n13cohqps",
+      "userId": "nazmul",
+      "date": "2026-10-26",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-fir76rx6n",
+      "userId": "nazmul",
+      "date": "2026-10-26",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-yecappv6v",
+      "userId": "nazmul",
+      "date": "2026-10-25",
+      "fromLocation": "Head office (51, Central Road)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-0df2qj54e",
+      "userId": "nazmul",
+      "date": "2026-10-25",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-okq1wadu6",
+      "userId": "nazmul",
+      "date": "2026-10-25",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-wawt0y3gd",
+      "userId": "nazmul",
+      "date": "2026-10-24",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-29vi1bwcn",
+      "userId": "nazmul",
+      "date": "2026-10-24",
+      "fromLocation": "Polton",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-mp9xxxuu3",
+      "userId": "nazmul",
+      "date": "2026-10-24",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Polton",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-hne5k14x8",
+      "userId": "nazmul",
+      "date": "2026-10-24",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-lanrauog4",
+      "userId": "nazmul",
+      "date": "2026-10-22",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Sonir Akhra",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 150
+    },
+    {
+      "id": "conv-b2jwiswgt",
+      "userId": "nazmul",
+      "date": "2026-10-22",
+      "fromLocation": "Sonir Akhra",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 150
+    },
+    {
+      "id": "conv-ke13z7jxb",
+      "userId": "nazmul",
+      "date": "2026-10-19",
+      "fromLocation": "Polton",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-94dyy316b",
+      "userId": "nazmul",
+      "date": "2026-10-19",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Polton",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-8icfoooc3",
+      "userId": "nazmul",
+      "date": "2026-10-19",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-kkrrp5vza",
+      "userId": "nazmul",
+      "date": "2026-10-18",
+      "fromLocation": "Head office (51, Central Road)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-p72cyop49",
+      "userId": "nazmul",
+      "date": "2026-10-18",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Head office (51, Central Road)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-sdk0s5mtn",
+      "userId": "nazmul",
+      "date": "2026-10-18",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-ltiqxdgoe",
+      "userId": "nazmul",
+      "date": "2026-10-18",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-icpeziocf",
+      "userId": "nazmul",
+      "date": "2026-10-17",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-0y9useyc2",
+      "userId": "nazmul",
+      "date": "2026-10-17",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-j7g7ishm6",
+      "userId": "nazmul",
+      "date": "2026-10-17",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-8cefcwqsh",
+      "userId": "nazmul",
+      "date": "2026-10-15",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-lw9unta7v",
+      "userId": "nazmul",
+      "date": "2026-10-17",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-d05mii7q8",
+      "userId": "nazmul",
+      "date": "2026-10-15",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-9o7agur2y",
+      "userId": "nazmul",
+      "date": "2026-10-15",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-m8x6h011y",
+      "userId": "nazmul",
+      "date": "2026-10-15",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-d4e0amh9h",
+      "userId": "nazmul",
+      "date": "2026-10-15",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-qjjoqtrsq",
+      "userId": "nazmul",
+      "date": "2026-10-14",
+      "fromLocation": "Polton",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-nvldc0rgb",
+      "userId": "nazmul",
+      "date": "2026-10-14",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Polton",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-0w5z19k73",
+      "userId": "nazmul",
+      "date": "2026-10-14",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-xgtq0lbgn",
+      "userId": "nazmul",
+      "date": "2026-10-13",
+      "fromLocation": "Head office (51, Central Road)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-psn6orq62",
+      "userId": "nazmul",
+      "date": "2026-10-13",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Head office (51, Central Road)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-tvcu23fas",
+      "userId": "nazmul",
+      "date": "2026-10-13",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-4n02bbkg0",
+      "userId": "nazmul",
+      "date": "2026-10-12",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-20mjt413f",
+      "userId": "nazmul",
+      "date": "2026-10-12",
+      "fromLocation": "Polton",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-s9mdbas7b",
+      "userId": "nazmul",
+      "date": "2026-10-12",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Polton",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-a9wu2d8e6",
+      "userId": "nazmul",
+      "date": "2026-10-12",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-autvgbkm9",
+      "userId": "nazmul",
+      "date": "2026-10-12",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-7ske5k33e",
+      "userId": "nazmul",
+      "date": "2026-10-11",
+      "fromLocation": "Ulav University",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 100
+    },
+    {
+      "id": "conv-oxj1i6v6o",
+      "userId": "nazmul",
+      "date": "2026-10-11",
+      "fromLocation": "Head office (51, Central Road)",
+      "toLocation": "Ulav University",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 150
+    },
+    {
+      "id": "conv-zpd7h8vjg",
+      "userId": "nazmul",
+      "date": "2026-10-11",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Head office (51, Central Road)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-ngeg0mrau",
+      "userId": "nazmul",
+      "date": "2026-10-11",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-3qj6vzyq5",
+      "userId": "nazmul",
+      "date": "2026-10-11",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-k3je1ow21",
+      "userId": "nazmul",
+      "date": "2026-10-10",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 60
+    },
+    {
+      "id": "conv-5147d0yn0",
+      "userId": "nazmul",
+      "date": "2026-10-10",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-lrv0le9c7",
+      "userId": "nazmul",
+      "date": "2026-10-10",
+      "fromLocation": "Badda Link Road",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-vapz2pk09",
+      "userId": "nazmul",
+      "date": "2026-10-10",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Badda Link Road",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-t5a8swth9",
+      "userId": "nazmul",
+      "date": "2026-10-10",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-40zjflv1y",
+      "userId": "nazmul",
+      "date": "2026-10-08",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-kko3zozqx",
+      "userId": "nazmul",
+      "date": "2026-10-08",
+      "fromLocation": "Head office (51, Central Road)",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 70
+    },
+    {
+      "id": "conv-u4fitgswg",
+      "userId": "nazmul",
+      "date": "2026-10-08",
+      "fromLocation": "New Market",
+      "toLocation": "Head office (51, Central Road)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-iidstgton",
+      "userId": "nazmul",
+      "date": "2026-10-08",
+      "fromLocation": "Nowabpur",
+      "toLocation": "New Market",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-ed0tsxuxx",
+      "userId": "nazmul",
+      "date": "2026-10-07",
+      "fromLocation": "Polton",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-aisjzyg9g",
+      "userId": "nazmul",
+      "date": "2026-10-07",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Polton",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-gk5mxk1wi",
+      "userId": "nazmul",
+      "date": "2026-10-07",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-cqi2kgb45",
+      "userId": "nazmul",
+      "date": "2026-10-07",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-hlyf6vb8c",
+      "userId": "nazmul",
+      "date": "2026-10-07",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-aj76fz6ww",
+      "userId": "nazmul",
+      "date": "2026-10-06",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-dvyjkcmix",
+      "userId": "nazmul",
+      "date": "2026-10-06",
+      "fromLocation": "Polton",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-n0hqiz5rj",
+      "userId": "nazmul",
+      "date": "2026-10-06",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Polton",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-35fhznae7",
+      "userId": "nazmul",
+      "date": "2026-10-06",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-7562nsmoq",
+      "userId": "nazmul",
+      "date": "2026-10-06",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-ejb8kjkxo",
+      "userId": "nazmul",
+      "date": "2026-10-06",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-t2t4v9c1m",
+      "userId": "nazmul",
+      "date": "2026-10-05",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-4teem07wg",
+      "userId": "nazmul",
+      "date": "2026-10-05",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-7o7t4k77t",
+      "userId": "nazmul",
+      "date": "2026-10-05",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-rdrfw697f",
+      "userId": "nazmul",
+      "date": "2026-10-04",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-150t27daq",
+      "userId": "nazmul",
+      "date": "2026-10-04",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-pxlbqrtpl",
+      "userId": "nazmul",
+      "date": "2026-10-04",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-21fbub40x",
+      "userId": "nazmul",
+      "date": "2026-10-04",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-skwk9o80p",
+      "userId": "nazmul",
+      "date": "2026-10-01",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-itjsr1999",
+      "userId": "nazmul",
+      "date": "2026-10-01",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-idgbf602m",
+      "userId": "nazmul",
+      "date": "2026-10-01",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-w81puu960",
+      "userId": "nazmul",
+      "date": "2026-10-01",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-pmsv8zpg6",
+      "userId": "nazmul",
+      "date": "2026-09-30",
+      "fromLocation": "Polton",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-x1kldl6qi",
+      "userId": "nazmul",
+      "date": "2026-09-30",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Polton",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-ep5eaeuqy",
+      "userId": "nazmul",
+      "date": "2026-09-30",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-1otgdy9x3",
+      "userId": "nazmul",
+      "date": "2026-09-30",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-lp40k7ilx",
+      "userId": "nazmul",
+      "date": "2026-09-29",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-78n7boo5r",
+      "userId": "nazmul",
+      "date": "2026-09-29",
+      "fromLocation": "Polton",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-pipql88xx",
+      "userId": "nazmul",
+      "date": "2026-09-29",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Polton",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-i8dsgqmub",
+      "userId": "nazmul",
+      "date": "2026-09-28",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-zm4mk4vpv",
+      "userId": "nazmul",
+      "date": "2026-09-28",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-71h65iipv",
+      "userId": "nazmul",
+      "date": "2026-09-28",
+      "fromLocation": "Head office (51, Central Road)",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-tb4cnevq5",
+      "userId": "nazmul",
+      "date": "2026-09-28",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Head office (51, Central Road)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-mb1qfrqch",
+      "userId": "nazmul",
+      "date": "2026-09-28",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-1eogqdj5b",
+      "userId": "nazmul",
+      "date": "2026-09-28",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-rvdiddasn",
+      "userId": "nazmul",
+      "date": "2026-09-27",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-peqlhh419",
+      "userId": "nazmul",
+      "date": "2026-09-27",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-tw9ytikib",
+      "userId": "nazmul",
+      "date": "2026-09-27",
+      "fromLocation": "Old Jail road",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-zy3kuj5dn",
+      "userId": "nazmul",
+      "date": "2026-09-27",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Old Jail road",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-j1izj1uca",
+      "userId": "nazmul",
+      "date": "2026-09-26",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-5t02g02dz",
+      "userId": "nazmul",
+      "date": "2026-09-26",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-snskccgb1",
+      "userId": "nazmul",
+      "date": "2026-09-24",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-zcaiem3l9",
+      "userId": "nazmul",
+      "date": "2026-09-24",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-yi79zt8ta",
+      "userId": "nazmul",
+      "date": "2026-09-24",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-u392fo9wr",
+      "userId": "nazmul",
+      "date": "2026-09-24",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-2ncz16bsi",
+      "userId": "nazmul",
+      "date": "2026-09-23",
+      "fromLocation": "Head office (51, Central Road)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-7vvk28j1p",
+      "userId": "nazmul",
+      "date": "2026-09-23",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Head office (51, Central Road)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-7ky34wk3a",
+      "userId": "nazmul",
+      "date": "2026-09-23",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-rb56fdgx0",
+      "userId": "nazmul",
+      "date": "2026-09-23",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-oirdknn2p",
+      "userId": "nazmul",
+      "date": "2026-09-22",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-dknyvarm1",
+      "userId": "nazmul",
+      "date": "2026-09-22",
+      "fromLocation": "Banglabazar",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Raw materials 2 bag 50 KG with 10 Taka entry stadium",
+      "amount": 160
+    },
+    {
+      "id": "conv-4a4ozb6qx",
+      "userId": "nazmul",
+      "date": "2026-09-22",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Banglabazar",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 100
+    },
+    {
+      "id": "conv-nubolp2v2",
+      "userId": "nazmul",
+      "date": "2026-09-22",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-rgrs5qmuj",
+      "userId": "nazmul",
+      "date": "2026-09-22",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-sp5zj3004",
+      "userId": "nazmul",
+      "date": "2026-09-21",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-l5cwg51ex",
+      "userId": "nazmul",
+      "date": "2026-09-21",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-zqdho52de",
+      "userId": "nazmul",
+      "date": "2026-09-21",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-5y7tdljsa",
+      "userId": "nazmul",
+      "date": "2026-09-21",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-yv4bpjbv3",
+      "userId": "nazmul",
+      "date": "2026-09-20",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-7feemc9oy",
+      "userId": "nazmul",
+      "date": "2026-09-20",
+      "fromLocation": "Polton",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-w2tzy1nc2",
+      "userId": "nazmul",
+      "date": "2026-09-20",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Polton",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-ga2nu0eod",
+      "userId": "nazmul",
+      "date": "2026-09-20",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-13wm7odlv",
+      "userId": "nazmul",
+      "date": "2026-09-19",
+      "fromLocation": "Xinial Restaurant Dhanmondi 27",
+      "toLocation": "Sonir Akhra",
+      "transport": "Motorbike",
+      "purpose": "Night 10:00 PM",
+      "amount": 300
+    },
+    {
+      "id": "conv-0c6jx56lu",
+      "userId": "nazmul",
+      "date": "2026-09-19",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Xinial Restaurant Dhanmondi 27",
+      "transport": "Uber / Pathao",
+      "purpose": "Dilars with uber car",
+      "amount": 1000
+    },
+    {
+      "id": "conv-gqx5ffnla",
+      "userId": "nazmul",
+      "date": "2026-09-19",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-u4sqypb94",
+      "userId": "nazmul",
+      "date": "2026-09-19",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "dawat",
+      "amount": 10
+    },
+    {
+      "id": "conv-nbew1qw3w",
+      "userId": "nazmul",
+      "date": "2026-09-19",
+      "fromLocation": "Polton",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-yc2imbn1i",
+      "userId": "nazmul",
+      "date": "2026-09-19",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Polton",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-bka6he2qr",
+      "userId": "nazmul",
+      "date": "2026-09-19",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-acpzm4lak",
+      "userId": "nazmul",
+      "date": "2026-09-17",
+      "fromLocation": "Head office (51, Central Road)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-bub37rj65",
+      "userId": "nazmul",
+      "date": "2026-09-17",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Head office (51, Central Road)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-blj1r9zlx",
+      "userId": "nazmul",
+      "date": "2026-09-17",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-ygp0w1equ",
+      "userId": "nazmul",
+      "date": "2026-09-17",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-5fhauc21f",
+      "userId": "nazmul",
+      "date": "2026-09-17",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "For Rain",
+      "amount": 40
+    },
+    {
+      "id": "conv-3ts10tca9",
+      "userId": "nazmul",
+      "date": "2026-09-16",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "order collection",
+      "amount": 10
+    },
+    {
+      "id": "conv-2x10p56ku",
+      "userId": "nazmul",
+      "date": "2026-09-16",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-jy41tapt1",
+      "userId": "nazmul",
+      "date": "2026-09-16",
+      "fromLocation": "Gulshan 1 Circle",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-qlnr32pvt",
+      "userId": "nazmul",
+      "date": "2026-09-16",
+      "fromLocation": "Rampra",
+      "toLocation": "Rampra",
+      "transport": "Rickshaw",
+      "purpose": "New shop search",
+      "amount": 50
+    },
+    {
+      "id": "conv-k1s060soe",
+      "userId": "nazmul",
+      "date": "2026-09-16",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Rampra",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 20
+    },
+    {
+      "id": "conv-r02irpjuo",
+      "userId": "nazmul",
+      "date": "2026-09-15",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-lq06hlbf9",
+      "userId": "nazmul",
+      "date": "2026-09-15",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-69nj515bp",
+      "userId": "nazmul",
+      "date": "2026-09-15",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-0j8n256za",
+      "userId": "nazmul",
+      "date": "2026-09-14",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-mhac09yxv",
+      "userId": "nazmul",
+      "date": "2026-09-14",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-mdirnfft0",
+      "userId": "nazmul",
+      "date": "2026-09-14",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-70wamqg4y",
+      "userId": "nazmul",
+      "date": "2026-09-14",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-cb7ulzkfg",
+      "userId": "nazmul",
+      "date": "2026-09-14",
+      "fromLocation": "Middle Badda",
+      "toLocation": "Gulisthan Market",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-2ks90lvzv",
+      "userId": "nazmul",
+      "date": "2026-09-14",
+      "fromLocation": "Jatrabari Bus Stand",
+      "toLocation": "Middle Badda",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-c5tdwgl8s",
+      "userId": "nazmul",
+      "date": "2026-09-13",
+      "fromLocation": "Head office (51, Central Road)",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Bus + Rickshaw",
+      "amount": 40
+    },
+    {
+      "id": "conv-1ssp7rvv5",
+      "userId": "nazmul",
+      "date": "2026-09-13",
+      "fromLocation": "Ulav University",
+      "toLocation": "Head office (51, Central Road)",
+      "transport": "Bus",
+      "purpose": "Bus + Rickshaw",
+      "amount": 70
+    },
+    {
+      "id": "conv-2tvre7ksb",
+      "userId": "nazmul",
+      "date": "2026-09-13",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Ulav University",
+      "transport": "CNG",
+      "purpose": "Ulav University  Meeting",
+      "amount": 100
+    },
+    {
+      "id": "conv-spk7t1ib1",
+      "userId": "nazmul",
+      "date": "2026-09-12",
+      "fromLocation": "Udoyon Market",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-qsu0ptvkj",
+      "userId": "nazmul",
+      "date": "2026-09-12",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Udoyon Market",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit and tea biscuit 🍪",
+      "amount": 60
+    },
+    {
+      "id": "conv-jnt0wi1ez",
+      "userId": "nazmul",
+      "date": "2026-09-12",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-oz0jivb0o",
+      "userId": "nazmul",
+      "date": "2026-09-12",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-p0r4j7ynw",
+      "userId": "nazmul",
+      "date": "2026-09-10",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-6pf6tsnqj",
+      "userId": "nazmul",
+      "date": "2026-09-10",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-2kk9fpsra",
+      "userId": "nazmul",
+      "date": "2026-09-10",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Payment collection",
+      "amount": 10
+    },
+    {
+      "id": "conv-pg8oj8qay",
+      "userId": "nazmul",
+      "date": "2026-09-10",
+      "fromLocation": "Head office (51, Central Road)",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-0snb9zi9r",
+      "userId": "nazmul",
+      "date": "2026-09-10",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Head office (51, Central Road)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-jj1t7phgo",
+      "userId": "nazmul",
+      "date": "2026-09-10",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-bnhhflk5o",
+      "userId": "nazmul",
+      "date": "2026-09-09",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 50
+    },
+    {
+      "id": "conv-bqfnq658u",
+      "userId": "nazmul",
+      "date": "2026-09-09",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "order collection",
+      "amount": 30
+    },
+    {
+      "id": "conv-03atfa3rg",
+      "userId": "nazmul",
+      "date": "2026-09-09",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Payment deposit",
+      "amount": 40
+    },
+    {
+      "id": "conv-b7777vf3u",
+      "userId": "nazmul",
+      "date": "2026-09-07",
+      "fromLocation": "Bank / CRM  (Motijheel)",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 40
+    },
+    {
+      "id": "conv-p7wzull4t",
+      "userId": "nazmul",
+      "date": "2026-09-07",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Bank / CRM  (Motijheel)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-cu5y5ixav",
+      "userId": "nazmul",
+      "date": "2026-09-07",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-xn4c9sx7g",
+      "userId": "nazmul",
+      "date": "2026-09-07",
+      "fromLocation": "Panir tanki (Pokirapul)",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-nnlvfd9cd",
+      "userId": "nazmul",
+      "date": "2026-09-07",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Panir tanki (Pokirapul)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-k121yjkwf",
+      "userId": "nazmul",
+      "date": "2026-09-07",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Nuralom vai",
+      "amount": 10
+    },
+    {
+      "id": "conv-1e2eynqud",
+      "userId": "nazmul",
+      "date": "2026-09-06",
+      "fromLocation": "Bata Signal",
+      "toLocation": "Nowabpur",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-32umr4r5d",
+      "userId": "nazmul",
+      "date": "2026-09-06",
+      "fromLocation": "Head office (51, Central Road)",
+      "toLocation": "Bata Signal",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-wpru7ev32",
+      "userId": "nazmul",
+      "date": "2026-09-06",
+      "fromLocation": "Bata Signal",
+      "toLocation": "Head office (51, Central Road)",
+      "transport": "Rickshaw",
+      "purpose": "Sales & Collection Visit",
+      "amount": 30
+    },
+    {
+      "id": "conv-hdnunhqea",
+      "userId": "nazmul",
+      "date": "2026-09-06",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Bata Signal",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-j0lqiqqsi",
+      "userId": "nazmul",
+      "date": "2026-09-06",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
     {
       "id": "conv-ew6f4uy19",
       "date": "2026-09-05",
@@ -976,7 +7178,8 @@
       "toLocation": "Nowabpur",
       "transport": "Bus",
       "purpose": "Market visit",
-      "amount": 10
+      "amount": 10,
+      "userId": "nazmul"
     },
     {
       "id": "conv-q8iiv5vdr",
@@ -985,7 +7188,8 @@
       "toLocation": "Stadium Market Gulisthan",
       "transport": "Rickshaw",
       "purpose": "Market visit",
-      "amount": 30
+      "amount": 30,
+      "userId": "nazmul"
     },
     {
       "id": "conv-0kuc3u2i8",
@@ -994,7 +7198,8 @@
       "toLocation": "Bank / CRM  (Motijheel)",
       "transport": "Rickshaw",
       "purpose": "Payment deposit to bank 475",
-      "amount": 30
+      "amount": 30,
+      "userId": "nazmul"
     },
     {
       "id": "conv-yrxpgdtk4",
@@ -1003,7 +7208,8 @@
       "toLocation": "Stadium Market Gulisthan",
       "transport": "Bus",
       "purpose": "Order Collection",
-      "amount": 10
+      "amount": 10,
+      "userId": "nazmul"
     },
     {
       "id": "conv-imywj4dbj",
@@ -1012,7 +7218,8 @@
       "toLocation": "Nowabpur",
       "transport": "Bus",
       "purpose": "Sales & Collection Visit",
-      "amount": 10
+      "amount": 10,
+      "userId": "nazmul"
     },
     {
       "id": "conv-mjlhoo4a3",
@@ -1021,7 +7228,8 @@
       "toLocation": "Bata Signal",
       "transport": "Rickshaw",
       "purpose": "Sales & Collection Visit",
-      "amount": 30
+      "amount": 30,
+      "userId": "nazmul"
     },
     {
       "id": "conv-60rcmrd3r",
@@ -1030,7 +7238,8 @@
       "toLocation": "Head office (51, Central Road)",
       "transport": "Rickshaw",
       "purpose": "Sales & Collection Visit",
-      "amount": 30
+      "amount": 30,
+      "userId": "nazmul"
     },
     {
       "id": "conv-983talxan",
@@ -1039,7 +7248,8 @@
       "toLocation": "Bata Signal",
       "transport": "Bus",
       "purpose": "Sales & Collection Visit",
-      "amount": 10
+      "amount": 10,
+      "userId": "nazmul"
     },
     {
       "id": "conv-8w2a7qe5r",
@@ -1048,7 +7258,8 @@
       "toLocation": "Polton",
       "transport": "Rickshaw",
       "purpose": "Going to Head office for burying some products ED sir",
-      "amount": 30
+      "amount": 30,
+      "userId": "nazmul"
     },
     {
       "id": "conv-v362ugd9j",
@@ -1057,7 +7268,8 @@
       "toLocation": "Bank / CRM  (Motijheel)",
       "transport": "Rickshaw",
       "purpose": "Payment deposit to  bank",
-      "amount": 30
+      "amount": 30,
+      "userId": "nazmul"
     },
     {
       "id": "conv-0d1zynq1y",
@@ -1066,7 +7278,8 @@
       "toLocation": "Stadium Market Gulisthan",
       "transport": "Bus",
       "purpose": "Order Collection",
-      "amount": 10
+      "amount": 10,
+      "userId": "nazmul"
     },
     {
       "id": "conv-bzt5y8ly4",
@@ -1075,7 +7288,8 @@
       "toLocation": "Nowabpur",
       "transport": "Rickshaw",
       "purpose": "Market",
-      "amount": 40
+      "amount": 40,
+      "userId": "nazmul"
     },
     {
       "id": "conv-px5sx166r",
@@ -1084,7 +7298,8 @@
       "toLocation": "Bank / CRM  (Motijheel)",
       "transport": "Rickshaw",
       "purpose": "Sales & Collection Visit",
-      "amount": 40
+      "amount": 40,
+      "userId": "nazmul"
     },
     {
       "id": "conv-o31984uhr",
@@ -1093,7 +7308,8 @@
       "toLocation": "Nowabpur",
       "transport": "Bus",
       "purpose": "Payment collection",
-      "amount": 10
+      "amount": 10,
+      "userId": "nazmul"
     },
     {
       "id": "conv-mpbwejipc",
@@ -1102,7 +7318,8 @@
       "toLocation": "Stadium Market Gulisthan",
       "transport": "Bus",
       "purpose": "Order collection and payment collection",
-      "amount": 10
+      "amount": 10,
+      "userId": "nazmul"
     },
     {
       "id": "conv-ief7cgxct",
@@ -1111,7 +7328,8 @@
       "toLocation": "Gulistan",
       "transport": "Bus",
       "purpose": "Water source",
-      "amount": 10
+      "amount": 10,
+      "userId": "nazmul"
     },
     {
       "id": "conv-1eacmywxp",
@@ -1120,7 +7338,8 @@
       "toLocation": "Bata signal",
       "transport": "Rickshaw",
       "purpose": "Order collection",
-      "amount": 30
+      "amount": 30,
+      "userId": "nazmul"
     },
     {
       "id": "conv-j63xcmyv9",
@@ -1129,7 +7348,8 @@
       "toLocation": "Gulisan",
       "transport": "Bus",
       "purpose": "Go to water source",
-      "amount": 20
+      "amount": 20,
+      "userId": "nazmul"
     },
     {
       "id": "conv-09tlptaey",
@@ -1138,7 +7358,48 @@
       "toLocation": "Head office",
       "transport": "Rickshaw",
       "purpose": "Sales & Collection Visit",
-      "amount": 30
+      "amount": 30,
+      "userId": "nazmul"
+    },
+    {
+      "id": "conv-5z7zh6cmb",
+      "userId": "nazmul",
+      "date": "2026-09-08",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-yr3uzcfzh",
+      "userId": "nazmul",
+      "date": "2026-09-08",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-7uooc6n18",
+      "userId": "nazmul",
+      "date": "2026-09-08",
+      "fromLocation": "Stadium Market Gulisthan",
+      "toLocation": "Nowabpur",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
+    },
+    {
+      "id": "conv-g9w7nj5be",
+      "userId": "nazmul",
+      "date": "2026-09-08",
+      "fromLocation": "Nowabpur",
+      "toLocation": "Stadium Market Gulisthan",
+      "transport": "Bus",
+      "purpose": "Sales & Collection Visit",
+      "amount": 10
     }
   ],
   "conveyanceLocations": [
@@ -1158,6 +7419,17 @@
     "Bank / CRM  (Motijheel)",
     "Polton",
     "Bata Signal",
-    "Head office (51, Central Road)"
+    "Head office (51, Central Road)",
+    "Panir tanki (Pokirapul)",
+    "Udoyon Market",
+    "Ulav University",
+    "Middle Badda",
+    "Rampra",
+    "Xinial Restaurant Dhanmondi 27",
+    "Sonir Akhra",
+    "Banglabazar",
+    "Old Jail road",
+    "arambugh",
+    "Golf Club"
   ]
 }

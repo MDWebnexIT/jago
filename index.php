@@ -1261,6 +1261,7 @@
                 <option value="Rickshaw">Rickshaw</option>
                 <option value="CNG">CNG Auto Rickshaw</option>
                 <option value="Bus">Bus</option>
+                <option value="Metro">Metro</option>
                 <option value="Uber / Pathao">Uber / Pathao</option>
                 <option value="Motorbike">Motorbike</option>
               </select>
@@ -1623,6 +1624,7 @@
                 <option value="Rickshaw">Rickshaw</option>
                 <option value="CNG">CNG Auto Rickshaw</option>
                 <option value="Bus">Bus</option>
+                <option value="Metro">Metro</option>
                 <option value="Uber / Pathao">Uber / Pathao</option>
                 <option value="Motorbike">Motorbike</option>
               </select>

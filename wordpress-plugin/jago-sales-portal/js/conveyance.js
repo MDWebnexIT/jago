@@ -308,7 +308,7 @@ const ConveyanceManager = {
           <td style="font-weight: 700;">${formatDate(l.date)}</td>
           <td style="font-weight: 600; color: var(--text-main);">${l.fromLocation} → ${l.toLocation}</td>
           <td>
-            <span class="badge ${l.transport === 'Rickshaw' ? 'badge-primary' : (l.transport === 'CNG' || l.transport === 'Uber / Pathao' ? 'badge-success' : 'badge-warning')}">${l.transport}</span>
+            <span class="badge ${l.transport === 'Rickshaw' ? 'badge-primary' : (l.transport === 'CNG' || l.transport === 'Uber / Pathao' ? 'badge-success' : (l.transport === 'Metro' ? 'badge-primary' : 'badge-warning'))}">${l.transport}</span>
           </td>
           <td>${l.purpose}</td>
           <td style="font-weight: 700; color: var(--danger);">${formatBDT(l.amount)}</td>
@@ -367,7 +367,7 @@ const ConveyanceManager = {
         <tr>
           <td style="text-align: center; width: 40px;">${index + 1}</td>
           <td style="font-weight: 600; color: var(--text-main);">${l.fromLocation} → ${l.toLocation}</td>
-          <td><span class="badge ${l.transport === 'Rickshaw' ? 'badge-primary' : (l.transport === 'CNG' || l.transport === 'Uber / Pathao' ? 'badge-success' : 'badge-warning')}">${l.transport}</span></td>
+          <td><span class="badge ${l.transport === 'Rickshaw' ? 'badge-primary' : (l.transport === 'CNG' || l.transport === 'Uber / Pathao' ? 'badge-success' : (l.transport === 'Metro' ? 'badge-primary' : 'badge-warning'))}">${l.transport}</span></td>
           <td>${l.purpose}</td>
           <td style="font-weight: 700; color: var(--danger); text-align: right;">${formatBDT(l.amount)}</td>
         </tr>
