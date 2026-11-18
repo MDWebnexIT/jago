@@ -103,6 +103,10 @@
         <i class="ri-bill-line"></i>
         <span>All Invoices Report</span>
       </div>
+      <div class="nav-item" data-tab="paymentHistoryTab">
+        <i class="ri-exchange-dollar-line"></i>
+        <span>Invoice Payment History</span>
+      </div>
       <div class="nav-item" data-tab="conveyanceReportTab">
         <i class="ri-car-line"></i>
         <span>Conveyance Report</span>
@@ -118,6 +122,10 @@
       <div class="nav-item" data-tab="itemTab">
         <i class="ri-stack-line"></i>
         <span>Items & Pricing</span>
+      </div>
+      <div class="nav-item" data-tab="cashClearanceTab">
+        <i class="ri-safe-2-line"></i>
+        <span>Cash Clearance</span>
       </div>
       <div class="nav-item" data-tab="reportsTab">
         <i class="ri-bar-chart-box-line"></i>
@@ -187,6 +195,14 @@
       <div class="nav-item" data-tab="invoicesTab">
         <i class="ri-file-list-3-line"></i>
         <span>All Invoices Report</span>
+      </div>
+      <div class="nav-item" data-tab="paymentHistoryTab">
+        <i class="ri-exchange-dollar-line"></i>
+        <span>Invoice Payment History</span>
+      </div>
+      <div class="nav-item" data-tab="cashClearanceTab">
+        <i class="ri-safe-2-line"></i>
+        <span>Cash Clearance</span>
       </div>
     </aside>
 
@@ -674,8 +690,9 @@
                 <option value="all" selected>View All Dates</option>
                 <option value="selectedDate">Filter by Selected Date</option>
               </select>
-              <div style="font-weight: 700; color: var(--danger);">
+              <div style="font-weight: 700; color: var(--danger); text-align: right;">
                 Total Conveyance: <span id="conveyanceDailyTotal">৳ 0</span>
+                <div id="conveyanceDailyTotalWords" style="font-size: 0.78rem; color: var(--text-muted); font-style: italic; font-weight: 500; margin-top: 2px;"></div>
               </div>
               <button class="btn btn-primary" onclick="ConveyanceManager.openAddModal()">
                 <i class="ri-add-line"></i> Log Conveyance Entry
@@ -1163,6 +1180,267 @@
         </div>
       </div>
 
+      <!-- TAB 11: INVOICE PAYMENT HISTORY & TRACKING HUB -->
+      <div class="tab-panel" id="paymentHistoryTab">
+        <div class="card no-print" style="margin-bottom: 1.5rem;">
+          <div class="card-header" style="flex-wrap: wrap; gap: 1rem;">
+            <div class="card-title">
+              <i class="ri-exchange-dollar-line"></i> Invoice Payment History & Channel Breakdown Hub
+            </div>
+            <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+              <button class="btn btn-secondary btn-sm" onclick="window.print()">
+                <i class="ri-printer-line"></i> Print Payment History
+              </button>
+              <button class="btn btn-danger btn-sm" onclick="InvoiceManager.downloadPaymentHistoryPDF()" style="background: #e11d48; border-color: #e11d48; color: white;" title="Download Payment History Report as PDF Document">
+                <i class="ri-file-pdf-2-line"></i> Download PDF
+              </button>
+            </div>
+          </div>
+
+          <!-- Summary Metric Cards -->
+          <div class="metrics-grid" style="margin-bottom: 1.25rem;">
+            <div class="metric-card">
+              <div class="metric-icon delivery">
+                <i class="ri-shopping-cart-2-line"></i>
+              </div>
+              <div class="metric-info">
+                <h3>Total Invoiced Sales</h3>
+                <div class="value" id="payHistTotalSales" style="color: var(--primary);">৳ 0</div>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon collection">
+                <i class="ri-wallet-3-line"></i>
+              </div>
+              <div class="metric-info">
+                <h3>Total Money Received</h3>
+                <div class="value" id="payHistTotalCollected" style="color: var(--success);">৳ 0</div>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon" style="background: rgba(239, 68, 68, 0.15); color: var(--danger);">
+                <i class="ri-error-warning-line"></i>
+              </div>
+              <div class="metric-info">
+                <h3>Remaining Due Balance</h3>
+                <div class="value" id="payHistTotalDue" style="color: var(--danger);">৳ 0</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Channel Breakdown Cards -->
+          <div class="metrics-grid" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); margin-bottom: 1.25rem;">
+            <div class="metric-card" style="padding: 0.75rem 1rem;">
+              <div class="metric-info">
+                <h3 style="font-size: 0.75rem;"><i class="ri-bank-card-line" style="color: #0284c7;"></i> Bank Transfer</h3>
+                <div class="value" id="payHistBankTotal" style="font-size: 1.05rem; color: #0284c7;">৳ 0</div>
+              </div>
+            </div>
+
+            <div class="metric-card" style="padding: 0.75rem 1rem;">
+              <div class="metric-info">
+                <h3 style="font-size: 0.75rem;"><i class="ri-smartphone-line" style="color: #d946ef;"></i> bKash / Nagad</h3>
+                <div class="value" id="payHistBkashTotal" style="font-size: 1.05rem; color: #d946ef;">৳ 0</div>
+              </div>
+            </div>
+
+            <div class="metric-card" style="padding: 0.75rem 1rem;">
+              <div class="metric-info">
+                <h3 style="font-size: 0.75rem;"><i class="ri-money-dollar-circle-line" style="color: #10b981;"></i> Cash Received</h3>
+                <div class="value" id="payHistCashTotal" style="font-size: 1.05rem; color: #10b981;">৳ 0</div>
+              </div>
+            </div>
+
+            <div class="metric-card" style="padding: 0.75rem 1rem;">
+              <div class="metric-info">
+                <h3 style="font-size: 0.75rem;"><i class="ri-file-shield-2-line" style="color: #f59e0b;"></i> Cheques Received</h3>
+                <div class="value" id="payHistChequeTotal" style="font-size: 1.05rem; color: #f59e0b;">৳ 0</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filters Row -->
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: flex-end;">
+            <div class="form-group" style="flex: 2; min-width: 200px;">
+              <label for="payHistSearchInput" style="font-size: 0.8rem; font-weight: 600;">Search Invoice # or Customer</label>
+              <input type="text" class="form-control" id="payHistSearchInput" placeholder="Search Invoice # (e.g. INV-1001), Customer, or Bank..." oninput="InvoiceManager.renderPaymentHistoryTable()">
+            </div>
+
+            <div class="form-group" style="flex: 1.5; min-width: 170px;">
+              <label for="payHistCustomerFilter" style="font-size: 0.8rem; font-weight: 600;">Filter Customer</label>
+              <select class="form-select customer-party-select" id="payHistCustomerFilter" onchange="InvoiceManager.renderPaymentHistoryTable()">
+                <option value="">All Customers</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="flex: 1.2; min-width: 150px;">
+              <label for="payHistStatusFilter" style="font-size: 0.8rem; font-weight: 600;">Payment Status</label>
+              <select class="form-select" id="payHistStatusFilter" onchange="InvoiceManager.renderPaymentHistoryTable()">
+                <option value="">All Statuses</option>
+                <option value="unpaid">🔴 Unpaid / Due Only</option>
+                <option value="partial">🟠 Partial Paid Only</option>
+                <option value="paid">🟢 Fully Paid Only</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="flex: 1.2; min-width: 150px;">
+              <label for="payHistMethodFilter" style="font-size: 0.8rem; font-weight: 600;">Payment Channel</label>
+              <select class="form-select" id="payHistMethodFilter" onchange="InvoiceManager.renderPaymentHistoryTable()">
+                <option value="">All Channels</option>
+                <option value="Bank">Bank Transfer</option>
+                <option value="bKash">bKash / Nagad</option>
+                <option value="Cash">Cash</option>
+                <option value="Cheque">Cheque</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="flex: 1; min-width: 130px;">
+              <label for="payHistFromDate" style="font-size: 0.8rem; font-weight: 600;">From Date</label>
+              <input type="date" class="form-control" id="payHistFromDate" onchange="InvoiceManager.renderPaymentHistoryTable()">
+            </div>
+
+            <div class="form-group" style="flex: 1; min-width: 130px;">
+              <label for="payHistToDate" style="font-size: 0.8rem; font-weight: 600;">To Date</label>
+              <input type="date" class="form-control" id="payHistToDate" onchange="InvoiceManager.renderPaymentHistoryTable()">
+            </div>
+          </div>
+        </div>
+
+        <!-- Master Payment History Table -->
+        <div class="card">
+          <div class="table-responsive">
+            <table class="data-table" style="font-size: 0.88rem;">
+              <thead>
+                <tr>
+                  <th style="width: 12%;">Invoice # & Date</th>
+                  <th style="width: 18%;">Customer & Zone</th>
+                  <th style="width: 11%;">Invoice Total (৳)</th>
+                  <th style="width: 11%;">Paid So Far (৳)</th>
+                  <th style="width: 11%;">Remaining Due (৳)</th>
+                  <th style="width: 10%;">Status</th>
+                  <th style="width: 27%;">Payment History & Method Breakdown</th>
+                  <th style="text-align: right; width: 10%;">Action</th>
+                </tr>
+              </thead>
+              <tbody id="payHistTableBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <!-- TAB 10: CASH IN HAND CLEARANCE & RECONCILIATION -->
+      <div class="tab-panel" id="cashClearanceTab">
+        <div class="card no-print" style="margin-bottom: 1.5rem; border-top: 3px solid #d97706;">
+          <div class="card-header" style="flex-wrap: wrap; gap: 1rem;">
+            <div class="card-title" style="font-size: 1.15rem; color: #d97706;">
+              <i class="ri-safe-2-line"></i> Cash in Hand Clearance & Reconciliation Hub
+            </div>
+            <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+              <button class="btn btn-success btn-sm" onclick="CashClearanceManager.clearSelectedCheckboxes()" style="background: #10b981; border-color: #10b981; color: white; font-weight: 700;">
+                <i class="ri-checkbox-circle-fill"></i> Clear Selected Invoices
+              </button>
+              <button class="btn btn-secondary btn-sm" onclick="window.print()">
+                <i class="ri-printer-line"></i> Print Clearance List
+              </button>
+              <button class="btn btn-danger btn-sm" onclick="CashClearanceManager.downloadCashClearancePDF()" style="background: #e11d48; border-color: #e11d48; color: white;" title="Download PDF Report">
+                <i class="ri-file-pdf-2-line"></i> Download PDF
+              </button>
+            </div>
+          </div>
+
+          <!-- Cash Clearance Summary Ticker Cards -->
+          <div class="metrics-grid" style="margin-bottom: 1.25rem;">
+            <div class="metric-card">
+              <div class="metric-icon cash">
+                <i class="ri-safe-2-line"></i>
+              </div>
+              <div class="metric-info">
+                <h3>Total Cash in Custody</h3>
+                <div class="value" id="cashClearanceTotalCustody" style="color: var(--warning);">৳ 0</div>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon collection">
+                <i class="ri-checkbox-circle-fill"></i>
+              </div>
+              <div class="metric-info">
+                <h3>Total Cleared / Bank Deposited</h3>
+                <div class="value" id="cashClearanceTotalCleared" style="color: var(--success);">৳ 0</div>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon delivery">
+                <i class="ri-file-list-line"></i>
+              </div>
+              <div class="metric-info">
+                <h3>Active Cash Invoices</h3>
+                <div class="value" id="cashClearanceActiveCount" style="color: var(--primary);">0 Invoices</div>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">
+                <i class="ri-check-double-line"></i>
+              </div>
+              <div class="metric-info">
+                <h3>Cleared Invoices</h3>
+                <div class="value" id="cashClearanceClearedCount" style="color: #10b981;">0 Cleared</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Search & Filter Controls -->
+          <div class="form-row" style="gap: 0.75rem; flex-wrap: wrap;">
+            <div class="form-group" style="flex: 2; min-width: 220px;">
+              <label for="cashClearanceSearchInput" style="font-size: 0.8rem; font-weight: 600;">Search Invoice or Party</label>
+              <input type="text" class="form-control" id="cashClearanceSearchInput" placeholder="Search by Invoice #, Party Name, Holder..." oninput="CashClearanceManager.renderCashClearanceView()">
+            </div>
+
+            <div class="form-group" style="flex: 1; min-width: 170px;">
+              <label for="cashClearanceStatusFilter" style="font-size: 0.8rem; font-weight: 600;">Status Filter</label>
+              <select class="form-select" id="cashClearanceStatusFilter" onchange="CashClearanceManager.renderCashClearanceView()">
+                <option value="all" selected>All Cash Records (View All)</option>
+                <option value="active">Active Cash in Hand (Pending)</option>
+                <option value="cleared">Cleared / Bank Deposited</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cash Clearance Table Card -->
+        <div class="card" id="cashClearancePanelContent">
+          <div class="table-responsive">
+            <table class="data-table" style="font-size: 0.88rem;">
+              <thead>
+                <tr>
+                  <th style="width: 40px; text-align: center;">
+                    <input type="checkbox" id="cashClearanceMasterCheckbox" onchange="CashClearanceManager.toggleSelectAllCheckboxes(this)" style="width: 18px; height: 18px; cursor: pointer;" title="Select All Active Invoices">
+                  </th>
+                  <th>Date & Time</th>
+                  <th>Invoice No</th>
+                  <th>Customer / Party Name</th>
+                  <th>Recipient / Holder</th>
+                  <th>Original Cash (৳)</th>
+                  <th>Cleared Amount (৳)</th>
+                  <th>Remaining Cash (৳)</th>
+                  <th style="text-align: right;">Clearance Action</th>
+                </tr>
+              </thead>
+              <tbody id="cashClearanceTableBody">
+                <!-- Dynamically populated by CashClearanceManager -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
       <!-- TAB 9: CONVEYANCE BILL REPORT & ANALYTICS -->
       <div class="tab-panel" id="conveyanceReportTab">
         <div class="card no-print" style="margin-bottom: 1.5rem;">
@@ -1189,6 +1467,7 @@
               <div class="metric-info">
                 <h3>Total Conveyance Bill</h3>
                 <div class="value" id="convMetricTotal" style="color: var(--danger);">৳ 0</div>
+                <div id="convMetricTotalWords" style="font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; font-weight: 500;"></div>
               </div>
             </div>
 
@@ -1333,6 +1612,11 @@
                   <td colspan="4" style="text-align: right;">Total Conveyance Claim Expense:</td>
                   <td style="color: var(--danger); font-size: 1.05rem;" id="conveyanceTableFooterTotal">৳ 0</td>
                   <td class="no-print"></td>
+                </tr>
+                <tr style="background: rgba(56, 189, 248, 0.06); font-weight: 700;">
+                  <td colspan="6" style="text-align: right; color: var(--primary); font-size: 0.92rem; padding: 8px 12px;" id="conveyanceTableFooterTotalWords">
+                    <strong>Amount in Words:</strong> Taka Zero Only
+                  </td>
                 </tr>
               </tfoot>
             </table>
@@ -1506,6 +1790,7 @@
       </div>
       <form id="daybookForm">
         <div class="modal-body">
+          <input type="hidden" id="dbEditId">
           <div id="dbModalAlert" style="display: none; padding: 0.75rem 1rem; margin-bottom: 1rem; border-radius: var(--radius-sm); font-size: 0.88rem; background: rgba(16, 185, 129, 0.15); border: 1px solid var(--success); color: var(--success);">
             <i class="ri-checkbox-circle-fill"></i> Entry saved successfully! You can add another party entry now.
           </div>
@@ -2127,6 +2412,7 @@
   <script src="js/ledger.js"></script>
   <script src="js/master_input.js"></script>
   <script src="js/invoices.js"></script>
+  <script src="js/cash_clearance.js"></script>
   <script src="js/pwa.js"></script>
   <script src="js/app.js"></script>
 </body>
